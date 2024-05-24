@@ -1,0 +1,63 @@
+body{
+    background-image: linear-gradient(to right, rgb(148, 218, 227), rgb(218, 182, 98));
+}
+.box {
+    border: 1px solid black;
+    margin-top: 4%;
+    margin-left: 20%;
+    width: 60%;
+    height: 500px;
+    background: #f1f1f1;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+
+}
+
+img.avatar {
+    border: 0px solid black;
+    width: 20%;
+    margin-left: -67%;
+    position: relative;
+    top: 10px
+    /* border-radius: 50%; */
+    /* padding-top: -100px; */
+}
+
+.login {
+    text-align: center;
+    font-size: 60px;
+    position: absolute;
+    top: 18%;
+    left: 36%;
+    font-family: 'Times New Roman', serif;
+}
+.smallsize{
+  font-size: 20px;
+  position: relative;
+  top:-20px;
+  
+}
+.kits{
+    border: 1px solid black;
+    margin-top:10%;
+    margin-left: -20%;
+    padding: 20px 70px;
+    font-size: 30px;
+    position: absolute;
+    top:40%;
+    left: 48%;
+
+}
+.kit{
+    border: 1px solid black;
+    margin-top:30%;
+    padding: 20px 70px;
+    font-size: 30px;
+    position: absolute;
+    top:-3.8%;
+    left: 50%;
+
+}

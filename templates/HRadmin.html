@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .manage {
+            margin-top: 200px;
+            margin-left: 400px;
+            width: 900px;
+            height: 100px;
+            font-size: 50px;
+
+        }
+
+        .box {
+            width: 100%;
+            height: 70px;
+            background-color: rgba(229, 199, 199, 0.53);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <button  onclick="myfun()" class="manage">Manage Employee</button>
+
+    <script>
+        function myfun() {
+            var myURL = "{{ url_for('showusers') }}";
+            window.location.href = myURL;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form11.css') }}">
+</head>
+
+<body>
+    <div class="img">
+        <img src="{{ url_for('static', filename='formimg11.PNG' )}}" style="width: 100%; height:300px">
+        <p onclick="window.print()" id="printout">printout</p><br>
+        <a href="{{url_for('homepage')}}" id="backtohomepage">back to homepage</a>
+    </div>
+
+    <div class="box">
+        <div class="box1">
+            <form  id="userForm" action="{{url_for('add_user')}}" method="POST" id="userForm" >
+                <img src="{{ url_for('static', filename='img/NAME.PNG') }}" alt="image">
+                <select name="choice1" id="" class="choice1">
+                    <option value="Mr.">MR.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </select>
+                <input type="text" name="name1" class="name1" required><br>
+
+                <img src="{{ url_for('static', filename='img/DATEOFBIRTH.PNG') }}" alt="">
+                <input type="text" name="dob" id="" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" class="dateofbirth" required><br>
+                <img src="{{ url_for('static', filename='img/FATHERORHUSBAND.PNG') }}" alt="">
+                <input type="text" value="Mr" name="fatherandhusband" class="fatherandhusband"><br>
+                <img src="{{ url_for('static', filename='img/RELATIONSHIPINRESPECTOF.PNG') }}" alt="" >
+                <select name="choice3" class="choice3">
+                    <option value="Father">Father</option>
+                    <option value="Husband">Husband</option>
+                </select><br>
+                <img src="{{ url_for('static', filename='img/GENDER.PNG') }}" alt="">
+                <select name="choice4" class="choice4">
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="TRANSGENDER">TRANSGENDER</option>
+                </select><br>
+                <img src="{{ url_for('static', filename='img/MOBILENUMBER.PNG') }}" alt="">
+                <input type="text" name="mobile" class="mobile"><br>
+                <img src="{{ url_for('static', filename='img/EMAILID.PNG') }}" alt="">
+                <input type="email" name="email" class="email" required><br>
+                <img src="{{ url_for('static', filename='img/MEMBEROFEMPLOYEE\'SPROVIDENTFUNDSCHEME.PNG') }}" alt="">
+                <select name="choice5" class="choice5">
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select><br>
+                <img src="{{ url_for('static', filename='img/MEMBEROFEMPLOYEE\'SPENSION.PNG') }}" alt="">
+                <select name="choice6" class="choice6">
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select><br>
+                <img src="{{ url_for('static', filename='img/MADATORILYFILLUP(PMD)101112.PNG') }}" alt=""><br>
+                <!-- <label>IF RESPONSE TO ANY OR BOTH OF (8) (9) ABOVE YES, THEN MANDATORILY  FILL UP THE PREVIOUS EMPLOYEE  DETAILS AT(10,11 AND 12)<label> -->
+                <img src="{{ url_for('static', filename='img/UANORPREVIOUSMEMBERID.PNG') }}" alt="">
+                <!-- <label>THE DETAILS OF THE UNIVERSAL ACCOUNT NUMBER (UAB) OR PREVIOUS PF MEMBER<label> -->
+                <select name="choice7" class="choice7">
+                    <option>UAB 10</option>
+                    <option>PREVIOUS PF MEMBER ID </option>
+                </select>
+                <input type="text" name="previousemployment" class="previousemployment"><br>
+                <!-- <label>DATE OF EXIT FOR PREVIOUS MEMBER ID</label> -->
+                <img src="{{ url_for('static', filename='img/DATEOFEXITBACKMEMBER.PNG') }}" alt="">
+                <input type="text" name="dateprevious" id="" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" class="dateprevious" required><br><br>
+                <!-- <label>(A) IF SCHEME CERTIFICATE ISSUED FOR PREVIOUS EMPLOYEE, THEN SCHEME CERTIFICATE NUMBER ID:</label> -->
+                <img src="{{ url_for('static', filename='img/12.CERTIFICATE ISSUED FOR PREVIOUS EMPLOYMENT.PNG') }}"
+                    alt="">
+                <input type="text" name="certificateforpreviousemployment" class="certificateforpreviousemployment" required>
+                <!-- <label>(B) IF PENSION PAYMENT ORDER (PRO) ISSUED FOR PREVIOUS EMPLOYEE, THEN PPO NUMBER:</label> -->
+                <img src="{{ url_for('static', filename='img/12.(B)PERSIONPAYMENTORDERTHENPPONUMBER.PNG') }}" alt="">
+                <input type="text" name="persionpayment" class="persionpayment" required><br><br>
+                <!-- <label>OTHER DETAILS</label>
+        <label>.IF THE REPLY TO (13) ABOVE IS YES, THEN ENTER THE DETAILS IN 13(A), 13(B) 13(C):</label><br><br>
+        <label>13(A) COUNTRY OF ORIGIN</label> -->
+                <img src="{{ url_for('static', filename='img/13.INTERNATIONWORK.PNG') }}" alt="">
+                <select name="internationalworker" class="choice8" required>
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                </select><br>
+                <img src="{{ url_for('static', filename='img/13ACOUNTRYOFORIGIN.PNG') }}" alt=""><br><br>
+                <input type="text" name="india" id="" class="india" required>
+                <input type="text" name="otherindia" id="" class="otherindia" required><br><br>
+                <img src="{{ url_for('static', filename='img/13B.PASSPORTNUMBER.PNG') }}" alt="">
+                <input type="text" name="passportnumber" id="" class="passportnumber" required><br><br>
+                <img src="{{ url_for('static', filename='img/13C.PASSPORTVALID.PNG') }}" alt="" required>
+                <input type="text" name="passportvalid" id="" class="passportvalid" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" required>
+                <input type="text" name="passportvalid1" id="" class="passportvalid1" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" required><br>
+                <div>
+                    <img src="{{ url_for('static', filename='img/14.EDUCATIONALQULIFICATION.PNG') }}" alt=""><br>
+                    <label for="option1" class="radio-label"><input type="checkbox" name="educationalqualification" id="option1" class="radio" value="illiterate"></label>
+            <label for="option2" class="radio-label"><input type="checkbox" name="educationalqualification" id="option2" class="radio" value="non-matric" ></label>
+            <label for="option3" class="radio-label"><input type="checkbox" name="educationalqualification" id="option3" class="radio" value="matric"></label>
+            <label for="option4" class="radio-label"><input type="checkbox" name="educationalqualification" id="option4" class="radio" value="seniorsecondary"></label>
+            <label for="option5" class="radio-label"><input type="checkbox" name="educationalqualification" id="option5" class="radio" value="graduate" ></label>
+            <label for="option6" class="radio-label"><input type="checkbox" name="educationalqualification" id="option6" class="radio" value="postgraduate" ></label>
+            <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification" id="option7" class="radio" value="doctor"></label>
+            <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification" id="option7" class="radio" value="technicalprofessional" ></label>
+      
+                </div>
+                <img src="{{ url_for('static', filename='img/15.MARITALSTATUS.PNG') }}" alt="">
+                <input type="radio" name="maritalstatus" id="married" class="radio1" value="married" >
+                <input type="radio" name="maritalstatus" id="unmarried" class="radio1" value="unmarried" >
+                <input type="radio" name="maritalstatus" id="widowwidower" class="radio1" value="widow/widower" >
+                <input type="radio" name="maritalstatus" id="divorcee" class="radio3" value="divorcee" >
+                <br>
+                <img src="{{ url_for('static', filename='img/16.SPECIALLYABLED.PNG') }}" alt="" >
+                <input type="checkbox" name="specially" id="" class="radio2" value="yes" >
+                <input type="checkbox" name="specially" id="" class="radio2" value="no" >
+                <input type="checkbox" name="abled" id="" class="check" value="Locomotive" >
+                <input type="checkbox" name="abled" id="" class="check" value="visual" >
+                <input type="checkbox" name="abled" id="" class="check" value="hearing" ><br>
+                <script>
+                    const checkboxes1 = document.querySelectorAll('input[type="checkbox"][name="specially"]');
+                    checkboxes1.forEach(box => {
+                        box.addEventListener('click', function() {
+                            if (this.checked) {
+                                checkboxes1.forEach(otherBox => otherBox.checked = false);
+                                this.checked = true;
+                            }
+                        });
+                    });
+                    const checkboxes = document.querySelectorAll('input[type="checkbox"][name="abled"]');
+                    checkboxes.forEach(box => {
+                        box.addEventListener('click', function() {
+                            if (this.checked) {
+                                checkboxes.forEach(otherBox => otherBox.checked = false);
+                                this.checked = true;
+                            }
+                        });
+                    });
+                    const checkboxes2 = document.querySelectorAll('input[type="checkbox"][name="educationalqualification"]');
+                    checkboxes2.forEach(box => {
+                        box.addEventListener('click', function() {
+                            if (this.checked) {
+                                checkboxes2.forEach(otherBox => otherBox.checked = false);
+                                this.checked = true;
+                            }
+                        });
+                    });
+                    
+                </script>
+                <img src="{{ url_for('static', filename='img/17.KYCDETAILS.PNG') }}" alt=""><br>
+                <input type="text" id="" name="bankkycnumber" placeholder="1" class="kyc" required>
+                <input type="text" id="" name="banknumber" placeholder="2" class="kyc" required>
+                <input type="text" id="" name="bankremark" placeholder="3" class="kyc" required><br><br>
+                <input type="text" id="" name="nprkycnumber" placeholder="4" class="kyc" required>
+                <input type="text" id="" name="nprnumber" placeholder="5" class="kyc" required>
+                <input type="text" id="" name="nprremark" placeholder="6" class="kyc" required><br><br>
+                <input type="text" id="" name="permanentkycnumber" placeholder="7" class="kyc" required>
+                <input type="text" id="" name="permanentnumber" placeholder="9" class="kyc" required>
+                <input type="text" id="" name="permanentremark" placeholder="10" class="kyc" required><br><br>
+                <input type="text" id="" name="passportkycnumber" placeholder="12" class="kyc" required>
+                <input type="text" id="" name="passportnumber" placeholder="13" class="kyc" required>
+                <input type="text" id="" name="passportremark" placeholder="14" class="kyc" required><br><br>
+                <input type="text" id="" name="drivinglicencekycnumber" placeholder="15" class="kyc" required>
+                <input type="text" id="" name="drivinglicencenumber" placeholder="16" class="kyc" required>
+                <input type="text" id="" name="drivinglicenceremark" placeholder="17" class="kyc" required><br><br>
+                <input type="text" id="" name="electioncardkycnumber" placeholder="18" class="kyc" required>
+                <input type="text" id="" name="electioncardnumber" placeholder="19" class="kyc" required>
+                <input type="text" id="" name="electioncardremark" placeholder="20" class="kyc" required><br><br>
+                <input type="text" id="" name="rationcardkycnumber" placeholder="21" class="kyc" required>
+                <input type="text" id="" name="rationcardnumber" placeholder="22" class="kyc" required>
+                <input type="text" id="" name="rationcardremark" placeholder="23" class="kyc" required><br><br>
+                <input type="text" id="" name="esiccardkycnumber" placeholder="24" class="kyc" required>
+                <input type="text" id="" name="esiccardnumber" placeholder="25" class="kyc" required>
+                <input type="text" id="" name="esiccardremark" placeholder="26" class="kyc" required><br>
+                <!-- <input type="text" id="" name="" class="kyc"> -->
+
+                <img src="{{ url_for('static', filename='img/DECLARATIONBYPRESENTEMPLOYER.PNG') }}" alt="">
+                <!-- <input type="text" id="" name="" class="joined" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" >
+        <input type="text" id="" name="" class="yourname">  
+        <input type="text" id="" name="" class="memberid1"> -->
+                <img src="{{ url_for('static', filename='img/DECLARATIONBYPRESENTEMPLOYER1.PNG') }}" alt="">
+                <input type="submit" value="submit" class="submit">
+            </form>
+            <!-- <script>
+            document.getElementById("userForm").addEventListener("submit", function(event) {
+            // Prevent form submission if any required field is empty
+            var choice1 = document.querySelector('input[name="choice1"]').value
+            var name1 = document.querySelector('input[name="name1"]').value.trim();
+            var dob = document.querySelector('input[name="dob"]').value.trim();
+            var fatherandhusband = document.querySelector('input[name="fatherandhusband"]').value.trim();
+            var choice3 = document.querySelector('input[name="choice3"]').value.trim();
+            var choice4 = document.querySelector('input[name="choice4"]').value.trim();
+            var mobile = document.querySelector('input[name="mobile"]').value.trim();
+            var email = document.querySelector('input[name="email"]').value.trim();
+            var choice5 = document.querySelector('input[name="choice5"]').value.trim();
+            var choice6 = document.querySelector('input[name="choice6"]').value.trim();
+            var choice7 = document.querySelector('input[name="choice7"]').value.trim();
+            var previousemployment = document.querySelector('input[name="previousemployment"]').value.trim();
+            var dateprevious = document.querySelector('input[name="dateprevious"]').value.trim();
+            var internationalworker = document.querySelector('input[name="internationalworker"]').value.trim();
+            var india = document.querySelector('input[name="india"]').value.trim();
+            var otherindia = document.querySelector('input[name="otherindia"]').value.trim();
+            var passportnumber = document.querySelector('input[name="passportnumber"]').value.trim();
+            var passportvalid = document.querySelector('input[name="passportvalid"]').value.trim();
+            var passportvalid1 = document.querySelector('input[name="passportvalid1"]').value.trim();
+            var educationalqualification = document.querySelector('input[name="educationalqualification"]').value.trim();
+            var maritalstatus = document.querySelector('input[name="maritalstatus"]').value.trim();
+            var specially = document.querySelector('input[name="specially"]').value.trim();
+            var abled = document.querySelector('input[name="abled"]').value.trim();
+            var bankkycnumber = document.querySelector('input[name="bankkycnumber"]').value.trim();
+            var banknumber = document.querySelector('input[name="banknumber"]').value.trim();
+            var bankremark = document.querySelector('input[name="bankremark"]').value.trim();
+            var nprkycnumber = document.querySelector('input[name="nprkycnumber"]').value.trim();
+            var nprnumber = document.querySelector('input[name="nprnumber"]').value.trim();
+            var nprremark = document.querySelector('input[name="nprremark"]').value.trim();
+            var permanentkycnumber = document.querySelector('input[name="permanentkycnumber"]').value.trim();
+            var permanentnumber = document.querySelector('input[name="permanentnumber"]').value.trim();
+            var permanentremark = document.querySelector('input[name="permanentremark"]').value.trim();
+            var passportkycnumber = document.querySelector('input[name="passportkycnumber"]').value.trim();
+            var passportnumber = document.querySelector('input[name="passportnumber"]').value.trim();
+            var passportremark = document.querySelector('input[name="passportremark"]').value.trim();
+            var drivinglicencekycnumber = document.querySelector('input[name="drivinglicencekycnumber"]').value.trim();
+            var drivinglicencenumber = document.querySelector('input[name="drivinglicencenumber"]').value.trim();
+            var drivinglicenceremark = document.querySelector('input[name="drivinglicenceremark"]').value.trim();
+            var electioncardkycnumber = document.querySelector('input[name="electioncardkycnumber"]').value.trim();
+            var electioncardnumber = document.querySelector('input[name="electioncardnumber"]').value.trim();
+            var electioncardremark = document.querySelector('input[name="electioncardremark"]').value.trim();
+            var esiccardkycnumber = document.querySelector('input[name="esiccardkycnumber"]').value.trim();
+            var esiccardnumber = document.querySelector('input[name="esiccardnumber"]').value.trim();
+            var esiccardremark = document.querySelector('input[name="esiccardremark"]').value.trim();
+            if ( !choice1 || !name1 || !dob || !fatherandhusband ||  !choice3  || !choice4 || !mobile || !email ||  !choice5 || !choice6 ||  !choice7 || !previousemployment  || !dateprevious || !internationalworker || !india  || !otherindia || !passportnumber || !passportvalid || !passportvalid1 || !educationalqualification ||  !maritalstatus || !specially || !abled || !bankkycnumber || !banknumber || !bankremark || !nprkycnumber || !nprnumber || !nprremark || !permanentkycnumber || !permanentnumber || !permanentremark || !passportkycnumber || !passportnumber || !passportremark || !drivinglicencenumber  || !drivinglicenceremark  || !electioncardkycnumber  || !electioncardnumber  || !electioncardremark || !esiccardkycnumber || !esiccardnumber || !esiccardremark) {
+                event.preventDefault();
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script> -->
+        </div>
+    </div>
+</body>
+
+</html>

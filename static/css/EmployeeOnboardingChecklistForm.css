@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header-table th,
+.header-table td {
+    border: 0px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+
+.title-cell {
+    text-align: center;
+    /*font-size: 18px;*/
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#title-cell {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+
+th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.colume {
+    background-color: rgb(221, 180, 104);
+}
+
+tbody td,
+tbody th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tbody .section-header {
+    background-color: #cfe2f3;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody .section-header1 {
+    background-color: #dcc9de;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody .section-header2 {
+    background-color: #b1eda4;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody .section-header3 {
+    background-color: #edd7ed;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody .section-header4 {
+    background-color: #c7e1ef;
+    font-weight: bold;
+    text-align: center;
+}
+
+tbody .section-header5 {
+    background-color: #65ce4e;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+td {
+    text-align: left;
+}
+
+th,
+td {
+    text-align: left;
+}
+
+.rownnumber {
+    width: 200px;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    margin-left: 40%;
+
+}
+
+input[type="text"],
+input[type="date"] {
+    margin-left: 60px;
+    padding: 6px 30px;
+}

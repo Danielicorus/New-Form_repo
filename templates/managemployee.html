@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table{
+        margin-top: 10%;
+      }
+
+    </style>
+    
+</head>
+
+<body>
+    <table border="1px" width="100%">
+        <tr>
+            <td>S.No</td>
+            <!-- <td>New Employee Name</td> -->
+            <td>Email</td>
+            <td>password</td>
+
+        </tr>
+        <tr>
+            {% for show in data %}
+            <td>{{show[0]}}</td>
+            <td>{{show[1]}}</td>
+            <td>{{show[2]}}</td>
+            <!-- <td>{{show[0]}}</td> -->
+            {% endfor %}
+        </tr>
+
+
+    </table>
+</body>
+
+</html>

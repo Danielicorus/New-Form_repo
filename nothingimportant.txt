@@ -1,0 +1,56 @@
+# @app.route('/register', methods=['POST'])
+# def register():
+#     if request.method == 'POST':
+#         email = request.form['email']
+#         psw = request.form['psw']
+#         try:
+#             con = mysql.connect()
+#             cur = con.cursor()
+#             cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (email, psw))
+#             con.commit()
+#             cur.close()
+#             con.close()
+#             return render_template("signup.html", message="User registered successfully.")
+#         except Exception as e:
+#             return f"An error occurred during registration: {str(e)}"
+#     return render_template("signup.html")
+
+
+
+
+
+# @app.route('/login' , methods=['POST' ,'GET'])
+# def login():
+#          if request.method == 'POST':
+#             uname = request.form['uname']
+#             psw = request.form['psw']
+#             try:
+#                 con = mysql.connect()
+#                 cur = con.cursor()
+#                 cur.execute("SELECT * FROM users  WHERE username = %s AND password = %s", (uname, psw))
+#                 data = cur.fetchone()
+#                 cur.close()
+#                 con.close()
+#                 if data is None:
+#                     return render_template("homepage.html")
+#                 else:
+#                     return "fail"
+#             except Exception as e:
+#                 return f"An error occurred: {str(e)}"
+        #return render_template("loginpage.html")
+
+
+
+
+# @app.route('/login', methods=['POST'])
+# def login():
+#     if request.method == 'POST':
+#         uname = request.form['uname']
+#         psw = request.form['psw']
+#         cur.execute("SELECT * FROM login WHERE username = %s AND password = %s", (uname, psw))
+#         data = cur.fetchone()
+#         if data is None:
+#             return render_template("homepage.html")
+#         else:
+#            return redirect(url_for('index'))
+    

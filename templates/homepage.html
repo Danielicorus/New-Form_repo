@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepage.css')}}">
+</head>
+
+<body>
+    <div class="box">
+        Employee joining project
+
+    </div>
+    <div class="box1">
+        <!-- <button onclick="myfun()" class="pfform">PF FORM</button><br>
+        <button onclick="myfuns()" class="form12b">FORM12B</button><br>
+        <button onclick="myform()" class="form12b">INFORMATIONfORM</button><br>
+        <button onclick="myforms()" class="form12b">NEW JOINING</button><br>
+        <button onclick="myinduction()" class="form12b">EMPLOYEE INDUCTION PLAN</button> -->
+        <a class="pfform" href="{{ url_for('form') }}" >1. PF FORM</a><br>
+        <a class="form12b" href="{{ url_for('forms') }}">2.FORM12B</a><br>
+        <a class="form12b" href="{{ url_for('newjoining') }}">3.NEW JOINING</a><br>
+        <a class="form12b" href="{{ url_for('informationform') }}">4.INFORMATIONFORM</a><br>
+        <a class="form12b" href="{{ url_for('inductionform') }}">5.EMPLOYEE INDUCTION PLAN</a><br>
+        <a class="form12b" href="{{ url_for('EmployeeOboarding') }}">6.EMPLOYEE INDUCTION PLAN</a><br>
+        <!-- <script src="{{url_for('static', filename='next.js') }}"></script> -->
+        <!-- <script>
+            function myfun() {
+                var myUrl = "{{ url_for('form') }}"; 
+                window.location.href = myUrl; 
+                
+            }
+            function myfuns(){
+                var myUrls = "{{ url_for('forms') }}"; 
+                window.location.href = myUrls; 
+            }
+            function myform(){
+                var myUrls = "{{ url_for('informationform') }}"; 
+                window.location.href = myUrls; 
+            }
+            function myforms(){
+                var myUrlr = "{{ url_for('newjoining') }}"; 
+                window.location.href = myUrlr; 
+            }
+            function myinduction(){
+                var myUrlr = "{{ url_for('inductionform') }}"; 
+                window.location.href = myUrlr; 
+            }
+        </script>
+
+ -->
+
+    </div>
+
+
+
+</body>
+
+</html>

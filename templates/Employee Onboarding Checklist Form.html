@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Onboarding Checklist Form</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Onboarding Checklist</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/EmployeeOnboardingChecklistForm.css' )}}">
+
+    </head>
+
+    <body>
+        <form action="{{url_for('EmployeeOboardinginsert')}}" method="post">
+            <table class="header-table">
+                <tr>
+                    <td id="title-cell" rowspan="4" colspan="0.1">Employee Onboarding Checklist</td>
+                    <td>Form No.:</td>
+                    <td><input type="text" name="Form_No" id=""></td>
+                </tr>
+                <tr>
+                    <td>Date of Issue:</td>
+                    <td><input type="text" name="Date_of_Issue" onfocus="(this.type='date')"
+                        onblur="if(!this.value) this.type='text'" max="9999-12-31" id=""></td>
+
+                </tr>
+                <tr>
+                    <td>Revision: <b>2.0</b></td>
+                    <td><input type="text" name="Revision" id=""></td>
+
+
+                </tr>
+                <tr>
+                    <td>Approved by: <b>Head HR</b></td>
+                    <td><input type="text" name="Approved_by" id=""></td>
+                </tr>
+
+
+                <tbody>
+
+                    <tr>
+                        <th class="colume">S.N.O</th>
+                        <th class="colume">Particulars</th>
+                        <th class="colume">Checked/Done</th>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td colspan="3" class="section-header">Human Resource</td>
+                    </tr>
+                    <tr>
+                        <td class="rownnumber">1</td>
+                        <td>Resume</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Resume" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Employee Information Form</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Employee Information Form" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Educational Certificates (10<sup>th</sup> & Highest one)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Educational Certificates" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Relieving Certificates of last 2 organizations</td>
+                        <td><input type="checkbox" name="checked_or_Done"
+                                value="Relieving Certificates of last 2 organizations" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Salary Slips of last 3 months</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Salary Slips of last 3 months" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Form 16 (If applicable)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Form 16 (If applicable)" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Pan Card (Mandatory)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Pan Card (Mandatory)" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Photo ID Proof (Voter, Aadhar Card, Passport etc.)</td>
+                        <td><input type="checkbox" name="checked_or_Done"
+                                value="Photo ID Proof (Voter, Aadhar Card, Passport etc.)" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Passport size Photo (3 nos.)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Passport size Photo (3 nos.)" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Permanent (Mandatory)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Permanent (Mandatory)" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Bank A/c Opening Form & Formalities</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Bank A/c Opening Form & Formalities"
+                                id=""></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Current Address Proof</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Current Address Proof" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>NDA/Service Agreement</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="NDA/Service Agreement" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Entry in Keka</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Entry in Keka" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Appointment Letter</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Appointment Letter" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Entry in Dax360</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Entry in Dax360" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Entry in Meytou</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Entry in Meytou" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Indirect Tariff</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Indirect Tariff" id=""></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="section-header1">Admin Dept.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Stationary (Notepad & Pen)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Stationary (Notepad & Pen)" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Employee ID Card</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Employee ID Card" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Extension list</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Extension list" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Visiting Cards (if applicable)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Visiting Cards (if applicable)" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Adhaar Card Copy</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Adhaar Card Copy" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Appointment Letter Copy</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Appointment Letter Copy" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Nomination Letter</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Nomination Letter" id=""></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="section-header2">Finance Dept.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Universal Account Number (UAN)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Universal Account Number (UAN)" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Provident Fund Account Number (PF)</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Provident Fund Account Number (PF)"
+                                id=""></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bank Account No. & Name</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Bank Account No. & Name" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>PAN Card Copy</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="PAN Card Copy" id=""></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td colspan="3" class="section-header3">IT Dept</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Seating Arrangement</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Seating Arrangement" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Laptop/ Desktop & Accessories</td>
+                        <td><input type="checkbox" name="checked_or_Done" value=">Laptop/ Desktop & Accessories" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Phone Extension</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Phone Extension" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Official Email ID Creation</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Official Email ID Creation" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Group & Location Email Alias</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Group & Location Email Alias" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Sim Card</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Sim Card" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Head Phone</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Head Phone" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Screen</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Screen" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Employee Access Card and Biometrix Access</td>
+                        <td><input type="checkbox" name="checked_or_Done"
+                                value="Employee Access Card and Biometrix Access" id=""></td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3" class="section-header4">Insurance Dept.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Insurance Form</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Insurance Form" id=""></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="section-header5">Induction Kit.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Insurance Form</td>
+                        <td><input type="checkbox" name="checked_or_Done" value="Insurance Form" id=""></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="submit"></td>
+                    </tr>
+
+
+
+
+
+
+                </tbody>
+
+            </table>
+        </form>
+
+
+
+
+    </body>
+
+    </html>

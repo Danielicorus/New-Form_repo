@@ -1,0 +1,437 @@
+.img{
+    border: 0px solid black;
+    width: 100%;
+    height: 300px;
+    /* background-image: url("/dciprojectform/formimg11.PNG");
+    background-repeat: no-repeat;
+    background-size: 4%;*/
+}
+.submit{
+ border: 1px solid black;
+ border-radius: 20px;
+ width: 10%;
+ height: 49px; 
+ background-color: aqua;
+ position: relative;
+ top:-30px;
+ left:-90px;
+ 
+}
+
+#printout{
+    border: 0px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top:-90px;
+    float: right;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 20px;
+
+
+}
+#backtohomepage{
+    border: 0px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top:-170px;
+    left: 120px;
+    float: right;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;  
+
+    
+    /* text-align: center; */
+    /* padding: 5px; */
+
+}
+.box{
+    border: 0px solid black;
+    width: 100%;
+    height: 6000px;
+    margin-top: 1%;
+  
+
+}
+
+/* .box1{
+    border: 0px solid black;
+    width: 96%;
+    height: 6000px;
+    margin-left: 2%;
+
+} */
+
+/* .name{
+
+    margin-left: 20%;
+    margin-top: -20px;
+} */
+
+.choice1 {
+    border: 1px solid black;
+    margin-left: 60px;
+    margin-top: -90px;
+    width: 100px;
+    height: 30px;
+    font-family:Verdana; 
+    font-size: 20px;
+    position: relative; /*Change position to relative  */
+     top: -42px; /* Adjust this value as needed */
+     font-family: Verdana;
+    font-size:20px;
+}
+
+
+
+
+
+
+.name1{
+    border: 1px solid black;
+    margin-left: 40px;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -46px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.dateofbirth{
+    border: 1px solid black;
+    width: 200px;
+    height: 30px;
+    position: relative;
+    top: -20px ;
+    font-family: Verdana;
+    font-size:20px;
+}
+.fatherandhusband{
+    border: 1px solid black;
+    /* margin-left: 40px; */
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -24px;
+    font-family: Verdana;
+    font-size:20px;
+
+}
+
+.choice3{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: -30px;
+    
+}
+.choice4{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: -20px;
+    
+
+}
+
+.mobile{
+ border: 1px solid ;
+ width:200px;
+ height:30px;
+ position: relative;
+ top: -20px; 
+ font-family: Verdana;
+ font-size:20px;  
+}
+
+.choice5{
+    border: 1px solid black;
+    width: 90px;
+    height: 30px;
+    position: relative;
+    top: -20px
+
+}
+
+.choice6{
+    border: 1px solid black;
+    width: 90px;
+    height: 30px;
+    position: relative;
+    top: -16px
+
+}
+
+
+
+.email{
+    border: 1px solid ;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -20px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.choice7{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: -20px
+}
+
+.previousemployment{
+    border: 1px solid  black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -20px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+
+
+.dateprevious{
+    border: 1px solid black;
+    width: 200px;
+    height: 30px;
+    position: relative;
+    top: -20px ;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.certificateforpreviousemployment{
+    border: 1px solid black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -40px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.persionpayment{
+    border: 1px solid black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -70px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.choice8{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: -107px;
+    left:-500px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+
+.india{
+    border: 1px solid black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -150px; 
+    left: 171px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.otherindia{
+    border: 1px solid black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -80px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+
+.passportnumber{
+    border: 1px solid black;
+    width:200px;
+    height:30px;
+    position: relative;
+    top: -20px;  
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.passportvalid{
+    border: 1px solid black;
+    width:119px;
+    height:30px;
+    position: relative;
+    top: -20px; 
+    left: -295px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+.passportvalid1{
+    border: 1px solid black;
+    width:119px;
+    height:30px;
+    margin-left: -20px;
+    position: relative;
+    top: -20px; 
+    left: -255px;
+    font-family: Verdana;
+    font-size:20px;
+}
+
+
+
+
+
+
+
+
+.radio{ 
+    border: 0px solid black;
+    width: 40px;
+    height: 50px;
+    margin-left:60px;
+    position: relative;
+    top: -90px;
+    left:-3px;
+    
+
+
+} 
+/* 
+.radio-label{
+    
+} */
+
+.radio1{
+    border: 0px solid black;
+    width: 40px;
+    height: 50px;
+    margin-left:78px;
+    position: relative;
+    top: -12px;
+    left: -580px;
+}
+
+.radio2{
+    border: 0px solid black;
+    width: 40px;
+    height: 50px;
+    margin-left:5px;
+    position: relative;
+    top: -71px;
+    left: -486px;
+
+}
+.radio3{
+    border: 0px solid black;
+    width: 40px;
+    height: 50px; 
+    position: relative;
+    top: -10px;
+    left: -486px;
+}
+
+
+
+
+
+
+.check{
+    border: 0px solid black;
+    width: 40px;
+    height: 50px;
+    margin-left:50px;
+    position: relative;
+    top: -25px;
+    left: -464px;
+
+}
+
+
+.kyc{
+    border: 1px solid black;
+    width: 100px;
+    height: 24px;
+    margin-left: 60px;
+    margin-top: -4px;
+    position: relative;
+    top: -779px;
+    left:210px;
+    font-family: Verdana;
+    font-size:20px;
+
+    
+
+}
+/* 
+.joined{
+    border: 1px solid black;
+    width: 170px;
+    height: 24px;
+    position: relative;
+    top:-330px;
+    left: -470px;
+}
+.memberid1{
+    border: 1px solid black;
+    width: 183px;
+    height: 24px;
+    position: relative;
+    top:-855px;
+    left:180px ;
+}
+.yourname{
+    border: 1px solid black;
+    width: 183px;
+    height: 24px;
+    position: relative;
+    top:-330px;
+    left: -914px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print{
+   #printout{
+    display: none;
+
+    }
+}

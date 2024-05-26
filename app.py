@@ -18,7 +18,7 @@ cur.execute("CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY
 cur.execute("CREATE TABLE IF NOT EXISTS admin (id INT AUTO_INCREMENT PRIMARY KEY , HRADMIN text , passwords text)")
 cur.execute("CREATE TABLE IF NOT EXISTS informationform (id INT AUTO_INCREMENT PRIMARY KEY , first_name text, middle_name text, surname text, employee_code text, reporting_manager text, department text, permanent_address text, PostalCodeorPinCode text, Present_Address text, dateofbirth date, sex text, birthplace text, bloodgroup text, nationality text, religion text,  pan text, language varchar(225), maritalstatus varchar(225), marriage_date date, spouse_name text, spouse_dob date, children_count text, first_child_name text, first_child_dob date,  second_child_name text, second_child_dob date, third_child_name text,  third_child_dob date, contact_number text,  mobile_number text, emergency_contact text, email_id text, SSCName text, SSCSpecialization text, SSCSPassingYearMonth text, SSCPercentage text, SSCGrade text, HSCName text, HSCSpecialization text,    HSCPassingYearMonth text, HSCPercentage text , HSCGrade text, GraduationName text, GraduationSpecialization text,   GraduationPassingYearMonth text, GraduationPercentage text, GraduationGrade text, DiplomaName text, DiplomaSpecialization text, DiplomaPassingYearMonth text, DiplomaPercentage text, DiplomaGrade text, DegreeName text, DegreeSpecialization text,  DegreePassingYearMonth text, DegreePercentage text, DegreeGrade text, MastersorPostGraduationName text , MastersorPostGraduationSpecialization text,  MastersorPostGraduationPassingYearMonth text, MastersorPercentage text, MastersorGrade text, DoctorateName text, DoctorateSpecialization text,  DoctoratePassingYearMonth text, DoctoratePercentage text, DoctorateGrade text, OthersName text, OthersSpecialization text,   OthersPassingYearMonth text,  OthersPercentage text, OthersGrade text, aOrganization text, aDesignation text, aLocation text, aDurationfrom date, aDurationto date, bOrganization text, bDesignation text, bLocation text, bDurationfrom date, bDurationto date, cOrganization text, cDesignation text, cLocation text, cDurationfrom date, cDurationto date, dOrganization text, dDesignation text, dLocation text, dDurationfrom date, dDurationto date, eOrganization text, eDesignation text, eLocation text, eDurationfrom date, eDurationto date, todaydate date)")
 cur.execute("CREATE TABLE IF NOT EXISTS inductionforminsurance (id INT AUTO_INCREMENT PRIMARY KEY ,Employee_name text, Employee_ID text, Department text, Joining_Date date, Designation text, HRorAdminDayandTime date, HRorAdminEmployeeSign varchar(225), HRorAdminProcessOwnerSign varchar(225), HRorAdminDayandTime1 date, HRorAdminEmployeeSign1 varchar(225), HRorAdminProcessOwnerSign1 varchar(225),  HRorAdminDayandTime2 date, HRorAdminEmployeeSign2 varchar(225), HRorAdminProcessOwnerSign2 varchar(225), HRorAdminDayandTime3 date, HRorAdminEmployeeSign3 varchar(225), HRorAdminProcessOwnerSign3 varchar(225), HRorAdminDayandTime4 date, HRorAdminEmployeeSign4 varchar(225), HRorAdminProcessOwnerSign4 varchar(225), HRorAdminDayandTime5 date, HRorAdminEmployeeSign5 varchar(225), HRorAdminProcessOwnerSign5 varchar(225), HRorAdminDayandTime6 date, HRorAdminEmployeeSign6 varchar(225), HRorAdminProcessOwnerSign6 varchar(225), HRorAdminDayandTime7 date, HRorAdminEmployeeSign7 varchar(225), HRorAdminProcessOwnerSign7 varchar(225), HRorAdminDayandTime8 date, HRorAdminEmployeeSign8 varchar(225), HRorAdminProcessOwnerSign8 varchar(225), HRorAdminDayandTime9 date, HRorAdminEmployeeSign9 varchar(225), HRorAdminProcessOwnerSign9 varchar(225), HRorAdminDayandTime10 date, HRorAdminEmployeeSign10 varchar(225), HRorAdminProcessOwnerSign10 varchar(225), Employee_FeedbacK text , Employee_Signature text, Date1 date, Date2 date)")
-cur.execute("CREATE TABLE IF NOT EXISTS employeeOboarding (id INT AUTO_INCREMENT PRIMARY KEY, Form_No text, Date_of_Issue date, Revision text, Approved_by text, checked_or_Done varchar(225))")
+cur.execute("CREATE TABLE IF NOT EXISTS employeeOboarding (id INT AUTO_INCREMENT PRIMARY KEY, Form_No text, Date_of_Issue date, Revision text, Approved_by text, Resume BOOLEAN, Employee_Information_Form  BOOLEAN, Educational_Certificate BOOLEAN,  Relieving_Certificates_of_last_2_organizations BOOLEAN, Salary_Slips_of_last_3_months  BOOLEAN, Form_16_If_applicable BOOLEAN, Pan_Card_Mandatory BOOLEAN, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc BOOLEAN, Passport_size_Photo BOOLEAN, Permanent_Mandatory BOOLEAN, Bank_Aorc_Opening_Form_and_Formalities BOOLEAN, Current_Address_Proof  BOOLEAN, NDAorService_Agreement  BOOLEAN,  Entry_in_Keka BOOLEAN,  Appointment_Letter  BOOLEAN, Entry_in_Dax360  BOOLEAN, Entry_in_Meytou BOOLEAN, Indirect_ariff BOOLEAN, Stationary_Notepad_and_Pen BOOLEAN,  Employee_ID_Card  BOOLEAN, Extension_list  BOOLEAN,   Visiting_Cards_if_pplicable  BOOLEAN,  Adhaar_Card_Copy BOOLEAN, Appointment_Letter_Copy BOOLEAN, Nomination_Letter  BOOLEAN, Universal_Account_Number_UAN  BOOLEAN, Provident_Fund_Account_Number_PF  BOOLEAN, Bank_Account_No_and_Name  BOOLEAN, PAN_Card_Copy BOOLEAN, Seating_Arrangement  BOOLEAN, Laptopa_and_Desktop_and_Accessories  BOOLEAN, Phone_Extension  BOOLEAN, Official_Email_ID_Creation BOOLEAN, Group_and_Location_Email_Alias BOOLEAN, Sim_Card  BOOLEAN,  Head_Phone BOOLEAN, Screen BOOLEAN,  Employee_Access_Card_and_Biometrix_Access BOOLEAN,  Insurance_Form BOOLEAN, Insurance_Form1 BOOLEAN)")
 con.commit()
 cur.close()
 con.close()
@@ -491,23 +491,99 @@ def EmployeeOboarding():
     return render_template("Employee Onboarding Checklist Form.html")
 
 
-@app.route("/EmployeeOboardinginsert", methods=['POST'])
+@app.route("/EmployeeOboardinginsert", methods=['POST', 'GET'])
 def EmployeeOboardinginsert():
-    if request.method=='POST':
-        Form_No=request.form["Form_No"]
-        Date_of_Issue=request.form["Date_of_Issue"]
-        Revision=request.form["Revision"]
-        Approved_by=request.form["Approved_by"]
-        checked_or_Done=request.form["checked_or_Done"]
+    if request.method == 'POST':
+        Form_No = request.form["Form_No"]
+        Date_of_Issue = request.form["Date_of_Issue"]
+        Revision = request.form["Revision"]
+        Approved_by = request.form["Approved_by"]
+        Resume = request.form.get("Resume", "off")=="on"
+        Employee_Information_Form = request.form.get("Employee_Information_Form", "off")=="on"
+        Educational_Certificate = request.form.get("Educational_Certificate", "off")=="on"
+        Relieving_Certificates_of_last_2_organizations = request.form.get("Relieving_Certificates_of_last_2_organizations", "off")=="on"
+        Salary_Slips_of_last_3_months = request.form.get("Salary_Slips_of_last_3_months", "off")=="on"
+        Form_16_If_applicable = request.form.get("Form_16_If_applicable", "off")=="on"
+        Pan_Card_Mandatory = request.form.get("Pan_Card_Mandatory", "off")=="on"
+        Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc = request.form.get("Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc", "off")=="on"
+        Passport_size_Photo = request.form.get("Passport_size_Photo", "off")=="on"
+        Permanent_Mandatory = request.form.get("Permanent_Mandatory", "off")=="on"
+        Bank_Aorc_Opening_Form_and_Formalities = request.form.get("Bank_Aorc_Opening_Form_and_Formalities", "off")=="on"
+        Current_Address_Proof = request.form.get("Current_Address_Proof", "off")=="on"
+        NDAorService_Agreement = request.form.get("NDAorService_Agreement", "off")=="on"
+        Entry_in_Keka = request.form.get("Entry_in_Keka", "off")=="on"
+        Appointment_Letter = request.form.get("Appointment_Letter", "off")=="on"
+        Entry_in_Dax360 = request.form.get("Entry_in_Dax360", "off")=="on"
+        Entry_in_Meytou = request.form.get("Entry_in_Meytou", "off")=="on"
+        Indirect_ariff = request.form.get("Indirect_ariff", "off")=="on"
+        Stationary_Notepad_and_Pen = request.form.get("Stationary_Notepad_and_Pen", "off")=="on"
+        Employee_ID_Card = request.form.get("Employee_ID_Card", "off")=="on"
+        Extension_list = request.form.get("Extension_list", "off")=="on"
+        Visiting_Cards_if_pplicable = request.form.get("Visiting_Cards_if_pplicable", "off")=="on"
+        Adhaar_Card_Copy = request.form.get("Adhaar_Card_Copy", "off")=="on"
+        Appointment_Letter_Copy = request.form.get("Appointment_Letter_Copy", "off")=="on"
+        Nomination_Letter = request.form.get("Nomination_Letter", "off")=="on"
+        Universal_Account_Number_UAN = request.form.get("Universal_Account_Number_UAN", "off")=="on"
+        Provident_Fund_Account_Number_PF = request.form.get("Provident_Fund_Account_Number_PF", "off")=="on"
+        Bank_Account_No_and_Name = request.form.get("Bank_Account_No_and_Name", "off")=="on"
+        PAN_Card_Copy = request.form.get("PAN_Card_Copy", "off")=="on"
+        Seating_Arrangement = request.form.get("Seating_Arrangement", "off")=="on"
+        Laptopa_and_Desktop_and_Accessories = request.form.get("Laptopa_and_Desktop_and_Accessories", "off")=="on"
+        Phone_Extension = request.form.get("Phone_Extension", "off")=="on"
+        Official_Email_ID_Creation = request.form.get("Official_Email_ID_Creation", "off")=="on"
+        Group_and_Location_Email_Alias = request.form.get("Group_and_Location_Email_Alias", "off")=="on"
+        Sim_Card = request.form.get("Sim_Card", "off")=="on"
+        Head_Phone = request.form.get("Head_Phone", "off")=="on"
+        Screen = request.form.get("Screen" , "off")=="on"
+        Employee_Access_Card_and_Biometrix_Access = request.form.get("Employee_Access_Card_and_Biometrix_Access", "off")=="on"
+        Insurance_Form = request.form.get("Insurance_Form", "off")=="on"
+        Insurance_Form1 = request.form.get("Insurance_Form1", "off")=="on"
+
         try:
             con = mysql.connect()
             cur = con.cursor()
             cur.execute("""
-                INSERT INTO employeeOboarding (
-                    Form_No, Date_of_Issue, Revision, Approved_by, checked_or_Done
-                ) VALUES (%s, %s, %s, %s, %s)
+                INSERT INTO employeeOnboarding (
+                    Form_No, Date_of_Issue, Revision, Approved_by, Resume,
+                    Employee_Information_Form, Educational_Certificate,
+                    Relieving_Certificates_of_last_2_organizations, Salary_Slips_of_last_3_months,
+                    Form_16_If_applicable, Pan_Card_Mandatory,
+                    Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc, Passport_size_Photo,
+                    Permanent_Mandatory, Bank_Aorc_Opening_Form_and_Formalities,
+                    Current_Address_Proof, NDAorService_Agreement, Entry_in_Keka,
+                    Appointment_Letter, Entry_in_Dax360, Entry_in_Meytou,
+                    Indirect_ariff, Stationary_Notepad_and_Pen, Employee_ID_Card,
+                    Extension_list, Visiting_Cards_if_pplicable, Adhaar_Card_Copy,
+                    Appointment_Letter_Copy, Nomination_Letter, Universal_Account_Number_UAN,
+                    Provident_Fund_Account_Number_PF, Bank_Account_No_and_Name, PAN_Card_Copy,
+                    Seating_Arrangement, Laptopa_and_Desktop_and_Accessories, Phone_Extension,
+                    Official_Email_ID_Creation, Group_and_Location_Email_Alias, Sim_Card,
+                    Head_Phone, Screen, Employee_Access_Card_and_Biometrix_Access,
+                    Insurance_Form, Insurance_Form1
+                ) VALUES (
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s,%s
+                )
             """, (
-                Form_No, Date_of_Issue, Revision, Approved_by, checked_or_Done
+                Form_No, Date_of_Issue, Revision, Approved_by, Resume,
+                Employee_Information_Form, Educational_Certificate,
+                Relieving_Certificates_of_last_2_organizations, Salary_Slips_of_last_3_months,
+                Form_16_If_applicable, Pan_Card_Mandatory,
+                Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc, Passport_size_Photo,
+                Permanent_Mandatory, Bank_Aorc_Opening_Form_and_Formalities,
+                Current_Address_Proof, NDAorService_Agreement, Entry_in_Keka,
+                Appointment_Letter, Entry_in_Dax360, Entry_in_Meytou,
+                Indirect_ariff, Stationary_Notepad_and_Pen, Employee_ID_Card,
+                Extension_list, Visiting_Cards_if_pplicable, Adhaar_Card_Copy,
+                Appointment_Letter_Copy, Nomination_Letter, Universal_Account_Number_UAN,
+                Provident_Fund_Account_Number_PF, Bank_Account_No_and_Name, PAN_Card_Copy,
+                Seating_Arrangement, Laptopa_and_Desktop_and_Accessories, Phone_Extension,
+                Official_Email_ID_Creation, Group_and_Location_Email_Alias, Sim_Card,
+                Head_Phone, Screen, Employee_Access_Card_and_Biometrix_Access,
+                Insurance_Form, Insurance_Form1
             ))
             con.commit()
             cur.close()
@@ -515,8 +591,7 @@ def EmployeeOboardinginsert():
             return "Data inserted successfully"
         except Exception as e:
             return str(e)
-        
-      
+
 
 
 

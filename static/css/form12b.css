@@ -29,7 +29,7 @@
 
 
 #printout{
-    border: 1px solid black;
+    border: 0px solid black;
     width: 100px;
     height: 30px;
     position: relative;
@@ -42,7 +42,7 @@
 
 }
 #backtohomepage{
-    border: 1px solid black;
+    border: 0px solid black;
     width: 100px;
     height: 50px;
     position: relative;
@@ -53,6 +53,9 @@
     padding-top: 10px;
     padding-left: 20px;  
     padding-right: 25px;
+    color: black;
+    text-decoration: none;
+
 
     
     /* text-align: center; */
@@ -77,7 +80,7 @@
     height: 30px;
     /* padding-right: 90px; */
     position: relative;
-    top: -910px;
+    top: -882px;
     left: 336px;
 }
 
@@ -87,7 +90,7 @@
     height: 30px;
     /* padding-right: 90px; */
     position: relative;
-    top: -907px;
+    top: -880px;
     left: 300px; 
 }
 
@@ -118,18 +121,10 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:98px; 
+    left:85px; 
 }
 
-.r11{
-    border:1px solid black;
-    width: 100px;
-    margin-left: 100px;
-    height: 20px;
-    position: relative;
-    top:-569px;
-    left: 399px;
-}
+
 
 .per3{
     border:1px solid black;
@@ -137,7 +132,7 @@
     height:20px;
     position: relative;
     top:-569px;
-    left:139px;
+    left:121px;
 }
 
 .per4{
@@ -146,7 +141,7 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:180px;
+    left:140px;
 }
 
 
@@ -157,7 +152,7 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:212px;
+    left:160px;
 }
 
 
@@ -167,7 +162,7 @@
     height:20px;
     position: relative;
     top:-569px;
-    left:270px;
+    left:170px;
 }
 
 
@@ -177,7 +172,7 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:316px;
+    left:220px;
 }
 
 
@@ -187,7 +182,7 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:380px;
+    left:250px;
 }
 
 .amo9{
@@ -196,7 +191,7 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:420px;
+    left:300px;
 }
 
 .tol10{
@@ -205,25 +200,38 @@
     height: 20px;
     position: relative;
     top:-569px;
-    left:500px;
+    left:330px;
 }
-/* 
-.r11
-
-
-    
-} */
+.r11{
+    border:1px solid black;
+    width: 100px;
+    margin-left: 100px;
+    height: 20px;
+    position: relative;
+    top:-569px;
+    left: 250px;
+}
 
 .yourname{
     border:1px solid black;
     width: 470px;
     height: 30px;
     position: relative;
-    top:-220px;
-    left:-980px;
+    top:-10%;
+    left:10%;
 
     /* top:-569px;
     left:500px; */
+}
+
+.verifiedtoday{
+    border:1px solid black;
+    width: 220px;
+    height: 30px;
+    position: relative;
+    top:-9%;
+    left:-16%;
+
 }
 
 
@@ -255,13 +263,30 @@
     top:-32.7%;
     left:13%;
 }
+.endingyear{
+    border:1px solid  black;
+    width:120px;
+    height:20px;
+    position: relative;
+    top:-32.7%;
+    left:67%;
+}
+
+.dayofyear{
+    border:1px solid  black;
+    width:120px;
+    height:20px;
+    position: relative;
+    top:-32.7%;
+    left:30%;
+}
 
 .nameemp1{
     border:1px solid  black;
     width:120px;
     height:20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:1%;
 
 
@@ -272,7 +297,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:5%;
 
 }
@@ -282,7 +307,7 @@
     width: 120px;
     height:20px;
     position: relative;    
-    top:-22.2%;
+    top:-23.1%;
     left:7%;
 
 }
@@ -291,7 +316,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:9%;
 }
 .furniture5{
@@ -299,7 +324,7 @@
     width: 120px;
     height: 20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:12%;
 }
 .perquisite6{
@@ -307,7 +332,7 @@
     width:120px;
     height:20px;
     position: relative; 
-    top:-22.2%;
+    top:-23.1%;
     left:19%;   
 }
 .tol7{
@@ -315,7 +340,7 @@
     width:120px;
     height:20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:22%;    
 }
 .rent8{
@@ -323,7 +348,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-22.2%;
+    top:-23.1%;
     left:23%;  
 }
 
@@ -332,7 +357,7 @@
     width: 120px;
     height:20px;
     position: relative;
-   top:-22.2%;
+   top:-23.1%;
     left:24%;     
 }
 
@@ -341,7 +366,7 @@
     width: 120px;
     height: 20px;
     position: relative;
-    top:-8.7%;
+    top:-9.6%;
     left:-73%;
 
 }
@@ -351,7 +376,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:14%;    
 }
 
@@ -360,7 +385,7 @@
     width: 120px;
     height: 20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:17%;  
 }
 
@@ -369,7 +394,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:19%; 
 }
 
@@ -378,7 +403,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:23%;
 }
 
@@ -387,7 +412,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:32%;  
 }
 
@@ -396,7 +421,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:37%;  
 }
 
@@ -405,7 +430,7 @@
     width: 120px;
     height:20px;
     position: relative;
-    top:-10.6%;
+    top:-11.5%;
     left:41%;   
 
 }
@@ -415,15 +440,15 @@
     width: 120px;
     height: 20px;
     position: relative;
-    top:-3.7%;
+    top:-4.7%;
     left:-12%;   
 }
-.date5{
+.Date5{
         border:1px solid  black;
         width: 120px;
         height: 20px;
         position: relative;
-        top:-3.7%;
+        top:-4.7%;
         left:-11%;     
 }
 
@@ -432,7 +457,7 @@
     width: 120px;
     height: 20px;
     position: relative;
-    top:-3.7%;
+    top:-4.7%;  
     left:-8%;     
 }
 
@@ -441,6 +466,6 @@
     width: 120px;
     height: 20px;
     position: relative;
-     top:-3.7%;
+     top:-4.7%;
     left:-5%; 
 }

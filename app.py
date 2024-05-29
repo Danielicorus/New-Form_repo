@@ -1,6 +1,8 @@
 
-from flask import Flask, render_template, request ,redirect
+from flask import Flask, render_template, request ,redirect,jsonify, send_file, url_for
 from flaskext.mysql import MySQL
+import csv
+import os
 
 
 
@@ -94,6 +96,7 @@ def adminadd():
 @app.route('/homepages')
 def homepages():
     return render_template("HRadmin.html")
+    
 
 @app.route('/showusers')
 def showusers():
@@ -102,6 +105,23 @@ def showusers():
      cur.execute("SELECT * from users")
      data = cur.fetchall()
      return render_template("managemployee.html" , data=data)
+ 
+
+@app.route('/employee_submitted')
+def employee_submitted():
+            con = mysql.connect()
+            cur=con.cursor()
+            cur.execute("SELECT id, username FROM users")
+        
+            datas = cur.fetchall()
+            con.close()
+            return render_template("Employee_submission.html" , datas=datas)
+   
+   
+    
+    
+    
+
 
 
     
@@ -182,44 +202,73 @@ def add_user():
             esiccardkycnumber = request.form['esiccardkycnumber']
             esiccardnumber = request.form['esiccardnumber']
             esiccardremark = request.form['esiccardremark']
-
+            try:
             # Insert data into the table
-            con = mysql.connect()
-            cur = con.cursor()
-            cur.execute("""
-    INSERT INTO providentfund (
-        mr_ms_mrs, name, dateofbirth, fatherandhusband, relationinrespect, gender, 
-        mobilenumber, email, emppovidentfunds, emppensionscheme, uaborprevious, account, 
-        dateofexit, certificateissued, pensionpayment, internationworker, india, otherthanindia, 
-        passport, passportfrom, passportto, educationalqualification, maritalstatus, specially, 
-        category, bankkycnumber, banknumber, bankremark, nprkycnumber, nprnumber, nprremark, 
-        permanentkycnumber, permanentnumber, permanentremark, passportkycnumber, passportnumber, 
-        passportremark, drivinglicencekycnumber, drivinglicencenumber, drivinglicenceremark, 
-        electioncardkycnumber, electioncardnumber, electioncardremark, rationcardkycnumber, 
-        rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, esiccardremark
-    ) VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-        %s, %s, %s, %s, %s, %s, %s
-    )
-""", (
-    choice1, name1, dob,fatherandhusband, choice3, choice4, mobile, email, choice5, choice6, choice7, 
-    previousemployment,dateprevious, certificateforpreviousemployment, persionpayment, internationalworker, 
-    india, otherindia, passportnumber, passportvalid, passportvalid1, educationalqualification, 
-    maritalstatus, specially, abled, bankkycnumber, banknumber, bankremark, nprkycnumber, 
-    nprnumber, nprremark, permanentkycnumber, permanentnumber, permanentremark, passportkycnumber, 
-    passportnumber, passportremark, drivinglicencekycnumber, drivinglicencenumber, 
-    drivinglicenceremark, electioncardkycnumber, electioncardnumber, electioncardremark, 
-    rationcardkycnumber, rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, 
-    esiccardremark
-))
+                    con = mysql.connect()
+                    cur = con.cursor()
+                    cur.execute("""
+            INSERT INTO providentfund (
+                mr_ms_mrs, name, dateofbirth, fatherandhusband, relationinrespect, gender, 
+                mobilenumber, email, emppovidentfunds, emppensionscheme, uaborprevious, account, 
+                dateofexit, certificateissued, pensionpayment, internationworker, india, otherthanindia, 
+                passport, passportfrom, passportto, educationalqualification, maritalstatus, specially, 
+                category, bankkycnumber, banknumber, bankremark, nprkycnumber, nprnumber, nprremark, 
+                permanentkycnumber, permanentnumber, permanentremark, passportkycnumber, passportnumber, 
+                passportremark, drivinglicencekycnumber, drivinglicencenumber, drivinglicenceremark, 
+                electioncardkycnumber, electioncardnumber, electioncardremark, rationcardkycnumber, 
+                rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, esiccardremark
+            ) VALUES (
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                %s, %s, %s, %s, %s, %s, %s
+            )
+        """, (
+            choice1, name1, dob,fatherandhusband, choice3, choice4, mobile, email, choice5, choice6, choice7, 
+            previousemployment,dateprevious, certificateforpreviousemployment, persionpayment, internationalworker, 
+            india, otherindia, passportnumber, passportvalid, passportvalid1, educationalqualification, 
+            maritalstatus, specially, abled, bankkycnumber, banknumber, bankremark, nprkycnumber, 
+            nprnumber, nprremark, permanentkycnumber, permanentnumber, permanentremark, passportkycnumber, 
+            passportnumber, passportremark, drivinglicencekycnumber, drivinglicencenumber, 
+            drivinglicenceremark, electioncardkycnumber, electioncardnumber, electioncardremark, 
+            rationcardkycnumber, rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, 
+            esiccardremark
+        ))
 
-            con.commit()
-            return 'User added successfully!'
+                    con.commit()
+            
 
-    else: return 'fail'
-    return redirect('/')
+                    return jsonify(success=True, message="Data inserted successfully", download_url=url_for('download_data'))
+            except Exception as e:
+                    return jsonify(success=False, message=str(e))
 
+@app.route('/download_data')
+def download_data():
+    try:
+        con = mysql.connect()
+        cursor = con.cursor()
+
+        cursor.execute("SELECT * FROM providentfund")
+
+        rows = cursor.fetchall()
+        headers = [i[0] for i in cursor.description]
+
+        cursor.close()
+        con.close()
+
+        # Write data to a CSV file
+        csv_file_path = 'F:\html folder\dciform2\data.csv'
+        with open(csv_file_path, 'w', newline='') as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerow(headers)
+            writer.writerows(rows)
+
+        return send_file(csv_file_path, as_attachment=True)
+    except Exception as e:
+            return str(e)
+    
+    
+    
+    
 @app.route('/forms')
 def forms():
     return render_template("form12.html")

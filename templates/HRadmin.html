@@ -29,12 +29,19 @@
 
     </div>
     <button  onclick="myfun()" class="manage">Manage Employee</button>
+    <button  onclick="myfuns()" class="manage">Manage Employee</button>
 
     <script>
         function myfun() {
             var myURL = "{{ url_for('showusers') }}";
             window.location.href = myURL;
         }
+
+           function myfuns(){
+            var myURLs = "{{ url_for('employee_submitted') }}";
+            window.location.href = myURLs;
+           }
+        
     </script>
 
 </body>

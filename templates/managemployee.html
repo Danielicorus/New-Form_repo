@@ -23,14 +23,16 @@
             <td>password</td>
 
         </tr>
+        {% for show in data %}
         <tr>
-            {% for show in data %}
+            
             <td>{{show[0]}}</td>
             <td>{{show[1]}}</td>
             <td>{{show[2]}}</td>
             <!-- <td>{{show[0]}}</td> -->
-            {% endfor %}
+            
         </tr>
+        {% endfor %}
 
 
     </table>

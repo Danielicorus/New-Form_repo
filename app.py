@@ -21,7 +21,7 @@ cur.execute("CREATE TABLE IF NOT EXISTS providentfund (id INT AUTO_INCREMENT PRI
 cur.execute("CREATE TABLE IF NOT EXISTS newjoiningforminsurance (id INT AUTO_INCREMENT PRIMARY KEY, Name text, Designation text, PresentAddress text, PermanentAddress text, Namefather text, NameMother text, PAN text, DateJoining date, DateBirth date, personalmobile text, personalemail text, Department text, Location text, MaritalStatus text, EPFNOwithPreviousEmployer text, nameofSpouseandChildren text, Relationship text, DateofBirth date, nameofSpouseandChildren1 text, Relationship1 text, DateofBirth1 date, nameofSpouseandChildren2 text, Relationship2 text, DateofBirth2 text, nameofSpouseandChildren3 text, Relationship3 text, DateofBirth3 date)")
 cur.execute("CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY , username text , password text)")
 cur.execute("CREATE TABLE IF NOT EXISTS admin (id INT AUTO_INCREMENT PRIMARY KEY , HRADMIN text , passwords text)")
-cur.execute("CREATE TABLE IF NOT EXISTS informationform (id INT AUTO_INCREMENT PRIMARY KEY , first_name text, middle_name text, surname text, employee_code text, reporting_manager text, department text, permanent_address text, PostalCodeorPinCode text, Present_Address text, dateofbirth date, sex text, birthplace text, bloodgroup text, nationality text, religion text,  pan text, language varchar(225), maritalstatus varchar(225), marriage_date date, spouse_name text, spouse_dob date, children_count text, first_child_name text, first_child_dob date,  second_child_name text, second_child_dob date, third_child_name text,  third_child_dob date, contact_number text,  mobile_number text, emergency_contact text, email_id text, SSCName text, SSCSpecialization text, SSCSPassingYearMonth text, SSCPercentage text, SSCGrade text, HSCName text, HSCSpecialization text,    HSCPassingYearMonth text, HSCPercentage text , HSCGrade text, GraduationName text, GraduationSpecialization text,   GraduationPassingYearMonth text, GraduationPercentage text, GraduationGrade text, DiplomaName text, DiplomaSpecialization text, DiplomaPassingYearMonth text, DiplomaPercentage text, DiplomaGrade text, DegreeName text, DegreeSpecialization text,  DegreePassingYearMonth text, DegreePercentage text, DegreeGrade text, MastersorPostGraduationName text , MastersorPostGraduationSpecialization text,  MastersorPostGraduationPassingYearMonth text, MastersorPercentage text, MastersorGrade text, DoctorateName text, DoctorateSpecialization text,  DoctoratePassingYearMonth text, DoctoratePercentage text, DoctorateGrade text, OthersName text, OthersSpecialization text,   OthersPassingYearMonth text,  OthersPercentage text, OthersGrade text, aOrganization text, aDesignation text, aLocation text, aDurationfrom date, aDurationto date, bOrganization text, bDesignation text, bLocation text, bDurationfrom date, bDurationto date, cOrganization text, cDesignation text, cLocation text, cDurationfrom date, cDurationto date, dOrganization text, dDesignation text, dLocation text, dDurationfrom date, dDurationto date, eOrganization text, eDesignation text, eLocation text, eDurationfrom date, eDurationto date, todaydate date)")
+cur.execute("CREATE TABLE IF NOT EXISTS informationform (id INT AUTO_INCREMENT PRIMARY KEY , photoimage LONGBLOB, first_name text, middle_name text, surname text, employee_code text, reporting_manager text, department text, permanent_address text, PostalCodeorPinCode text, Present_Address text, dateofbirth date, sex text, birthplace date, bloodgroup text, nationality text, religion text,  pan text, language varchar(225), maritalstatus varchar(225), marriage_date date, spouse_name text, spouse_dob date, children_count integer, first_child_name text, first_child_dob date,  second_child_name text, second_child_dob date, third_child_name text,  third_child_dob date, contact_number text,  mobile_number text, emergency_contact text, email_id text, SSCName text, SSCSpecialization text, SSCSPassingYearMonth text, SSCPercentage text, SSCGrade text, HSCName text, HSCSpecialization text,    HSCPassingYearMonth text, HSCPercentage text , HSCGrade text, GraduationName text, GraduationSpecialization text,   GraduationPassingYearMonth text, GraduationPercentage text, GraduationGrade text, DiplomaName text, DiplomaSpecialization text, DiplomaPassingYearMonth text, DiplomaPercentage text, DiplomaGrade text, DegreeName text, DegreeSpecialization text,  DegreePassingYearMonth text, DegreePercentage text, DegreeGrade text, MastersorPostGraduationName text , MastersorPostGraduationSpecialization text,  MastersorPostGraduationPassingYearMonth text, MastersorPercentage text, MastersorGrade text, DoctorateName text, DoctorateSpecialization text,  DoctoratePassingYearMonth text, DoctoratePercentage text, DoctorateGrade text, OthersName text, OthersSpecialization text,   OthersPassingYearMonth text,  OthersPercentage text, OthersGrade text, aOrganization text, aDesignation text, aLocation text, aDurationfrom date, aDurationto date, bOrganization text, bDesignation text, bLocation text, bDurationfrom date, bDurationto date, cOrganization text, cDesignation text, cLocation text, cDurationfrom date, cDurationto date, dOrganization text, dDesignation text, dLocation text, dDurationfrom date, dDurationto date, eOrganization text, eDesignation text, eLocation text, eDurationfrom date, eDurationto date, todaydate date)")
 cur.execute("CREATE TABLE IF NOT EXISTS inductionforminsurance (id INT AUTO_INCREMENT PRIMARY KEY ,Employee_name text, Employee_ID text, Department text, Joining_Date date, Designation text, HRorAdminDayandTime date, HRorAdminEmployeeSign varchar(225), HRorAdminProcessOwnerSign varchar(225), HRorAdminDayandTime1 date, HRorAdminEmployeeSign1 varchar(225), HRorAdminProcessOwnerSign1 varchar(225),  HRorAdminDayandTime2 date, HRorAdminEmployeeSign2 varchar(225), HRorAdminProcessOwnerSign2 varchar(225), HRorAdminDayandTime3 date, HRorAdminEmployeeSign3 varchar(225), HRorAdminProcessOwnerSign3 varchar(225), HRorAdminDayandTime4 date, HRorAdminEmployeeSign4 varchar(225), HRorAdminProcessOwnerSign4 varchar(225), HRorAdminDayandTime5 date, HRorAdminEmployeeSign5 varchar(225), HRorAdminProcessOwnerSign5 varchar(225), HRorAdminDayandTime6 date, HRorAdminEmployeeSign6 varchar(225), HRorAdminProcessOwnerSign6 varchar(225), HRorAdminDayandTime7 date, HRorAdminEmployeeSign7 varchar(225), HRorAdminProcessOwnerSign7 varchar(225), HRorAdminDayandTime8 date, HRorAdminEmployeeSign8 varchar(225), HRorAdminProcessOwnerSign8 varchar(225), HRorAdminDayandTime9 date, HRorAdminEmployeeSign9 varchar(225), HRorAdminProcessOwnerSign9 varchar(225), HRorAdminDayandTime10 date, HRorAdminEmployeeSign10 varchar(225), HRorAdminProcessOwnerSign10 varchar(225), Employee_FeedbacK text , Employee_Signature text, Date1 date, Date2 date)")
 cur.execute("CREATE TABLE IF NOT EXISTS employeeoboarding (id INT AUTO_INCREMENT PRIMARY KEY, Form_No text, Date_of_Issue date, Revision text, Approved_by text, Resume BOOLEAN, Employee_Information_Form  BOOLEAN, Educational_Certificate BOOLEAN,  Relieving_Certificates_of_last_2_organizations BOOLEAN, Salary_Slips_of_last_3_months  BOOLEAN, Form_16_If_applicable BOOLEAN, Pan_Card_Mandatory BOOLEAN, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc BOOLEAN, Passport_size_Photo BOOLEAN, Permanent_Mandatory BOOLEAN, Bank_Aorc_Opening_Form_and_Formalities BOOLEAN, Current_Address_Proof  BOOLEAN, NDAorService_Agreement  BOOLEAN,  Entry_in_Keka BOOLEAN,  Appointment_Letter  BOOLEAN, Entry_in_Dax360  BOOLEAN, Entry_in_Meytou BOOLEAN, Indirect_ariff BOOLEAN, Stationary_Notepad_and_Pen BOOLEAN,  Employee_ID_Card  BOOLEAN, Extension_list  BOOLEAN,   Visiting_Cards_if_pplicable  BOOLEAN,  Adhaar_Card_Copy BOOLEAN, Appointment_Letter_Copy BOOLEAN, Nomination_Letter  BOOLEAN, Universal_Account_Number_UAN  BOOLEAN, Provident_Fund_Account_Number_PF  BOOLEAN, Bank_Account_No_and_Name  BOOLEAN, PAN_Card_Copy BOOLEAN, Seating_Arrangement  BOOLEAN, Laptopa_and_Desktop_and_Accessories  BOOLEAN, Phone_Extension  BOOLEAN, Official_Email_ID_Creation BOOLEAN, Group_and_Location_Email_Alias BOOLEAN, Sim_Card  BOOLEAN,  Head_Phone BOOLEAN, Screen BOOLEAN,  Employee_Access_Card_and_Biometrix_Access BOOLEAN,  Insurance_Form BOOLEAN, Insurance_Form1 BOOLEAN)")
 cur.execute("CREATE TABLE IF NOT EXISTS taxdeduction  (id INT AUTO_INCREMENT PRIMARY KEY , name_and_address text, permanent_accountno text, residential_status text, name_and_address_employer text, tan_of_employer_ito  text, permanent_account_number text, period_of_employment date, total_amount_of_salary text, total_amount_house_allowance text, value_of_perquistes_and_amount text, total_of_colume text, amount_deducted_in_respesct text, total_of_tax_deducteddu_in_the_year  text, remark text, your_name text, verified_today date, day_of_year date, name_emp_address text, permanent_account text, year_ending date, name_of_emp text, tan_of_employer text, acommodation_is_unfurnished  text, value_of_acommodation  text,  cost_of_furniture  text, perquisite_value_of_furniture  text, total_of_column1 text, rent  text, value_of_perquisite text, name_of_employee text, whether_any_conveyance text, remuneration12 text, value13 text, estimated_value14 text, employer_contribution15 text, interest16 text, total_of_columns17 text, policy text, Date5 date, gross_amount text, qualifying_amount text)")
@@ -368,117 +368,118 @@ def informationform():
 @app.route('/informationforminserts', methods=['POST' , 'GET'])
 def informationforminserts():
     if request.method == 'POST':
-        # Collecting form data
-        first_name = request.form["first_name"]
-        middle_name = request.form["middle_name"]
-        surname = request.form["surname"]
-        employee_code = request.form["employee_code"]
-        reporting_manager = request.form["reporting_manager"]
-        department = request.form["department"]
-        permanent_address = request.form["permanent_address"]
-        PostalCodeorPinCode = request.form["PostalCodeorPinCode"]
+        if 'photoimage' not in request.files:
+            return "No file part in the request", 400  
+        photoimage = request.files['photoimage']
+        if photoimage.filename == '':
+            return "No selected file", 400
+        photoimage_data = photoimage.read()
+
+        first_name = request.form.get("first_name")
+        middle_name = request.form.get("middle_name")
+        surname = request.form.get("surname")
+        employee_code = request.form.get("employee_code")
+        reporting_manager = request.form.get("reporting_manager")
+        department = request.form.get("department")
+        permanent_address = request.form.get("permanent_address")
+        PostalCodeorPinCode = request.form.get("PostalCodeorPinCode")
         Present_Address = request.form.get("Present_Address")
-        dateofbirth = request.form["dateofbirth"]
-        sex = request.form["sex"]
-        birthplace = request.form["birthplace"]
-        bloodgroup = request.form["bloodgroup"]
-        nationality = request.form["nationality"]
-        religion = request.form["religion"]
-        pan = request.form["pan"]
-        language = request.form.get("language")
+        dateofbirth = request.form.get("dateofbirth")
+        sex = request.form.get("sex")
+        birthplace = request.form.get("birthplace")
+        bloodgroup = request.form.get("bloodgroup")
+        nationality = request.form.get("nationality")
+        religion = request.form.get("religion")
+        pan = request.form.get("pan")
+        language =  ', '.join(request.form.getlist("language")) 
         maritalstatus = request.form.get("maritalstatus")
-        # if maritalstatus:
-        #     maritalstatus_field=maritalstatus
-        # else:
-        #      maritalstatus_field=ma
-            
-        marriage_date = request.form["marriage_date"]
-        spouse_name = request.form["spouse_name"]
-        spouse_dob = request.form["spouse_dob"]
-        children_count = request.form["children_count"]
-        first_child_name = request.form["first_child_name"]
-        first_child_dob = request.form["first_child_dob"]
-        second_child_name = request.form["second_child_name"]
-        second_child_dob = request.form["second_child_dob"]
-        third_child_name = request.form["third_child_name"]
-        third_child_dob = request.form["third_child_dob"]
-        contact_number = request.form["contact_number"]
-        mobile_number = request.form["mobile_number"]
-        emergency_contact = request.form["emergency_contact"]
-        email_id = request.form["email_id"]
-        SSCName = request.form["SSCName"]
-        SSCSpecialization = request.form["SSCSpecialization"]
-        SSCSPassingYearMonth = request.form["SSCSPassingYearMonth"]
-        SSCPercentage = request.form["SSCPercentage"]
-        SSCGrade = request.form["SSCGrade"]
-        HSCName = request.form["HSCName"]
-        HSCSpecialization = request.form["HSCSpecialization"]
-        HSCPassingYearMonth = request.form["HSCPassingYearMonth"]
-        HSCPercentage = request.form["HSCPercentage"]
-        HSCGrade = request.form["HSCGrade"]
-        GraduationName = request.form["GraduationName"]
-        GraduationSpecialization = request.form["GraduationSpecialization"]
-        GraduationPassingYearMonth = request.form["GraduationPassingYearMonth"]
-        GraduationPercentage = request.form["GraduationPercentage"]
-        GraduationGrade = request.form["GraduationGrade"]
-        DiplomaName = request.form["DiplomaName"]
-        DiplomaSpecialization = request.form["DiplomaSpecialization"]
-        DiplomaPassingYearMonth = request.form["DiplomaPassingYearMonth"]
-        DiplomaPercentage = request.form["DiplomaPercentage"]
-        DiplomaGrade = request.form["DiplomaGrade"]
-        DegreeName = request.form["DegreeName"]
-        DegreeSpecialization = request.form["DegreeSpecialization"]
-        DegreePassingYearMonth = request.form["DegreePassingYearMonth"]
-        DegreePercentage = request.form["DegreePercentage"]
-        DegreeGrade = request.form["DegreeGrade"]
-        MastersorPostGraduationName = request.form["MastersorPostGraduationName"]
-        MastersorPostGraduationSpecialization = request.form["MastersorPostGraduationSpecialization"]
-        MastersorPostGraduationPassingYearMonth = request.form["MastersorPostGraduationPassingYearMonth"]
-        MastersorPercentage = request.form["MastersorPercentage"]
-        MastersorGrade = request.form["MastersorGrade"]
-        DoctorateName = request.form["DoctorateName"]
-        DoctorateSpecialization = request.form["DoctorateSpecialization"]
-        DoctoratePassingYearMonth = request.form["DoctoratePassingYearMonth"]
-        DoctoratePercentage = request.form["DoctoratePercentage"]
-        DoctorateGrade = request.form["DoctorateGrade"]
-        OthersName = request.form["OthersName"]
-        OthersSpecialization = request.form["OthersSpecialization"]
-        OthersPassingYearMonth = request.form["OthersPassingYearMonth"]
-        OthersPercentage = request.form["OthersPercentage"]
-        OthersGrade = request.form["OthersGrade"]
-        aOrganization = request.form["aOrganization"]
-        aDesignation = request.form["aDesignation"]
-        aLocation = request.form["aLocation"]
-        aDurationfrom = request.form["aDurationfrom"]
-        aDurationto = request.form["aDurationto"]
+        marriage_date = request.form.get("marriage_date")
+        spouse_name = request.form.get("spouse_name")
+        spouse_dob = request.form.get("spouse_dob")
+        children_count = request.form.get("children_count")
+        first_child_name = request.form.get("first_child_name")
+        first_child_dob = request.form.get("first_child_dob")
+        second_child_name = request.form.get("second_child_name")
+        second_child_dob = request.form.get("second_child_dob")
+        third_child_name = request.form.get("third_child_name")
+        third_child_dob = request.form.get("third_child_dob")
+        contact_number = request.form.get("contact_number")
+        mobile_number = request.form.get("mobile_number")
+        emergency_contact = request.form.get("emergency_contact")
+        email_id = request.form.get("email_id")
+        SSCName = request.form.get("SSCName")
+        SSCSpecialization = request.form.get("SSCSpecialization")
+        SSCSPassingYearMonth = request.form.get("SSCSPassingYearMonth")
+        SSCPercentage = request.form.get("SSCPercentage")
+        SSCGrade = request.form.get("SSCGrade")
+        HSCName = request.form.get("HSCName")
+        HSCSpecialization = request.form.get("HSCSpecialization")
+        HSCPassingYearMonth = request.form.get("HSCPassingYearMonth")
+        HSCPercentage = request.form.get("HSCPercentage")
+        HSCGrade = request.form.get("HSCGrade")
+        GraduationName = request.form.get("GraduationName")
+        GraduationSpecialization = request.form.get("GraduationSpecialization")
+        GraduationPassingYearMonth = request.form.get("GraduationPassingYearMonth")
+        GraduationPercentage = request.form.get("GraduationPercentage")
+        GraduationGrade = request.form.get("GraduationGrade")
+        DiplomaName = request.form.get("DiplomaName")
+        DiplomaSpecialization = request.form.get("DiplomaSpecialization")
+        DiplomaPassingYearMonth = request.form.get("DiplomaPassingYearMonth")
+        DiplomaPercentage = request.form.get("DiplomaPercentage")
+        DiplomaGrade = request.form.get("DiplomaGrade")
+        DegreeName = request.form.get("DegreeName")
+        DegreeSpecialization = request.form.get("DegreeSpecialization")
+        DegreePassingYearMonth = request.form.get("DegreePassingYearMonth")
+        DegreePercentage = request.form.get("DegreePercentage")
+        DegreeGrade = request.form.get("DegreeGrade")
+        MastersorPostGraduationName = request.form.get("MastersorPostGraduationName")
+        MastersorPostGraduationSpecialization = request.form.get("MastersorPostGraduationSpecialization")
+        MastersorPostGraduationPassingYearMonth = request.form.get("MastersorPostGraduationPassingYearMonth")
+        MastersorPercentage = request.form.get("MastersorPercentage")
+        MastersorGrade = request.form.get("MastersorGrade")
+        DoctorateName = request.form.get("DoctorateName")
+        DoctorateSpecialization = request.form.get("DoctorateSpecialization")
+        DoctoratePassingYearMonth = request.form.get("DoctoratePassingYearMonth")
+        DoctoratePercentage = request.form.get("DoctoratePercentage")
+        DoctorateGrade = request.form.get("DoctorateGrade")
+        OthersName = request.form.get("OthersName")
+        OthersSpecialization = request.form.get("OthersSpecialization")
+        OthersPassingYearMonth = request.form.get("OthersPassingYearMonth")
+        OthersPercentage = request.form.get("OthersPercentage")
+        OthersGrade = request.form.get("OthersGrade")
+        aOrganization = request.form.get("aOrganization")
+        aDesignation = request.form.get("aDesignation")
+        aLocation = request.form.get("aLocation")
+        aDurationfrom = request.form.get("aDurationfrom")
+        aDurationto = request.form.get("aDurationto")
         bOrganization = request.form.get("bOrganization")
-        bDesignation = request.form["bDesignation"]
-        bLocation = request.form["bLocation"]
-        bDurationfrom = request.form["bDurationfrom"]
-        bDurationto = request.form["bDurationto"]
-        cOrganization = request.form["cOrganization"]
-        cDesignation = request.form["cDesignation"]
-        cLocation = request.form["cLocation"]
-        cDurationfrom = request.form["cDurationfrom"]
-        cDurationto = request.form["cDurationto"]
-        dOrganization = request.form["dOrganization"]
-        dDesignation = request.form["dDesignation"]
-        dLocation = request.form["dLocation"]
-        dDurationfrom = request.form["dDurationfrom"]
-        dDurationto = request.form["dDurationto"]
-        eOrganization = request.form["eOrganization"]
-        eDesignation = request.form["eDesignation"]
-        eLocation = request.form["eLocation"]
-        eDurationfrom = request.form["eDurationfrom"]
-        eDurationto = request.form["eDurationto"]
-        todaydate = request.form["todaydate"]
+        bDesignation = request.form.get("bDesignation")
+        bLocation = request.form.get("bLocation")
+        bDurationfrom = request.form.get("bDurationfrom")
+        bDurationto = request.form.get("bDurationto")
+        cOrganization = request.form.get("cOrganization")
+        cDesignation = request.form.get("cDesignation")
+        cLocation = request.form.get("cLocation")
+        cDurationfrom = request.form.get("cDurationfrom")
+        cDurationto = request.form.get("cDurationto")
+        dOrganization = request.form.get("dOrganization")
+        dDesignation = request.form.get("dDesignation")
+        dLocation = request.form.get("dLocation")
+        dDurationfrom = request.form.get("dDurationfrom")
+        dDurationto = request.form.get("dDurationto")
+        eOrganization = request.form.get("eOrganization")
+        eDesignation = request.form.get("eDesignation")
+        eLocation = request.form.get("eLocation")
+        eDurationfrom = request.form.get("eDurationfrom")
+        eDurationto = request.form.get("eDurationto")
+        todaydate = request.form.get("todaydate")
 
         try:
             con = mysql.connect()
             cur = con.cursor()
             cur.execute(
                 """INSERT INTO informationform (
-                    first_name, middle_name, surname, employee_code, reporting_manager, department, 
+                    photoimage, first_name, middle_name, surname, employee_code, reporting_manager, department, 
                     permanent_address, PostalCodeorPinCode, Present_Address, dateofbirth, sex, birthplace, 
                     bloodgroup, nationality, religion, pan, language, maritalstatus, marriage_date, 
                     spouse_name, spouse_dob, children_count, first_child_name, first_child_dob, 
@@ -503,10 +504,10 @@ def informationforminserts():
                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                    %s, %s, %s, %s, %s, %s,%s
                 )""",
                 (
-                    first_name, middle_name, surname, employee_code, reporting_manager, department,
+                    photoimage_data, first_name, middle_name, surname, employee_code, reporting_manager, department,
                     permanent_address, PostalCodeorPinCode, Present_Address, dateofbirth, sex, birthplace,
                     bloodgroup, nationality, religion, pan, language, maritalstatus, marriage_date,
                     spouse_name, spouse_dob, children_count, first_child_name, first_child_dob,

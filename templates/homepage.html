@@ -11,7 +11,10 @@
 
 <body>
     <div class="box">
-        Employee joining project
+        <div class="login"><b>DANIELI</b> CORUS</div>
+        <div class="imgcontainer">
+            <img src="{{url_for('static' , filename='img/for Applicaiton.png')}}" alt="Avatar" class="avatar">
+        </div>
 
     </div>
     <div class="box1">
@@ -20,12 +23,28 @@
         <button onclick="myform()" class="form12b">INFORMATIONfORM</button><br>
         <button onclick="myforms()" class="form12b">NEW JOINING</button><br>
         <button onclick="myinduction()" class="form12b">EMPLOYEE INDUCTION PLAN</button> -->
-        <a class="pfform" href="{{ url_for('form') }}" >1. PF FORM</a><br>
-        <a class="form12b" href="{{ url_for('forms') }}">2.Details of tax deduction (FORM12B)</a><br>
-        <a class="form12b" href="{{ url_for('newjoining') }}">3.New Joinee Insurance Form</a><br>
-        <a class="form12b" href="{{ url_for('informationform') }}">4.Employee Joining Form</a><br>
-        <a class="form12b" href="{{ url_for('inductionform') }}">5.EMPLOYEE INDUCTION PLAN</a><br>
-        <a class="form12b" href="{{ url_for('EmployeeOboarding') }}">6.EMPLOYEE ONBOARDING</a><br>
+        <a class="pfform" href="{{ url_for('form') }}" >1. PF FORM</a><br><br>
+        <a class="form12b" href="{{ url_for('forms') }}">2.Details of tax deduction (FORM12B)</a><br><br>
+        <a class="form12b" href="{{ url_for('newjoining') }}">3.New Joinee Insurance Form</a><br><br>
+        <a class="form12b" href="{{ url_for('informationform') }}">4.Employee Joining Form</a><br><br>
+        <a class="form12b" href="{{ url_for('newempinductionform') }}">5.EMPLOYEE INDUCTION PLAN</a><br><br>
+        <a class="form12b" href="{{ url_for('EmployeeOboarding') }}">6.EMPLOYEE ONBOARDING</a><br><br>
+        <!-- <div id="successIcon">&#10004;</div>
+
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+            
+                // Simulate form submission (you can replace this with your actual logic)
+                // For demonstration purposes, I'm using a setTimeout
+                setTimeout(function () {
+                    document.getElementById('successIcon').style.display = 'block';
+                    document.getElementById('submitButton').disabled = true;
+                }, 1000); // Change the timeout as needed
+            });
+            
+        </script>
+         -->
         <!-- <script src="{{url_for('static', filename='next.js') }}"></script> -->
         <!-- <script>
             function myfun() {
@@ -46,7 +65,7 @@
                 window.location.href = myUrlr; 
             }
             function myinduction(){
-                var myUrlr = "{{ url_for('inductionform') }}"; 
+                var myUrlr = "{{ url_for('newempinductionform') }}"; 
                 window.location.href = myUrlr; 
             }
         </script>

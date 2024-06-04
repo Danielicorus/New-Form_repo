@@ -17,7 +17,7 @@
 
     <div class="box">
         <div class="box1">
-            <form  id="userForm" action="{{url_for('add_user')}}" method="POST" id="userForm" >
+            <form  action="{{url_for('add_user')}}" method="POST">
                 <img src="{{ url_for('static', filename='img/NAME.PNG') }}" alt="image">
                 <select name="choice1" id="" class="choice1">
                     <option value="Mr.">MR.</option>
@@ -31,7 +31,7 @@
                     onblur="if(!this.value) this.type='text'" class="dateofbirth" required><br>
                 <img src="{{ url_for('static', filename='img/FATHERORHUSBAND.PNG') }}" alt="">
                 <input type="text" value="Mr" name="fatherandhusband" class="fatherandhusband"><br>
-                <img src="{{ url_for('static', filename='img/RELATIONSHIPINRESPECTOF.PNG') }}" alt="" >
+                <img src="{{ url_for('static', filename='img/RELATIONSHIPINRESPECTOF.PNG') }}" alt="">
                 <select name="choice3" class="choice3">
                     <option value="Father">Father</option>
                     <option value="Husband">Husband</option>
@@ -72,7 +72,8 @@
                 <!-- <label>(A) IF SCHEME CERTIFICATE ISSUED FOR PREVIOUS EMPLOYEE, THEN SCHEME CERTIFICATE NUMBER ID:</label> -->
                 <img src="{{ url_for('static', filename='img/12.CERTIFICATE ISSUED FOR PREVIOUS EMPLOYMENT.PNG') }}"
                     alt="">
-                <input type="text" name="certificateforpreviousemployment" class="certificateforpreviousemployment" required>
+                <input type="text" name="certificateforpreviousemployment" class="certificateforpreviousemployment"
+                    required>
                 <!-- <label>(B) IF PENSION PAYMENT ORDER (PRO) ISSUED FOR PREVIOUS EMPLOYEE, THEN PPO NUMBER:</label> -->
                 <img src="{{ url_for('static', filename='img/12.(B)PERSIONPAYMENTORDERTHENPPONUMBER.PNG') }}" alt="">
                 <input type="text" name="persionpayment" class="persionpayment" required><br><br>
@@ -96,39 +97,47 @@
                     onblur="if(!this.value) this.type='text'" required><br>
                 <div>
                     <img src="{{ url_for('static', filename='img/14.EDUCATIONALQULIFICATION.PNG') }}" alt=""><br>
-                    <label for="option1" class="radio-label"><input type="checkbox" name="educationalqualification" id="option1" class="radio" value="illiterate"></label>
-            <label for="option2" class="radio-label"><input type="checkbox" name="educationalqualification" id="option2" class="radio" value="non-matric" ></label>
-            <label for="option3" class="radio-label"><input type="checkbox" name="educationalqualification" id="option3" class="radio" value="matric"></label>
-            <label for="option4" class="radio-label"><input type="checkbox" name="educationalqualification" id="option4" class="radio" value="seniorsecondary"></label>
-            <label for="option5" class="radio-label"><input type="checkbox" name="educationalqualification" id="option5" class="radio" value="graduate" ></label>
-            <label for="option6" class="radio-label"><input type="checkbox" name="educationalqualification" id="option6" class="radio" value="postgraduate" ></label>
-            <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification" id="option7" class="radio" value="doctor"></label>
-            <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification" id="option7" class="radio" value="technicalprofessional" ></label>
-      
+                    <label for="option1" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option1" class="radio" value="illiterate"></label>
+                    <label for="option2" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option2" class="radio" value="non-matric"></label>
+                    <label for="option3" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option3" class="radio" value="matric"></label>
+                    <label for="option4" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option4" class="radio" value="seniorsecondary"></label>
+                    <label for="option5" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option5" class="radio" value="graduate"></label>
+                    <label for="option6" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option6" class="radio" value="postgraduate"></label>
+                    <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option7" class="radio" value="doctor"></label>
+                    <label for="option7" class="radio-label"><input type="checkbox" name="educationalqualification"
+                            id="option7" class="radio" value="technicalprofessional"></label>
+
                 </div>
                 <img src="{{ url_for('static', filename='img/15.MARITALSTATUS.PNG') }}" alt="">
-                <input type="radio" name="maritalstatus" id="married" class="radio1" value="married" >
-                <input type="radio" name="maritalstatus" id="unmarried" class="radio1" value="unmarried" >
-                <input type="radio" name="maritalstatus" id="widowwidower" class="radio1" value="widow/widower" >
-                <input type="radio" name="maritalstatus" id="divorcee" class="radio3" value="divorcee" >
+                <input type="radio" name="maritalstatus" id="married" class="radio1" value="married">
+                <input type="radio" name="maritalstatus" id="unmarried" class="radio1" value="unmarried">
+                <input type="radio" name="maritalstatus" id="widowwidower" class="radio1" value="widow/widower">
+                <input type="radio" name="maritalstatus" id="divorcee" class="radio3" value="divorcee">
                 <br>
-                <img src="{{ url_for('static', filename='img/16.SPECIALLYABLED.PNG') }}" alt="" >
-                <input type="checkbox" name="specially" id="" class="radio2" value="yes" >
-                <input type="checkbox" name="specially" id="" class="radio2" value="no" >
-                <input type="checkbox" name="abled" id="" class="check" value="Locomotive" >
-                <input type="checkbox" name="abled" id="" class="check" value="visual" >
-                <input type="checkbox" name="abled" id="" class="check" value="hearing" ><br>
+                <img src="{{ url_for('static', filename='img/16.SPECIALLYABLED.PNG') }}" alt="">
+                <input type="checkbox" name="specially" id="" class="radio2" value="yes">
+                <input type="checkbox" name="specially" id="" class="radio2" value="no">
+                <input type="checkbox" name="abled" id="" class="check" value="Locomotive">
+                <input type="checkbox" name="abled" id="" class="check" value="visual">
+                <input type="checkbox" name="abled" id="" class="check" value="hearing"><br>
                 <script>
                     const checkboxes1 = document.querySelectorAll('input[type="checkbox"][name="specially"]');
                     checkboxes1.forEach(box => {
-                        box.addEventListener('click', function() {
+                        box.addEventListener('click', function () {
                             if (this.checked) {
                                 checkboxes1.forEach(otherBox => otherBox.checked = false);
                                 this.checked = true;
                             }
                         });
                     });
-                    const checkboxes = document.querySelectorAll('input[type="checkbox"][name="abled"]');
+                    /*const checkboxes = document.querySelectorAll('input[type="checkbox"][name="abled"]');
                     checkboxes.forEach(box => {
                         box.addEventListener('click', function() {
                             if (this.checked) {
@@ -145,40 +154,46 @@
                                 this.checked = true;
                             }
                         });
-                    });
-                    
+                    });*/
+
                 </script>
                 <img src="{{ url_for('static', filename='img/17.KYCDETAILS.PNG') }}" alt=""><br>
-                <input type="text" id="" name="bankkycnumber" placeholder="1" class="kyc" >
-                <input type="text" id="" name="banknumber" placeholder="2" class="kyc" >
-                <input type="text" id="" name="bankremark" placeholder="3" class="kyc" ><br><br>
-                <input type="text" id="" name="nprkycnumber" placeholder="4" class="kyc" >
-                <input type="text" id="" name="nprnumber" placeholder="5" class="kyc" >
-                <input type="text" id="" name="nprremark" placeholder="6" class="kyc" ><br><br>
-                <input type="text" id="" name="permanentkycnumber" placeholder="7" class="kyc" >
-                <input type="text" id="" name="permanentnumber" placeholder="9" class="kyc" >
-                <input type="text" id="" name="permanentremark" placeholder="10" class="kyc" ><br><br>
-                <input type="text" id="" name="passportkycnumber" placeholder="12" class="kyc" >
-                <input type="text" id="" name="passportnumber" placeholder="13" class="kyc" >
-                <input type="text" id="" name="passportremark" placeholder="14" class="kyc" ><br><br>
-                <input type="text" id="" name="drivinglicencekycnumber" placeholder="15" class="kyc" >
-                <input type="text" id="" name="drivinglicencenumber" placeholder="16" class="kyc" >
-                <input type="text" id="" name="drivinglicenceremark" placeholder="17" class="kyc" ><br><br>
-                <input type="text" id="" name="electioncardkycnumber" placeholder="18" class="kyc" >
-                <input type="text" id="" name="electioncardnumber" placeholder="19" class="kyc" >
-                <input type="text" id="" name="electioncardremark" placeholder="20" class="kyc" ><br><br>
-                <input type="text" id="" name="rationcardkycnumber" placeholder="21" class="kyc" >
-                <input type="text" id="" name="rationcardnumber" placeholder="22" class="kyc" >
-                <input type="text" id="" name="rationcardremark" placeholder="23" class="kyc" ><br><br>
-                <input type="text" id="" name="esiccardkycnumber" placeholder="24" class="kyc" >
-                <input type="text" id="" name="esiccardnumber" placeholder="25" class="kyc" >
-                <input type="text" id="" name="esiccardremark" placeholder="26" class="kyc" ><br>
+                <input type="text" id="" name="bankkycnumber" placeholder="1" class="kyc">
+                <input type="text" id="" name="banknumber" placeholder="2" class="kyc">
+                <input type="text" id="" name="bankremark" placeholder="3" class="kyc"><br><br>
+                <input type="text" id="" name="nprkycnumber" placeholder="4" class="kyc">
+                <input type="text" id="" name="nprnumber" placeholder="5" class="kyc">
+                <input type="text" id="" name="nprremark" placeholder="6" class="kyc"><br><br>
+                <input type="text" id="" name="permanentkycnumber" placeholder="7" class="kyc">
+                <input type="text" id="" name="permanentnumber" placeholder="9" class="kyc">
+                <input type="text" id="" name="permanentremark" placeholder="10" class="kyc"><br><br>
+                <input type="text" id="" name="passportkycnumber" placeholder="12" class="kyc">
+                <input type="text" id="" name="passportnumber" placeholder="13" class="kyc">
+                <input type="text" id="" name="passportremark" placeholder="14" class="kyc"><br><br>
+                <input type="text" id="" name="drivinglicencekycnumber" placeholder="15" class="kyc">
+                <input type="text" id="" name="drivinglicencenumber" placeholder="16" class="kyc">
+                <input type="text" id="" name="drivinglicenceremark" placeholder="17" class="kyc"><br><br>
+                <input type="text" id="" name="electioncardkycnumber" placeholder="18" class="kyc">
+                <input type="text" id="" name="electioncardnumber" placeholder="19" class="kyc">
+                <input type="text" id="" name="electioncardremark" placeholder="20" class="kyc"><br><br>
+                <input type="text" id="" name="rationcardkycnumber" placeholder="21" class="kyc">
+                <input type="text" id="" name="rationcardnumber" placeholder="22" class="kyc">
+                <input type="text" id="" name="rationcardremark" placeholder="23" class="kyc"><br><br>
+                <input type="text" id="" name="esiccardkycnumber" placeholder="24" class="kyc">
+                <input type="text" id="" name="esiccardnumber" placeholder="25" class="kyc">
+                <input type="text" id="" name="esiccardremark" placeholder="26" class="kyc"><br>
                 <!-- <input type="text" id="" name="" class="kyc"> -->
 
-                <img src="{{ url_for('static', filename='img/DECLARATIONBYPRESENTEMPLOYER.PNG') }}" alt="">
-                <!-- <input type="text" id="" name="" class="joined" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" >
-        <input type="text" id="" name="" class="yourname">  
-        <input type="text" id="" name="" class="memberid1"> -->
+                <img src="{{ url_for('static', filename='img/DECLARATIONBYPRESENTEMPLOYER.PNG') }}" alt=""><br>
+                <input type="text" id="" name="today_date" class="today_date" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" max="9999-12-31">
+                <input type="text" id="" name="your_place" class="your_place">
+                <input type="text" id="" name="your_name" class="your_name">
+                <input type="text" id="" name="join_date" class="join_date" onfocus="(this.type='date')"
+                onblur="if(!this.value) this.type='text'" max="9999-12-31">
+                <input type="text" name="UAN_ALLOTED" class="UAN_ALLOTED" id="">
+                <input type="text" id="" name="today_dates" class="today_dates" onfocus="(this.type='date')"
+                onblur="if(!this.value) this.type='text'" max="9999-12-31">
                 <img src="{{ url_for('static', filename='img/DECLARATIONBYPRESENTEMPLOYER1.PNG') }}" alt="">
                 <input type="submit" value="submit" class="submit">
             </form>

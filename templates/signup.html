@@ -11,24 +11,24 @@
 <body>
 
 
-    <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> -->
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
 
-    <!-- <div id="id01" class="modal"> -->
+    <div id="id01" class="modal">
     <div class="container">
-        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         <form class="modal-content" action="{{url_for('register')}}" method="post">
-            <div class="signup" >Modal Signup Form</div>
+            <div class="signup" > Signup Form</div>
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" name="username" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" id="pas" placeholder="Enter Password" name="psw" required>
-<!-- 
+            <input type="password" id="pas" placeholder="Enter Password" name="password" required>
+
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" id="repeatpas" placeholder="Repeat Password" name="psw-repeat" required> -->
+            <input type="password" id="repeatpas" placeholder="Repeat Password" name="psw-repeat" required>
 
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -56,7 +56,7 @@
         }
 
     </script>
-    <!-- <script>
+    <script>
     // Get the modal
     var modal = document.getElementById('id01');
     onclick="document.getElementById('id01').style.display='none'" 
@@ -66,7 +66,7 @@
         modal.style.display = "none";
       }
     }
-    </script> -->
+    </script>
     </div>
 </body>
 

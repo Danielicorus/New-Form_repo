@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/PFForm.css') }}">
+    <title>PF Form </title>
+</head>
+
+<body>
+    <form  action="{{url_for('add_user')}}" method="POST">
+
+        <div class="container">
+            <img src="{{ url_for('static', filename='formimg11.PNG' )}}" style="height: 300px; width: 100%;">
+    
+            <hr>
+            <div style="display: flex; justify-content: end; align-items: center; gap: 20px;" class="btn">
+                <p onclick="window.print()" id="printout">Printout</p><br>
+                <a href="{{url_for('homepage')}}" id="backtohomepage">Back to homepage</a>
+            </div>
+            <div>
+                <ol>
+                    <li class="ordered-list"> Name(Title) (Mr./Ms./Mrs.)
+                        <select class="input" name="choice1" required>
+                            <option value="Mr.">Mr</option>
+                            <option value="Ms.">Ms</option>
+                            <option value="Mrs.">Mrs</option>
+                        </select>
+                        <input type="text" name="name1" class="input name1">
+                    </li>
+                    (Please Tick)
+                    <li class="ordered-list"> Date of birth ( DD/MM/YYYY)
+                        <input type="date" name="dob" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'"required>
+    
+                    </li>
+                    <li class="ordered-list"> Father's Husband's Name
+                        <input type="text" name="fatherandhusband" class="input name1" value="Mr. "  required>
+                    </li>
+                    <li class="ordered-list"> Relation In Respect of (3 ) above
+                        <select name="choice3" id="" class="input" required>
+                            <option value="Husband">Husband </option>
+                            <option value="father">Father</option>
+                        </select>
+    
+                    </li>
+                    <li class="ordered-list"> Gender
+                        <select name="choice4" id="" class="input" required>
+                            <option value="Male">Male </option>
+                            <option value="Female">Female</option>
+                            <option value="TRANSGENDER">TRANSGENDER</option>
+                        </select>
+    
+                    </li>
+                    <li class="ordered-list"> Mobile No (if Any)
+                        <input type="tel" name="mobile" id="" class="input" required>
+    
+                    </li>
+                    <li class="ordered-list"> Email Id (if Any)
+                        <input type="email"name="email" id="" class="input" required>
+    
+                    </li>
+                    <li class="ordered-list"> Whether Earlier a member of the Empolyee's Provident Fund Scheme , 1952 ?
+                        <select name="choice5" id="" class="input" required>
+                            <option value="Yes">Yes </option>
+                            <option value="No">No</option>
+                        </select>
+    
+    
+                    </li>
+                    <li class="ordered-list"> Whether Earlier a member of the Empolyee's Pension scheme, 1952 ?
+                        <select name="choice6" id="" class="input" required>
+                            <option value="Yes">Yes </option>
+                            <option value="No">No</option>
+                        </select>
+
+    
+    
+                    </li>
+                    <p style="font-weight: 700; font-size: 20px;"> If response to any orr bith of (8) & (9) above yes then
+                        <span style="text-decoration: underline;">Maindatorily</span> fill up the prevoius Employment
+                        Details At
+                        (10,11&12):</p>
+                    <p style="font-weight: 700; font-size: 20px;"> (A) Previous Employment Details</p>
+                    <li class="ordered-list"> The details of the Universal Account number (UAN) or Previous pf
+                        <select name="choice7" id="" class="input">
+                            <option value="uab 10">UAB 10</option>
+                            <option value="Previous pf Member Id "> Previous Pf Member Id </option>
+                        </select>
+                         <input type="text" name="previousemployment"class="input">
+    
+                    </li>
+                    <li class="ordered-list"> Date of exit of previous member id ( DD/MM/YYYY)
+                        <input type="text" name="dateprevious" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" required>
+    
+                    </li>
+                    <li class="ordered-list"> (A) If Scheme certificate issued for previouss employement , then scheme
+                        <input type="text" name="certificateforpreviousemployment" id="" class="input" required>
+                        certificate number:
+    
+                    </li>
+                    <p class="ordered-list"> (B) If penssion Payment order (PPO) issued for previous employement , then PPO
+                        <input type="text" name="persionpayment" id="" class="input" required>
+                        number:
+                    </p>
+    
+                    <p style="font-weight: 700; font-size: 20px;"> (A) Other Details </p>
+                    <li class="ordered-list"> International worker
+                        <select name="internationalworker" id="" class="input" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </li>
+    
+                    <p style="font-weight: 700; font-size: 20px;"> If reply to (13) Above is yes , then enter the details in
+                        13
+                        (A), 13(B), 13(C) :</p>
+    
+                    <p class="ordered-list"> 13 (A) Country of origin (please tick)
+                        <select name="india" id="" class="input" required>
+                            <option value="India">India</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <br>
+                        &nbsp; Other Than India ( If yes , please Mention name of country): &nbsp;
+                        <input type="text" name="otherindia" id="" class="input">
+                    </p>
+                    <p class="ordered-list"> 13 (B) Passport Number :
+                        <input type="text" name="passportnumber" id="" class="input" required>
+                    </p>
+                    <p class="ordered-list"> 13 (C) Passport valid from :
+                        <input type="text" name="passportvalid" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" required> to <input type="text" name="passportvalid1" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'"  required>
+    
+                    </p>
+                    <li class="ordered-list"> educaational Qualification:(please tick)
+                        <table style="border: 1px solid black; width: 100%;">
+                            <tr>
+                                <th>Illitrate</th>
+                                <th>Non Matric</th>
+                                <th>Matric</th>
+                                <th>Senior Secondary</th>
+                                <th>Graduate</th>
+                                <th>Post Graduate</th>
+                                <th>Doctor</th>
+                                <th>Technical / Professional</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="illiterate" ></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="non-matric"  ></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="matric"></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="seniorsecondary"></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="graduate"></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="postgraduate" ></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="doctor" ></td>
+                                <td style="text-align: center;"> <input type="checkbox" name="educationalqualification" id=""
+                                        style="font-size: 30px; transform: scale(2);" value="technicalprofessional" ></td>
+    
+    
+                            </tr>
+    
+                        </table>
+                       
+    
+                    </li>
+                    <li class="ordered-list"> Marital status (please check)
+                        <table style="border: 1px solid black; width: 50%;">
+                            <tr>
+                                <th>Married</th>
+                                <th>Unmarried</th>
+                                <th>Widow/ Widower</th>
+                                <th>Divorce</th>
+                            </tr>
+                            <tr>
+    
+                                <td style="text-align: center;"> <input type="radio" name="maritalstatus" id="" class="marital"
+                                        style="font-size: 30px; transform: scale(2);" value="married"> </td>
+                                <td style="text-align: center;"><input type="radio" name="maritalstatus" id="" class="marital"
+                                        style="font-size: 30px; transform: scale(2);" value="unmarried" > </td>
+                                <td style="text-align: center;"> <input type="radio" name="maritalstatus" id="" class="marital"
+                                        style="font-size: 30px; transform: scale(2);"  value="widow/widower"></td>
+                                <td style="text-align: center;"> <input type="radio" name="maritalstatus" id="" class="marital"
+                                        style="font-size: 30px; transform: scale(2);" value="divorcee" ></td>
+    
+    
+                            </tr>
+    
+                        </table>
+    
+                    </li>
+                    <li class="ordered-list"> specially Abled
+                        <div style="display: flex;  gap: 30px;">
+    
+                            <table style="border: 1px solid black; width: 20%;">
+                                <tr>
+                                    <th>Yes</th>
+                                    <th>No</th>
+    
+    
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;"> <input type="checkbox" name="specially" id="" class="abled"
+                                            style="font-size: 30px; transform: scale(2);" value="yes" required> </td>
+                                    <td style="text-align: center;"><input type="checkbox" name="specially" id="" class="abled"
+                                            style="font-size: 30px; transform: scale(2);" value="no" required> </td>
+                                </tr>
+    
+                            </table>
+                         
+                            <div>
+                                <table style="border: 1px solid black; width: 40%;">
+                                    If Yes , tick the Category
+                                    <tr>
+                                        <th>Locomotive</th>
+                                        <th>Visual</th>
+                                        <th>Hearing</th>
+    
+    
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;"> <input type="radio" name="abled" id="" class="abled"
+                                                style="font-size: 30px; transform: scale(2);" value="Locomotive"> </td>
+                                        <td style="text-align: center;"><input type="radio" name="abled" id="" class="abled"
+                                                style="font-size: 30px; transform: scale(2);" value="visual"> </td>
+                                        <td style="text-align: center;"><input type="radio" name="abled" id="" class="abled"
+                                                style="font-size: 30px; transform: scale(2);" value="hearing"> </td>
+                                    </tr>
+    
+                                </table>
+    
+                            </div>
+                        </div>
+                        <script>
+                            const checkboxes1 = document.querySelectorAll('input[type="checkbox"][name="specially"]');
+                            checkboxes1.forEach(box => {
+                                box.addEventListener('click', function () {
+                                    if (this.checked) {
+                                        checkboxes1.forEach(otherBox => otherBox.checked = false);
+                                        this.checked = true;
+                                    }
+                                });
+                            });
+                            /*const checkboxes = document.querySelectorAll('input[type="checkbox"][name="abled"]');
+                            checkboxes.forEach(box => {
+                                box.addEventListener('click', function() {
+                                    if (this.checked) {
+                                        checkboxes.forEach(otherBox => otherBox.checked = false);
+                                        this.checked = true;
+                                    }
+                                });
+                            });
+                            const checkboxes2 = document.querySelectorAll('input[type="checkbox"][name="educationalqualification"]');
+                            checkboxes2.forEach(box => {
+                                box.addEventListener('click', function() {
+                                    if (this.checked) {
+                                        checkboxes2.forEach(otherBox => otherBox.checked = false);
+                                        this.checked = true;
+                                    }
+                                });
+                            });*/
+        
+                        </script>
+    
+                    </li>
+                    <li class="ordered-list">
+                        Kyc details
+                        <table style="border: 1px solid black; width: 100%;">
+    
+                            <tr>
+                                <th>Kyc Document type</th>
+                                <th>Name As on Kyc Document </th>
+                                <th>Number</th>
+                                <th>Remark , if any </th>
+    
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Bank Account -1 *</td>
+                                <td style="text-align: start;"> <input type="text" name="bankkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="banknumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="bankremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> NPR / AADhar</td>
+                                <td style="text-align: start;"> <input type="text" name="nprkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="nprnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="nprremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Permanent Account number </td>
+                                <td style="text-align: start;"> <input type="text" name="permanentkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="permanentnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="permanentremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Passport</td>
+                                <td style="text-align: start;"> <input type="text" name="passportkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="passportnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="passportremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Driving License</td>
+                                <td style="text-align: start;"> <input type="text" name="drivinglicencekycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="drivinglicencenumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="drivinglicenceremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Election Card </td>
+                                <td style="text-align: start;"> <input type="text" name="electioncardkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="electioncardnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="electioncardremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Ration card</td>
+                                <td style="text-align: start;"> <input type="text" name="rationcardkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="rationcardnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="rationcardremark" id="" class="input" required></td>
+    
+                            </tr>
+                            <tr>
+                                <td style="text-align: start;"> Esic card </td>
+                                <td style="text-align: start;"> <input type="text" name="esiccardkycnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="esiccardnumber" id="" class="input" required></td>
+                                <td style="text-align: start;"> <input type="text" name="esiccardremark" id="" class="input" required></td>
+                            </tr>
+                        </table>
+                        <p> <span style="font-weight:700 ;"> Mandatory Fields ( Note : Bank Account Number ( Along with Ifsc
+                                code ) is Mandatory .</span>
+                            You are however advised to provide all kyc Documents available with you in addition to MANDATORy
+                            Kycs to avil better services . <span style="font-weight: 700;"> Self Attested photoccopies of
+                                the documents </span> must be atteched with this form .
+                        </p>
+                    </li>
+    
+                    <p style="font-weight: 700; font-size: 20px;"> (C) UnderTaking
+                    </p>
+                    <p style="font-weight: 700; font-size: 20px;"> (A) I certify that all the information is given above is
+                        true to the best of my knowledge and belief.
+                    </p>
+                    <p style="font-weight: 600; font-size: 20px;"> (B) In case , earlier a member of Epf scheme . 1952 and
+                        /or EPs , 1995, <br> <br>
+                        (I) I have ensured the correctness of my UAN/Previous Pf member Id . <br><br>
+                        (II) this may also be treated as my request for transfer of funds and service details if applicable
+                        from thee previous account as declared above to the present P.F account ()The transfer would be
+                        possible only if indentified kyc details approved by prevoius employer has been verified bt present
+                        employer using his digital signanture certificate).<br> <br>
+                        (III) I am aware that I can submit my Nomination from through UAN Based member portal.<br />
+                        <br>
+    
+                </ol>
+            </div>
+            <br>
+            <br><br><br>
+            <div>
+                <p> Date <input type="date" name="today_date" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" max="9999-12-31" required></p>
+                <p> Place: <input type="text" name="your_place" id="" class="input" required></p>
+                <br><br>
+    
+                <p style="text-align: center;">Signature of member </p>
+                <p style="text-align: center; text-decoration: underline;">DECLARATION BY PRESENTEMPLOYER </p>
+                <br><br>
+                <p> A. the member Mr./Mrs./Ms. <input type="text" name="your_name" class="input" id="" required> joineed on <input type="date"
+                        name="join_date" id=""  class="input" onfocus="(this.type='date')"
+                        onblur="if(!this.value) this.type='text'" max="9999-12-31" required> and has been alloted Pf member id .</p>
+                <br>
+                <p> iN case the persson was earlier not a member of epf scheme , 1952 and Eps, 1995:</p>
+                <ul>
+                    <li class="ordered-list"> <span style="font-weight: 700;">(Post Allotment of Uan)</span>The Uan alloted for the member is
+                        <input type="text" name="UAN_ALLOTED" id="" class="input" required></li>
+                    <li class="ordered-list"> <span style="font-weight: 700;">(Please tick the appropriate option:)</span>
+                        <br>
+                        tHE KYC details of the above member in the Uan database <br>
+                        <ul>
+                            <li class="ordered-list">Have not been uploaded </li>
+                            <li class="ordered-list"> Have been Uploaded but not Approved </li>
+                            <li class="ordered-list">Have been uploaded and approved with dsc</li>
+                        </ul>
+                    </li>
+    
+                    </li>
+    
+                </ul>
+                <p> in case the person was earlier a member of Epf scheme , 1952 and Eps , 1995 :</p>
+                <ul>
+                    <li class="ordered-list">The above member id of the member as mentioned in (A) above has been tagged with His/her
+                        Uan/previous Member Id Declared by Member .</li>
+                    <li class="ordered-list"> <span style="font-weight: 700;">Pleae tick the appropriate Option:</span>
+                        <br>
+                        <ul>
+                            <li class="ordered-list">The Kyc details of the Above member in the Uan database have been Approved with digital
+                                signanture certificate and Transfer request has been generated on Portal .</li>
+    
+                            <li class="ordered-list">
+                                As the Dsc of Establishment are not registred with Epfo , the member has been informed to
+                                file Physical Claim (Form-13) for transfer of funds from his previous Establishment.
+                            </li>
+                        </ul>
+    
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <p> Date: <input type="date" name="today_dates" id="" class="input" onfocus="(this.type='date')"
+                    onblur="if(!this.value) this.type='text'" max="9999-12-31" required></p>
+                <br>
+                <br>
+                <h3 style="text-align: center;">Signature of Employer seal of Establishment</h3>
+                <br><br><br><br><br>
+            </div>
+             <div class="btn" style="display: flex; justify-content: end;">
+
+                 <button type="submit" style="text-align: center; padding: 10px ; border-radius: 5px ; background-color: rgb(14, 151, 105); font-weight: 600; font-size: 22px;">Submit </button>
+             </div>
+             <br><br>
+        </div>
+    </form>
+</body>
+
+</html>

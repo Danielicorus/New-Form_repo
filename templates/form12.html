@@ -17,6 +17,8 @@
             <img src="{{url_for('static' , filename='imgs/formno12b.PNG')}}" alt="" class="img1">
             <p onclick="window.print()" id="printout">printout</p><br>
             <a href="{{url_for('homepage')}}" id="backtohomepage">back to homepage</a>
+            <input type="text" name="end_year" class="endyear" id="" onfocus="(this.type='date')"
+                onblur="if(!this.value) this.type='text'" max="9999-12-31">
             <input type="text" name="name_and_address" id="" class="nameandaddress"><br>
             <input type="text" name="permanent_accountno" id="" class="permanentaccountno"><br>
             <input type="text" name="residential_status" id="" class="residentialstatus"><br>
@@ -34,16 +36,18 @@
             <input type="text" name="remark" placeholder="11" id="" class="r11">
             <input type="text" name="your_name" id="" placeholder="n1" class="yourname">
             <input type="text" name="verified_today" id="" class="verifiedtoday" onfocus="(this.type='date')"
-                onblur="if(!this.value) this.type='text'" max="9999-12-31">
+                onblur="if(!this.value) this.type='text'" max="9999-12-31"><br>
             <input type="text" name="day_of_year" id="" class="dayofyear" onfocus="(this.type='date')"
-            onblur="if(!this.value) this.type='text'" max="9999-12-31"><br>
+                onblur="if(!this.value) this.type='text'" max="9999-12-31"><br>
             <!-- <input type="text" name="" id="" class=""> -->
             <img src="{{url_for('static' , filename='imgs/formno121b.PNG')}}" alt="" class="img2">
             <input type="text" name="name_emp_address" id="name_empa_ddress" placeholder="" class="nameempaddress">
             <input type="text" name="permanent_account" id="" placeholder="" class="permanentaccount">
-            <input type="text" name="year_ending" id="" placeholder="" class="endingyear" onfocus="(this.type='date')"
-                onblur="if(!this.value) this.type='text'" max="9999-12-31"> <br>
-           
+            <input type="text" name="year_endingfrom" id="" placeholder="" class="endingyear"
+                onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" max="9999-12-31">
+            <input type="text" name="year_endingto" id="" placeholder="" class="endingyearto"
+                onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" max="9999-12-31"> <br>
+
 
             <input type="text" name="name_of_emp" id="" placeholder="1" class="nameemp1">
             <input type="text" name="tan_of_employer" id="" placeholder="2" class="tanemp2">
@@ -67,16 +71,16 @@
                 onblur="if(!this.value) this.type='text'" max="9999-12-31">
             <input type="text" name="gross_amount" id="" class="grossamount">
             <input type="text" name="qualifying_amount" id="" class="qualifyingamount">
-            <input type="submit" value="submit">
-   
+            <input type="submit" value="submit" class="submit">
 
 
 
 
 
 
-    </div>
-</form>
+
+        </div>
+    </form>
 
 </body>
 

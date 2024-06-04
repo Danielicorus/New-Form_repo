@@ -10,21 +10,21 @@ app = Flask(__name__)
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''  # Replace with your MySQL password
-app.config['MYSQL_DATABASE_DB'] = 'providentfundsandfurnishing'
+app.config['MYSQL_DATABASE_DB'] = 'providentfundsandfurnishings'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 mysql = MySQL(app)
 
 con = mysql.connect()
 cur = con.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS providentfund (id INT AUTO_INCREMENT PRIMARY KEY, mr_ms_mrs text, name text, dateofbirth date, fatherandhusband text, relationinrespect text, gender text, mobilenumber integer, email text, emppovidentfunds text, emppensionscheme text, uaborprevious text, account text, dateofexit date, certificateissued text, pensionpayment text, internationworker text, india text, otherthanindia text, passport text,  passportfrom date , passportto date, educationalqualification text, maritalstatus varchar(225), specially varchar(225), category varchar(225), bankkycnumber text, banknumber text, bankremark text, nprkycnumber text, nprnumber text, nprremark text, permanentkycnumber text, permanentnumber text,  permanentremark text, passportkycnumber text, passportnumber text, passportremark text, drivinglicencekycnumber text, drivinglicencenumber text , drivinglicenceremark text, electioncardkycnumber text, electioncardnumber text, electioncardremark text,  rationcardkycnumber text, rationcardnumber text, rationcardremark text, esiccardkycnumber text, esiccardnumber text, esiccardremark text)")
+cur.execute("CREATE TABLE IF NOT EXISTS providentfund (id INT AUTO_INCREMENT PRIMARY KEY, mr_ms_mrs text, name text, dateofbirth date, fatherandhusband text, relationinrespect text, gender text, mobilenumber integer, email text, emppovidentfunds text, emppensionscheme text, uaborprevious text, account text, dateofexit date, certificateissued text, pensionpayment text, internationworker text, india text, otherthanindia text, passport text,  passportfrom date , passportto date, educationalqualification text, maritalstatus varchar(225), specially varchar(225), category varchar(225), bankkycnumber text, banknumber text, bankremark text, nprkycnumber text, nprnumber text, nprremark text, permanentkycnumber text, permanentnumber text,  permanentremark text, passportkycnumber text, passportnumber text, passportremark text, drivinglicencekycnumber text, drivinglicencenumber text , drivinglicenceremark text, electioncardkycnumber text, electioncardnumber text, electioncardremark text,  rationcardkycnumber text, rationcardnumber text, rationcardremark text, esiccardkycnumber text, esiccardnumber text, esiccardremark text, today_date date, your_place text, your_name text, join_date date, UAN_ALLOTED text, today_dates date)")
 cur.execute("CREATE TABLE IF NOT EXISTS newjoiningforminsurance (id INT AUTO_INCREMENT PRIMARY KEY, Name text, Designation text, PresentAddress text, PermanentAddress text, Namefather text, NameMother text, PAN text, DateJoining date, DateBirth date, personalmobile text, personalemail text, Department text, Location text, MaritalStatus text, EPFNOwithPreviousEmployer text, nameofSpouseandChildren text, Relationship text, DateofBirth date, nameofSpouseandChildren1 text, Relationship1 text, DateofBirth1 date, nameofSpouseandChildren2 text, Relationship2 text, DateofBirth2 text, nameofSpouseandChildren3 text, Relationship3 text, DateofBirth3 date)")
 cur.execute("CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY , username text , password text)")
 cur.execute("CREATE TABLE IF NOT EXISTS admin (id INT AUTO_INCREMENT PRIMARY KEY , HRADMIN text , passwords text)")
 cur.execute("CREATE TABLE IF NOT EXISTS informationform (id INT AUTO_INCREMENT PRIMARY KEY , photoimage LONGBLOB, first_name text, middle_name text, surname text, employee_code text, reporting_manager text, department text, permanent_address text, PostalCodeorPinCode text, Present_Address text, dateofbirth date, sex text, birthplace date, bloodgroup text, nationality text, religion text,  pan text, language varchar(225), maritalstatus varchar(225), marriage_date date, spouse_name text, spouse_dob date, children_count integer, first_child_name text, first_child_dob date,  second_child_name text, second_child_dob date, third_child_name text,  third_child_dob date, contact_number text,  mobile_number text, emergency_contact text, email_id text, SSCName text, SSCSpecialization text, SSCSPassingYearMonth text, SSCPercentage text, SSCGrade text, HSCName text, HSCSpecialization text,    HSCPassingYearMonth text, HSCPercentage text , HSCGrade text, GraduationName text, GraduationSpecialization text,   GraduationPassingYearMonth text, GraduationPercentage text, GraduationGrade text, DiplomaName text, DiplomaSpecialization text, DiplomaPassingYearMonth text, DiplomaPercentage text, DiplomaGrade text, DegreeName text, DegreeSpecialization text,  DegreePassingYearMonth text, DegreePercentage text, DegreeGrade text, MastersorPostGraduationName text , MastersorPostGraduationSpecialization text,  MastersorPostGraduationPassingYearMonth text, MastersorPercentage text, MastersorGrade text, DoctorateName text, DoctorateSpecialization text,  DoctoratePassingYearMonth text, DoctoratePercentage text, DoctorateGrade text, OthersName text, OthersSpecialization text,   OthersPassingYearMonth text,  OthersPercentage text, OthersGrade text, aOrganization text, aDesignation text, aLocation text, aDurationfrom date, aDurationto date, bOrganization text, bDesignation text, bLocation text, bDurationfrom date, bDurationto date, cOrganization text, cDesignation text, cLocation text, cDurationfrom date, cDurationto date, dOrganization text, dDesignation text, dLocation text, dDurationfrom date, dDurationto date, eOrganization text, eDesignation text, eLocation text, eDurationfrom date, eDurationto date, todaydate date)")
-cur.execute("CREATE TABLE IF NOT EXISTS inductionforminsurance (id INT AUTO_INCREMENT PRIMARY KEY ,Employee_name text, Employee_ID text, Department text, Joining_Date date, Designation text, HRorAdminDayandTime date, HRorAdminEmployeeSign varchar(225), HRorAdminProcessOwnerSign varchar(225), HRorAdminDayandTime1 date, HRorAdminEmployeeSign1 varchar(225), HRorAdminProcessOwnerSign1 varchar(225),  HRorAdminDayandTime2 date, HRorAdminEmployeeSign2 varchar(225), HRorAdminProcessOwnerSign2 varchar(225), HRorAdminDayandTime3 date, HRorAdminEmployeeSign3 varchar(225), HRorAdminProcessOwnerSign3 varchar(225), HRorAdminDayandTime4 date, HRorAdminEmployeeSign4 varchar(225), HRorAdminProcessOwnerSign4 varchar(225), HRorAdminDayandTime5 date, HRorAdminEmployeeSign5 varchar(225), HRorAdminProcessOwnerSign5 varchar(225), HRorAdminDayandTime6 date, HRorAdminEmployeeSign6 varchar(225), HRorAdminProcessOwnerSign6 varchar(225), HRorAdminDayandTime7 date, HRorAdminEmployeeSign7 varchar(225), HRorAdminProcessOwnerSign7 varchar(225), HRorAdminDayandTime8 date, HRorAdminEmployeeSign8 varchar(225), HRorAdminProcessOwnerSign8 varchar(225), HRorAdminDayandTime9 date, HRorAdminEmployeeSign9 varchar(225), HRorAdminProcessOwnerSign9 varchar(225), HRorAdminDayandTime10 date, HRorAdminEmployeeSign10 varchar(225), HRorAdminProcessOwnerSign10 varchar(225), Employee_FeedbacK text , Employee_Signature text, Date1 date, Date2 date)")
+cur.execute("CREATE TABLE IF NOT EXISTS inductionforminsurance (id INT AUTO_INCREMENT PRIMARY KEY ,Employee_name text, Employee_ID text, Department text, Joining_Date date, Designation text, HRorAdminDayandTime date, HRorAdminEmployeeSign varchar(225), HRorAdminProcessOwnerSign varchar(225), Quality_EngineeringDayandTime1 date, Quality_EngineeringEmployeeSign1 varchar(225), Quality_EngineeringProcessOwnerSign1 varchar(225),  Finance_ControlDayandTime2 date, Finance_ControlEmployeeSign2 varchar(225), Finance_ControlProcessOwnerSign2 varchar(225), Project_ManagementDayandTime3 date, Project_ManagementEmployeeSign3 varchar(225), Project_ManagementProcessOwnerSign3 varchar(225), Engineering_DayandTime4 date, Engineering_EmployeeSign4 varchar(225), Engineering_ProcessOwnerSign4 varchar(225), SIBM_DayandTime5 date, SIBM_EmployeeSign5 varchar(225), SIBM_ProcessOwnerSign5 varchar(225), Procurement_DayandTime6 date, Procurement_EmployeeSign6 varchar(225), Procurement_ProcessOwnerSign6 varchar(225), Proposal_ServiceDayandTime7 date, Proposal_ServiceEmployeeSign7 varchar(225), Proposal_ServiceProcessOwnerSign7 varchar(225), Refractory_DayandTime8 date, Refractory_EmployeeSign8 varchar(225), Refractory_ProcessOwnerSign8 varchar(225), PMO_DayandTime9 date,PMO_EmployeeSign9 varchar(225), PMO_ProcessOwnerSign9 varchar(225), IT_DayandTime10 date, IT_EmployeeSign10 varchar(225), IT_ProcessOwnerSign10 varchar(225), Employee_FeedbacK text , Employee_Signature text, Date1 date, Date2 date)")
 cur.execute("CREATE TABLE IF NOT EXISTS employeeoboarding (id INT AUTO_INCREMENT PRIMARY KEY, Form_No text, Date_of_Issue date, Revision text, Approved_by text, Resume BOOLEAN, Employee_Information_Form  BOOLEAN, Educational_Certificate BOOLEAN,  Relieving_Certificates_of_last_2_organizations BOOLEAN, Salary_Slips_of_last_3_months  BOOLEAN, Form_16_If_applicable BOOLEAN, Pan_Card_Mandatory BOOLEAN, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc BOOLEAN, Passport_size_Photo BOOLEAN, Permanent_Mandatory BOOLEAN, Bank_Aorc_Opening_Form_and_Formalities BOOLEAN, Current_Address_Proof  BOOLEAN, NDAorService_Agreement  BOOLEAN,  Entry_in_Keka BOOLEAN,  Appointment_Letter  BOOLEAN, Entry_in_Dax360  BOOLEAN, Entry_in_Meytou BOOLEAN, Indirect_ariff BOOLEAN, Stationary_Notepad_and_Pen BOOLEAN,  Employee_ID_Card  BOOLEAN, Extension_list  BOOLEAN,   Visiting_Cards_if_pplicable  BOOLEAN,  Adhaar_Card_Copy BOOLEAN, Appointment_Letter_Copy BOOLEAN, Nomination_Letter  BOOLEAN, Universal_Account_Number_UAN  BOOLEAN, Provident_Fund_Account_Number_PF  BOOLEAN, Bank_Account_No_and_Name  BOOLEAN, PAN_Card_Copy BOOLEAN, Seating_Arrangement  BOOLEAN, Laptopa_and_Desktop_and_Accessories  BOOLEAN, Phone_Extension  BOOLEAN, Official_Email_ID_Creation BOOLEAN, Group_and_Location_Email_Alias BOOLEAN, Sim_Card  BOOLEAN,  Head_Phone BOOLEAN, Screen BOOLEAN,  Employee_Access_Card_and_Biometrix_Access BOOLEAN,  Insurance_Form BOOLEAN, Insurance_Form1 BOOLEAN)")
-cur.execute("CREATE TABLE IF NOT EXISTS taxdeduction  (id INT AUTO_INCREMENT PRIMARY KEY , name_and_address text, permanent_accountno text, residential_status text, name_and_address_employer text, tan_of_employer_ito  text, permanent_account_number text, period_of_employment date, total_amount_of_salary text, total_amount_house_allowance text, value_of_perquistes_and_amount text, total_of_colume text, amount_deducted_in_respesct text, total_of_tax_deducteddu_in_the_year  text, remark text, your_name text, verified_today date, day_of_year date, name_emp_address text, permanent_account text, year_ending date, name_of_emp text, tan_of_employer text, acommodation_is_unfurnished  text, value_of_acommodation  text,  cost_of_furniture  text, perquisite_value_of_furniture  text, total_of_column1 text, rent  text, value_of_perquisite text, name_of_employee text, whether_any_conveyance text, remuneration12 text, value13 text, estimated_value14 text, employer_contribution15 text, interest16 text, total_of_columns17 text, policy text, Date5 date, gross_amount text, qualifying_amount text)")
+cur.execute("CREATE TABLE IF NOT EXISTS taxdeduction  (id INT AUTO_INCREMENT PRIMARY KEY ,  end_year date, name_and_address text, permanent_accountno text, residential_status text, name_and_address_employer text, tan_of_employer_ito  text, permanent_account_number text, period_of_employment date, total_amount_of_salary text, total_amount_house_allowance text, value_of_perquistes_and_amount text, total_of_colume text, amount_deducted_in_respesct text, total_of_tax_deducteddu_in_the_year  text, remark text, your_name text, verified_today date, day_of_year date, name_emp_address text, permanent_account text, year_endingfrom date,  year_endingto date,  name_of_emp text, tan_of_employer text, acommodation_is_unfurnished  text, value_of_acommodation  text,  cost_of_furniture  text, perquisite_value_of_furniture  text, total_of_column1 text, rent  text, value_of_perquisite text, name_of_employee text, whether_any_conveyance text, remuneration12 text, value13 text, estimated_value14 text, employer_contribution15 text, interest16 text, total_of_columns17 text, policy text, Date5 date, gross_amount text, qualifying_amount text)")
 con.commit()
 cur.close()
 con.close()
@@ -63,6 +63,20 @@ def login():
             return f"An error occurred: {str(e)}"
     return render_template("loginpage.html")
 
+@app.route('/register', methods=['POST','GET'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        try:
+            con = mysql.connect()
+            cur = con.cursor()
+            cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
+            con.commit()
+        except Exception as e:
+            return f"{e}" 
+        return render_template("signup.html")
+
 
 @app.route('/admin')
 def admin():
@@ -85,7 +99,7 @@ def adminadd():
             if data:
                 return render_template("HRadmin.html")
             else:
-                return "Login failed. Please check your username and password."
+                return "Login failed. Please check your HRAdmin and password."
         except mysql.connector.Error as err:
             return f"MySQL Error: {err}"
         except Exception as e:
@@ -93,9 +107,9 @@ def adminadd():
     return render_template("loginadmin.html")
 
 
-@app.route('/homepages')
-def homepages():
-    return render_template("HRadmin.html")
+# @app.route('/homepages')
+# def homepages():
+#     return render_template("HRadmin.html")
     
 
 @app.route('/showusers')
@@ -146,7 +160,7 @@ def homepage():
 
 @app.route('/form')
 def form():
-    return render_template("form11.html")
+    return render_template("PFform.html")
 
 
 
@@ -174,10 +188,10 @@ def add_user():
             passportnumber = request.form['passportnumber']
             passportvalid = request.form['passportvalid']
             passportvalid1 = request.form['passportvalid1']
-            educationalqualification = request.form.get('educationalqualification')
+            educationalqualification = ', '.join(request.form.getlist('educationalqualification'))
             maritalstatus = request.form.get('maritalstatus')
             specially = request.form.get('specially')
-            abled =request.form.get('abled')  # Convert list to string
+            abled = ', '.join(request.form.getlist('abled')) # Convert list to string
             bankkycnumber = request.form['bankkycnumber']
             banknumber = request.form['banknumber']
             bankremark = request.form['bankremark']
@@ -202,6 +216,12 @@ def add_user():
             esiccardkycnumber = request.form['esiccardkycnumber']
             esiccardnumber = request.form['esiccardnumber']
             esiccardremark = request.form['esiccardremark']
+            today_date = request.form['today_date']
+            your_place = request.form['your_place']
+            your_name = request.form['your_name'] 
+            join_date = request.form['join_date']
+            UAN_ALLOTED = request.form['UAN_ALLOTED']
+            today_dates = request.form['today_dates']
             try:
             # Insert data into the table
                     con = mysql.connect()
@@ -216,11 +236,12 @@ def add_user():
                 permanentkycnumber, permanentnumber, permanentremark, passportkycnumber, passportnumber, 
                 passportremark, drivinglicencekycnumber, drivinglicencenumber, drivinglicenceremark, 
                 electioncardkycnumber, electioncardnumber, electioncardremark, rationcardkycnumber, 
-                rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, esiccardremark
+                rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, esiccardremark, today_date, 
+                your_place, your_name, join_date, UAN_ALLOTED, today_dates
             ) VALUES (
                 %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
                 %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-                %s, %s, %s, %s, %s, %s, %s
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
             )
         """, (
             choice1, name1, dob,fatherandhusband, choice3, choice4, mobile, email, choice5, choice6, choice7, 
@@ -231,13 +252,22 @@ def add_user():
             passportnumber, passportremark, drivinglicencekycnumber, drivinglicencenumber, 
             drivinglicenceremark, electioncardkycnumber, electioncardnumber, electioncardremark, 
             rationcardkycnumber, rationcardnumber, rationcardremark, esiccardkycnumber, esiccardnumber, 
-            esiccardremark
+            esiccardremark ,today_date, your_place, your_name, join_date, UAN_ALLOTED, today_dates
         ))
 
                     con.commit()
-            
+                    # emp_id = cur.lastrowid
+                    # cur.close()
+                    # con.close()
 
+                    # Generate a unique filename for the form (timestamp + emp_id)
+                    # timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+                    # unique_filename = f"{timestamp}_emp_{emp_id}.pdf"
+
+                    # Save the form data to a file
+                    # save_form_data_to_file(request.form, unique_filename)
                     return jsonify(success=True, message="Data inserted successfully", download_url=url_for('download_data'))
+                    # return jsonify(success=True, message="Data inserted successfully", download_url=url_for('download_data', filename=unique_filename))
             except Exception as e:
                     return jsonify(success=False, message=str(e))
 
@@ -255,8 +285,7 @@ def download_data():
         cursor.close()
         con.close()
 
-        # Write data to a CSV file
-        csv_file_path = 'F:\html folder\dciform2\data.csv'
+        csv_file_path = r'F:\html folder\dciform2\data.csv'
         with open(csv_file_path, 'w', newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerow(headers)
@@ -265,6 +294,24 @@ def download_data():
         return send_file(csv_file_path, as_attachment=True)
     except Exception as e:
             return str(e)
+        
+        
+# def save_form_data_to_file(form_data, filename):
+#     # Define the directory where forms will be saved
+#     forms_directory = "forms"
+
+#     # Create the directory if it doesn't exist
+#     if not os.path.exists(forms_directory):
+#         os.makedirs(forms_directory)
+
+#     # Write the form data to a file
+#     form_file_path = os.path.join(forms_directory, filename)
+#     with open(form_file_path, 'w') as file:
+#         for key, value in form_data.items():
+#             file.write(f"{key}: {value}\n")
+
+#     # Optionally, you can return the file path if needed
+#     return form_file_path
     
     
     
@@ -276,6 +323,7 @@ def forms():
 @app.route('/forminserts', methods=['POST'])
 def forminserts():
     if request.method=='POST':
+        end_year = request.form["end_year"]
         name_and_address = request.form["name_and_address"]
         permanent_accountno = request.form["permanent_accountno"]
         residential_status = request.form["residential_status"]
@@ -295,7 +343,8 @@ def forminserts():
         day_of_year = request.form["day_of_year"]
         name_emp_address = request.form["name_emp_address"]
         permanent_account = request.form["permanent_account"]
-        year_ending = request.form["year_ending"]
+        year_endingfrom = request.form["year_endingfrom"]
+        year_endingto = request.form["year_endingto"]
         name_of_emp = request.form["name_of_emp"]
         tan_of_employer = request.form["tan_of_employer"]
         acommodation_is_unfurnished = request.form["acommodation_is_unfurnished"]
@@ -324,25 +373,25 @@ def forminserts():
             cur = con.cursor()
             cur.execute("""
                 INSERT INTO taxdeduction (
-                    name_and_address, permanent_accountno, residential_status, 
+                    end_year,name_and_address, permanent_accountno, residential_status, 
                     name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
                     period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
                     value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
                     total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
-                    day_of_year, name_emp_address, permanent_account, year_ending, name_of_emp, 
+                    day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto,  name_of_emp, 
                     tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
                     cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
                     value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
                     value13, estimated_value14, employer_contribution15, interest16, 
                     total_of_columns17, policy, Date5, gross_amount, qualifying_amount
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
+                ) VALUES (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
             """, (
-                name_and_address, permanent_accountno, residential_status, 
+                end_year, name_and_address, permanent_accountno, residential_status, 
                 name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
                 period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
                 value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
                 total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
-                day_of_year, name_emp_address, permanent_account, year_ending, name_of_emp, 
+                day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp, 
                 tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
                 cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
                 value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
@@ -606,31 +655,95 @@ def newjoininginserts():
             return str(e)
         
         
-@app.route('/inductionform')
-def inductionform():
+@app.route('/newempinductionform')
+def newempinductionform():
     return render_template("induction.html")
 
 
-# @app.route('/inductioninserts', methods=['POST'])
-# def inductioninserts():
-#     if request.method=='POST':
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
-#         Employee_name=request.form["Employee_name"]
+@app.route('/inductioninserts', methods=['POST'])
+def inductioninserts():
+    if request.method=='POST':
+        Employee_name = request.form.get("Employee_name")
+        Employee_ID = request.form.get("Employee_ID")
+        Department = request.form.get("Department")
+        Joining_Date = request.form.get("Joining_Date")
+        Designation = request.form.get("Designation")
+        HRorAdminDayandTime = request.form.get("HRorAdminDayandTime")
+        HRorAdminEmployeeSign = request.form.get("HRorAdminEmployeeSign")
+        HRorAdminProcessOwnerSign = request.form.get("HRorAdminProcessOwnerSign")
+        Quality_EngineeringDayandTime1 = request.form.get("Quality_EngineeringDayandTime1")
+        Quality_EngineeringEmployeeSign1 = request.form.get("Quality_EngineeringEmployeeSign1")
+        Quality_EngineeringProcessOwnerSign1 = request.form.get("Quality_EngineeringProcessOwnerSign1")
+        Finance_ControlDayandTime2 = request.form.get("Finance_ControlDayandTime2")
+        Finance_ControlEmployeeSign2 = request.form.get("Finance_ControlEmployeeSign2")
+        Finance_ControlProcessOwnerSign2 = request.form.get("Finance_ControlProcessOwnerSign2")
+        Project_ManagementDayandTime3 = request.form.get("Project_ManagementDayandTime3")
+        Project_ManagementEmployeeSign3 = request.form.get("Project_ManagementEmployeeSign3")
+        Project_ManagementProcessOwnerSign3 = request.form.get("Project_ManagementProcessOwnerSign3")
+        Engineering_DayandTime4 = request.form.get("Engineering_DayandTime4")
+        Engineering_EmployeeSign4 = request.form.get("Engineering_EmployeeSign4")
+        Engineering_ProcessOwnerSign4 = request.form.get("Engineering_ProcessOwnerSign4")
+        SIBM_DayandTime5 = request.form.get("SIBM_DayandTime5")
+        SIBM_EmployeeSign5 = request.form.get("SIBM_EmployeeSign5")
+        SIBM_ProcessOwnerSign5 = request.form.get("SIBM_ProcessOwnerSign5")
+        Procurement_DayandTime6 = request.form.get("Procurement_DayandTime6")
+        Procurement_EmployeeSign6 = request.form.get("Procurement_EmployeeSign6")
+        Procurement_ProcessOwnerSign6 = request.form.get("Procurement_ProcessOwnerSign6")
+        Proposal_ServiceDayandTime7 = request.form.get("Proposal_ServiceDayandTime7")
+        Proposal_ServiceEmployeeSign7 = request.form.get("Proposal_ServiceEmployeeSign7")
+        Proposal_ServiceProcessOwnerSign7 = request.form.get("Proposal_ServiceProcessOwnerSign7")
+        Refractory_DayandTime8 = request.form.get("Refractory_DayandTime8")
+        Refractory_EmployeeSign8 = request.form.get("Refractory_EmployeeSign8")
+        Refractory_ProcessOwnerSign8 = request.form.get("Refractory_ProcessOwnerSign8")
+        PMO_DayandTime9 = request.form.get("PMO_DayandTime9")
+        PMO_EmployeeSign9 = request.form.get("PMO_EmployeeSign9")
+        PMO_ProcessOwnerSign9 = request.form.get("PMO_ProcessOwnerSign9")
+        IT_DayandTime10 = request.form.get("IT_DayandTime10")
+        IT_EmployeeSign10 = request.form.get("IT_EmployeeSign10")
+        IT_ProcessOwnerSign10 = request.form.get("IT_ProcessOwnerSign10")
+        Employee_FeedbacK = request.form.get("Employee_FeedbacK")
+        Employee_Signature = request.form.get("Employee_Signature")
+        Date1 = request.form.get("Date1")
+        Date2 = request.form.get("Date2")
+        try:
+            con = mysql.connect()
+            cur = con.cursor()
+            cur.execute(
+                """INSERT INTO inductionforminsurance (
+                    Employee_name, Employee_ID, Department, Joining_Date, Designation, HRorAdminDayandTime, 
+                    HRorAdminEmployeeSign, HRorAdminProcessOwnerSign, Quality_EngineeringDayandTime1, 
+                    Quality_EngineeringEmployeeSign1, Quality_EngineeringProcessOwnerSign1, Finance_ControlDayandTime2, 
+                    Finance_ControlEmployeeSign2, Finance_ControlProcessOwnerSign2, Project_ManagementDayandTime3, 
+                    Project_ManagementEmployeeSign3, Project_ManagementProcessOwnerSign3, Engineering_DayandTime4, 
+                    Engineering_EmployeeSign4, Engineering_ProcessOwnerSign4, SIBM_DayandTime5, SIBM_EmployeeSign5, 
+                    SIBM_ProcessOwnerSign5, Procurement_DayandTime6, Procurement_EmployeeSign6, Procurement_ProcessOwnerSign6, 
+                    Proposal_ServiceDayandTime7, Proposal_ServiceEmployeeSign7, Proposal_ServiceProcessOwnerSign7, 
+                    Refractory_DayandTime8, Refractory_EmployeeSign8, Refractory_ProcessOwnerSign8, PMO_DayandTime9, 
+                    PMO_EmployeeSign9, PMO_ProcessOwnerSign9, IT_DayandTime10, IT_EmployeeSign10, IT_ProcessOwnerSign10, 
+                    Employee_FeedbacK, Employee_Signature, Date1, Date2
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                (
+                    Employee_name, Employee_ID, Department, Joining_Date, Designation, HRorAdminDayandTime, 
+                    HRorAdminEmployeeSign, HRorAdminProcessOwnerSign, Quality_EngineeringDayandTime1, 
+                    Quality_EngineeringEmployeeSign1, Quality_EngineeringProcessOwnerSign1, Finance_ControlDayandTime2, 
+                    Finance_ControlEmployeeSign2, Finance_ControlProcessOwnerSign2, Project_ManagementDayandTime3, 
+                    Project_ManagementEmployeeSign3, Project_ManagementProcessOwnerSign3, Engineering_DayandTime4, 
+                    Engineering_EmployeeSign4, Engineering_ProcessOwnerSign4, SIBM_DayandTime5, SIBM_EmployeeSign5, 
+                    SIBM_ProcessOwnerSign5, Procurement_DayandTime6, Procurement_EmployeeSign6, Procurement_ProcessOwnerSign6, 
+                    Proposal_ServiceDayandTime7, Proposal_ServiceEmployeeSign7, Proposal_ServiceProcessOwnerSign7, 
+                    Refractory_DayandTime8, Refractory_EmployeeSign8, Refractory_ProcessOwnerSign8, PMO_DayandTime9, 
+                    PMO_EmployeeSign9, PMO_ProcessOwnerSign9, IT_DayandTime10, IT_EmployeeSign10, IT_ProcessOwnerSign10, 
+                    Employee_FeedbacK, Employee_Signature, Date1, Date2
+                )
+            )
+            con.commit()
+            cur.close()
+            con.close()
+            return "Data inserted successfully"
+        except Exception as e:
+            return str(e)
+        
 
 
 

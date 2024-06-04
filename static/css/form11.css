@@ -383,31 +383,60 @@
     
 
 }
-/* 
-.joined{
+ 
+.today_date{
     border: 1px solid black;
     width: 170px;
     height: 24px;
     position: relative;
-    top:-330px;
-    left: -470px;
+    top:-586px;
+    left: 120px;
 }
-.memberid1{
+.your_place{
     border: 1px solid black;
     width: 183px;
     height: 24px;
     position: relative;
-    top:-855px;
-    left:180px ;
+    top:-537px;
+    left:-30px ;
 }
-.yourname{
+
+.your_name{
     border: 1px solid black;
-    width: 183px;
+    width: 133px;
     height: 24px;
     position: relative;
-    top:-330px;
-    left: -914px;
-} */
+    top:-360px;
+    left: -2%;
+} 
+
+
+.join_date{
+    border: 1px solid black;
+    width: 110px;
+    height: 24px;
+    position: relative;
+    top:-356px;
+    left: 120px;
+}
+
+.UAN_ALLOTED{
+    border: 1px solid black;
+    width: 120px;
+    height: 24px;
+    position: relative;
+    top:-268px;
+    left: 150px;
+}
+
+.today_dates{
+    border: 1px solid black;
+    width: 120px;
+    height: 24px;
+    position: relative;
+    top:380px;
+    left:-680px;
+}
 
 
 

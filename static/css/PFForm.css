@@ -1,0 +1,40 @@
+.container {
+  margin: 0px 50px 0px 50px;
+  text-transform: uppercase;
+}
+#backtohomepage {
+  text-decoration: none;
+}
+.ordered-list {
+ 
+  font-size: 20px !important;
+  margin-top: 20px;
+  /* text-transform: capitalize; */
+} p{
+  font-size: 20px !important;
+}
+.input {
+  border-radius: 0%;
+  border: none;
+  font-weight: 700;
+  font-size: 20px !important;
+}
+
+td {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+th {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+@media Print{
+  .btn{
+     display: none;
+ 
+  }
+}

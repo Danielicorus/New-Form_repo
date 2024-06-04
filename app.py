@@ -37,6 +37,26 @@ def index():
 def logins():
     return render_template("loginpage.html")
 
+# @app.route('/signups')
+# def signups():
+#     return render_template("signup.html")
+
+
+@app.route('/register', methods=['POST','GET'])
+def register():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        try:
+            con = mysql.connect()
+            cur = con.cursor()
+            cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
+            con.commit()
+        except Exception as e:
+            return f"{e}" 
+        return render_template("managemployee.html")
+
+
 
 
 @app.route('/login', methods=['POST'])
@@ -63,19 +83,9 @@ def login():
             return f"An error occurred: {str(e)}"
     return render_template("loginpage.html")
 
-@app.route('/register', methods=['POST','GET'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        try:
-            con = mysql.connect()
-            cur = con.cursor()
-            cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
-            con.commit()
-        except Exception as e:
-            return f"{e}" 
-        return render_template("signup.html")
+
+
+
 
 
 @app.route('/admin')

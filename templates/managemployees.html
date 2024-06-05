@@ -52,18 +52,14 @@
         </div><br>
 
     </div>
+    <!-- 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Employee</button>
-    <form action="{{url_for('showusers')}}" method="post">
-        <input type="search" name="username" style="width:auto; padding:8px 10px;" id="">
-        <input type="submit" value="search" style="width:auto;  padding:8px 10px; background:rgb(127, 197, 127);">
-    </form>
-
 
     <div id="id01" class="modal">
         <div class="container">
             <span onclick="document.getElementById('id01').style.display='none'" class="close"
                 title="Close Modal">&times;</span>
-            <form class="modal-content" action="{{url_for('register')}}" method="post">
+            <form class="modal-content" action="" method="post">
                 <div class="signup"> Add New Employee</div>
                 <h1>New Employee Addition</h1>
                 <p>Please fill in this form to create new employee credential.</p>
@@ -114,37 +110,33 @@
                 }
             }
         </script>
-    </div>
-    {% if data %}
-    <table border="1px" width="100%" align="centre">
+    </div> -->
+
+    <table border="1px" width="100%">
         <tr>
             <td>S.No</td>
             <!-- <td>New Employee Name</td> -->
             <td>Email</td>
             <td>password</td>
-            <td>Onboarding</td>
-           
 
         </tr>
         {% for show in data %}
         <tr>
-            <!-- <td>{{loop.index}}</td> -->
+
             <td>{{show[0]}}</td>
             <td>{{show[1]}}</td>
             <td>{{show[2]}} </td>
             <td><a href="{{url_for('EmployeeOboarding')}}">click</a></td>
-           
 
 
             <!-- <td>{{show[0]}}</td> -->
 
         </tr>
         {% endfor %}
-
+        
 
 
     </table>
-    {% endif %}
 </body>
 
 </html>

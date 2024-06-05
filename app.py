@@ -122,13 +122,50 @@ def adminadd():
 #     return render_template("HRadmin.html")
     
 
-@app.route('/showusers')
+@app.route('/showusers' ,methods=['GET' , 'POST'])
 def showusers():
+        data = None
+        try:
+            con = mysql.connect()
+            cur = con.cursor()
+            if request.method == 'POST':
+                username = request.form.get("username")
+                cur.execute("SELECT username, password FROM users WHERE username LIKE %s", ("%" + username + "%",))
+            else:
+                cur.execute("SELECT * FROM users")
+            
+            data = cur.fetchall()
+            cur.close()
+            con.close()
+        except Exception as e:
+            return str(e)
+
+        return render_template("managemployee.html", data=data)
+
+
+@app.route('/showuser')
+def showuser():
      con = mysql.connect()
      cur=con.cursor()
      cur.execute("SELECT * from users")
      data = cur.fetchall()
-     return render_template("managemployee.html" , data=data)
+     return render_template("managemployees.html", data=data)
+ 
+# @app.route('/search',methods=['GET' , 'POST']) 
+# def search():
+#     data = None
+#     if request.method == 'POST':
+#         username = request.form.get("username")
+#         try:
+#             con = mysql.connect()
+#             cur = con.cursor()
+#             cur.execute("SELECT username, password FROM users WHERE username LIKE %s", ("%" + username + "%",))
+#             data = cur.fetchall()
+#             cur.close()
+#             con.close()
+#         except Exception as e:
+#             return str(e)
+#     return render_template('managemployee.html', data=data)
  
 
 @app.route('/employee_submitted')

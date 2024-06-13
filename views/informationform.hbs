@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/informationform.css">
+  <title>Employee Information Form</title>
+
+</head>
+
+<body>
+  <form action="/informationforminsert" method="post" enctype="multipart/form-data">
+    <div class="box">
+      DANIELI CORUS<br>
+      <span class="smalls">HRMS Mandatory Information FormIndia Pvt. Ltd</span>
+      <span class="upload">
+        <input type="file" id="imageInput" accept="image/jpeg, image/png" name="photoimage"
+          onchange="handleImageUpload()">
+      </span>
+      <div class="box2">
+        <img id="displayedImage" src="#" alt="Uploaded Image" style="display: none;" width="130px" height="130px">
+        <script>
+          function handleImageUpload() {
+            const imageInput = document.querySelector('#imageInput');
+            const displayedImage = document.querySelector('#displayedImage');
+
+            const file = imageInput.files[0];
+            if (file) {
+              const fileReader = new FileReader();
+              fileReader.addEventListener('load', () => {
+                const uploadedImage = fileReader.result;
+                displayedImage.src = uploadedImage;
+                displayedImage.style.display = 'block';
+              });
+
+
+              fileReader.readAsDataURL(file);
+            }
+          }
+        </script>
+      </div>
+      .
+    </div>
+
+
+    <table border="0px" class="form-table" width="300%">
+      <tr>
+        <th rowspan="3">Name of the Employee (In BLOCK LETTER)</th>
+      </tr>
+      <tr>
+        <td colspan="2">First Name</td>
+        <td colspan="2">Middle Name</td>
+        <td colspan="2">Surname</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="text" name="first_name"></td>
+        <td colspan="2"><input type="text" name="middle_name"></td>
+        <td colspan="2"><input type="text" name="surname"></td>
+      </tr>
+      <tr>
+        <th>Employee Code:</th>
+        <td colspan="6"><input type="text" name="employee_code"></td>
+      </tr>
+      <tr>
+        <th>Reporting Manager:</th>
+        <td colspan="6"><input type="text" name="reporting_manager"></td>
+      </tr>
+      <tr>
+        <th>Department:</th>
+        <td colspan="6"><input type="text" name="department"></td>
+      </tr>
+      <tr>
+        <th>Permanent Address:</th>
+        <td colspan="6"><input type="text" name="permanent_address"></td>
+      </tr>
+      <tr>
+        <th>Postal Code/Pin Code:</th>
+        <td colspan="6"><input type="text" name="PostalCodeorPinCode"></td>
+      </tr>
+      <tr>
+        <th>Present Address:</th>
+        <td colspan="6"><input type="text" name="Present_Address:"></td>
+      </tr>
+      <tr>
+        <th>DOB (DD/MM/YYYY):</th>
+        <td colspan="6"><input type="text" name="dateofbirth" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+      </tr>
+      <!-- <tr>
+        <th colspan="2">Personal Details</th>
+      </tr> -->
+      <tr>
+        <tH>Sex</th>
+        <td colspan="6">
+          <select name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Place of Birth</th>
+        <td colspan="6"><input type="text" name="birthplace" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+      </tr>
+      <tr>
+        <th>Blood Group</th>
+        <td colspan="6"><input type="text" name="bloodgroup"></td>
+      </tr>
+      <tr>
+        <th>Nationality</th>
+        <td colspan="6"><input type="text" name="nationality"></td>
+      </tr>
+      <tr>
+        <th>Religion</th>
+        <td colspan="6"><input type="text" name="religion"></td>
+      </tr>
+      <tr>
+        <th>Permanent Account No.(PAN)</th>
+        <td colspan="6"><input type="text" name="pan"></td>
+      </tr>
+      <tr>
+        <th>Languages</th>
+        <td colspan="6">
+          <input type="checkbox" name="language" value="Read">Read
+          <input type="checkbox" name="language" value="Speak">Speak
+          <input type="checkbox" name="language" value="Write">Write
+        </td>
+      </tr>
+      <tr>
+        <th>Marital Status:</th>
+        <td><input type="checkbox" name="maritalstatus" value="Married"> Married</td>
+        <td><input type="checkbox" name="maritalstatus" value="Single"> Single</td>
+        <td>Kindly tick the relevant box.</td>
+        <th>Date of Marriage:</th>
+        <td><input type="text" name="marriage_date" max="9999-12-31" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'"></td>
+      </tr>
+      <tr>
+        <th>Spouse Name:</th>
+        <td colspan="6"><input type="text" name="spouse_name" style="width:100%;"></td>
+      </tr>
+      <tr>
+        <th>D.O.B.:</th>
+        <td colspan="6"><input type="text" name="spouse_dob" max="9999-12-31" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'"></td>
+      </tr>
+      <tr>
+        <th>No. Of Children:</th>
+        <td colspan="6"><input type="number" name="children_count" style="width:100%;"></td>
+      </tr>
+      <tr>
+        <th>1<sup>st</sup> Child Name:</th>
+        <td colspan="6"><input type="text" name="first_child_name" style="width:100%;"></td>
+      </tr>
+      <tr>
+        <th>D.O.B.:</th>
+        <td colspan="6"><input type="text" name="first_child_dob" max="9999-12-31" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'"></td>
+      </tr>
+      <tr>
+        <th>2<sup>nd</sup> Child Name:</th>
+        <td colspan="6"><input type="text" name="second_child_name" style="width:100%;"></td>
+      </tr>
+      <tr>
+        <th>D.O.B.:</th>
+        <td colspan="6"><input type="text" name="second_child_dob" max="9999-12-31" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'"></td>
+      </tr>
+      <tr>
+        <th>3<sup>rd</sup> Child Name:</th>
+        <td colspan="6"><input type="text" name="third_child_name" style="width:100%;" max="9999-12-31"></td>
+      </tr>
+      <tr>
+        <th>D.O.B.:</th>
+        <td colspan="6"><input type="text" name="third_child_dob" max="9999-12-31" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'"></td>
+      </tr>
+      <tr>
+        <th colspan="6">Contact Information</th>
+      </tr>
+      <tr>
+        <th>Contact Number</th>
+        <td colspan="6"><input type="text" name="contact_number"></td>
+      </tr>
+      <tr>
+        <th>Mobile Number</th>
+        <td colspan="6"><input type="text" name="mobile_number"></td>
+      </tr>
+      <tr>
+        <th>Emergency Contact No.</th>
+        <td colspan="6"><input type="text" name="emergency_contact"></td>
+      </tr>
+      <tr>
+        <th>Email ID</th>
+        <td colspan="6"><input type="email" name="email_id"></td>
+      </tr>
+
+      <tr>
+        <th>Qualification</th>
+        <th>Name of School/College/University</th>
+        <th>Specialization</th>
+        <th>Passing Year Month</th>
+        <!-- <th>Year</th> -->
+        <th>Percentage</th>
+        <th>Grade</th>
+      </tr>
+      <tbody>
+        <!-- Add your data rows here -->
+        <tr>
+
+          <th>S.S.C</th>
+          <td colspan="1"><input type="text" name="SSCName"></td>
+          <td colspan="1"><input type="text" name="SSCSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="SSCSPassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="SSCYear"></td> -->
+          <td colspan="1"><input type="text" name="SSCPercentage"></td>
+          <td colspan="1"><input type="text" name="SSCGrade"></td>
+        </tr>
+        <tr>
+          <th>H.S.C</th>
+          <td colspan="1"><input type="text" name="HSCName"></td>
+          <td colspan="1"><input type="text" name="HSCSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="HSCPassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="HSCYear"></td> -->
+          <td colspan="1"><input type="text" name="HSCPercentage"></td>
+          <td colspan="1"><input type="text" name="HSCGrade"></td>
+        </tr>
+        <tr>
+          <th>Graduation</th>
+          <td colspan="1"><input type="text" name="GraduationName"></td>
+          <td colspan="1"><input type="text" name="GraduationSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="GraduationPassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="GraduationYear"></td> -->
+          <td colspan="1"><input type="text" name="GraduationPercentage"></td>
+          <td colspan="1"><input type="text" name="GraduationGrade"></td>
+
+        </tr>
+        <tr>
+          <th>Diploma</th>
+          <td colspan="1"><input type="text" name="DiplomaName"></td>
+          <td colspan="1"><input type="text" name="DiplomaSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="DiplomaPassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="DiplomaYear"></td> -->
+          <td colspan="1"><input type="text" name="DiplomaPercentage"></td>
+          <td colspan="1"><input type="text" name="DiplomaGrade"></td>
+
+        </tr>
+        <tr>
+          <th>Degree</th>
+          <td colspan="1"><input type="text" name="DegreeName"></td>
+          <td colspan="1"><input type="text" name="DegreeSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="DegreePassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="DegreeYear"></td> -->
+          <td colspan="1"><input type="text" name="DegreePercentage"></td>
+          <td colspan="1"><input type="text" name="DegreeGrade"></td>
+
+        </tr>
+        <tr>
+          <th>Masters/ Post Graduation</th>
+          <td colspan="1"><input type="text" name="MastersorPostGraduationName"></td>
+          <td colspan="1"><input type="text" name="MastersorPostGraduationSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="MastersorPostGraduationPassingYearMonth">
+          </td>
+          <!-- <td colspan="1"><input type="text" name="MastersorYear"></td> -->
+          <td colspan="1"><input type="text" name="MastersorPercentage"></td>
+          <td colspan="1"><input type="text" name="MastersorGrade"></td>
+
+        </tr>
+        <tr>
+          <th>Doctorate</th>
+          <td colspan="1"><input type="text" name="DoctorateName"></td>
+          <td colspan="1"><input type="text" name="DoctorateSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="DoctoratePassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="DoctorateYear"></td> -->
+          <td colspan="1"><input type="text" name="DoctoratePercentage"></td>
+          <td colspan="1"><input type="text" name="DoctorateGrade"></td>
+
+
+        </tr>
+        <tr>
+          <th>Others</th>
+          <td colspan="1"><input type="text" name="OthersName"></td>
+          <td colspan="1"><input type="text" name="OthersSpecialization"></td>
+          <td colspan="1"><input type="text" value="month:-   year:-   " name="OthersPassingYearMonth"></td>
+          <!-- <td colspan="1"><input type="text" name="OthersYear"></td> -->
+          <td colspan="1"><input type="text" name="OthersPercentage"></td>
+          <td colspan="1"><input type="text" name="OthersGrade"></td>
+
+        </tr>
+
+
+        <tr>
+          <th>Organization</th>
+          <th>Designation</th>
+          <th>Location</th>
+          <th colspan="4">Duration</th>
+
+
+        </tr>
+        <tr>
+          <td colspan="1"><input type="text" name="aOrganization"></td>
+          <td colspan="1"><input type="text" name="aDesignation"></td>
+          <td colspan="1"><input type="text" name="aLocation"></td>
+          <td colspan="2">From: <input type="text" name="aDurationfrom" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+          <td colspan="2">To: <input type="text" name="aDurationto" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+        </tr>
+        <tr>
+          <td colspan="1"><input type="text" name=" bOrganization"></td>
+          <td colspan="1"><input type="text" name="bDesignation"></td>
+          <td colspan="1"><input type="text" name="bLocation"></td>
+          <td colspan="2">From: <input type="text" name="bDurationfrom" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+          <td colspan="2">To: <input type="text" name="bDurationto" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td colspan="1"><input type="text" name="cOrganization"></td>
+          <td colspan="1"><input type="text" name="cDesignation"></td>
+          <td colspan="1"><input type="text" name="cLocation"></td>
+          <td colspan="2">From: <input type="text" name="cDurationfrom" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+          <td colspan="2">To: <input type="text" name="cDurationto" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+
+
+        </tr>
+        <tr>
+          <td colspan="1"><input type="text" name="dOrganization"></td>
+          <td colspan="1"><input type="text" name="dDesignation"></td>
+          <td colspan="1"><input type="text" name="dLocation"></td>
+          <td colspan="2">From: <input type="text" name="dDurationfrom" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+          <td colspan="2">To: <input type="text" name="dDurationto" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+        </tr>
+        <tr>
+          <td colspan="1"><input type="text" name="eOrganization"></td>
+          <td colspan="1"><input type="text" name="eDesignation"></td>
+          <td colspan="1"><input type="text" name="eLocation"></td>
+          <td colspan="2">From: <input type="text" name="eDurationfrom" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+          <td colspan="2">To: <input type="text" name="eDurationto" placeholder="DD/MM/YYYY" max="9999-12-31"
+              onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"></td>
+        </tr>
+      </tbody>
+      <tr>
+        <td colspan="7">Hereby I confirm that the above mentioned information is true and complete to the best of my
+          knowledge.</td>
+      </tr>
+      <tr>
+        <th>date</th>
+        <td colspan="2"><input type="text" name="todaydate" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+        <th>Employee Signature </th>
+        <td colspan="3">
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td> <input type="submit" value="submit" class="submit" onclick="myfun()"></td>
+      </tr>
+
+
+      <script>
+        /*const checkboxes = document.querySelectorAll('input[type="checkbox"][name="language"]');
+        checkboxes.forEach(box => {
+          box.addEventListener('click', function () {
+            if (this.checked) {
+              checkboxes.forEach(otherBox => otherBox.checked = false);
+              this.checked = true;
+            }
+          });
+        });*/
+
+        function myfun() {
+          alert("done");
+          window.location.href = "/homepage";
+        }
+
+
+        const checkboxes1 = document.querySelectorAll('input[type="checkbox"][name="maritalstatus"]');
+        checkboxes1.forEach(box => {
+          box.addEventListener('click', function () {
+            if (this.checked) {
+              checkboxes1.forEach(otherBox => otherBox.checked = false);
+              this.checked = true;
+            }
+          });
+        });
+
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </table>
+
+  </form>
+
+</body>
+
+</html>

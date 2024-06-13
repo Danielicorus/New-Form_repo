@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/userandadmin.css">
+  
+</head>
+
+<body>
+    <div class="box">
+        <div class="login"><b>DANIELI</b> CORUS<br>
+            <span class="smallsize">Welcome to HR Admin New Employee management Portal</span></div>
+        <div class="imgcontainer">
+            <img src="img/for Applicaiton.png" alt="Avatar" class="avatar"><br>
+            
+           <button class="kits" onclick="myfun()">User</button>
+           <button class="kit" onclick="myfuns()" >HRadmin</button>
+            <script>
+            function myfun() {
+               myurl="{{url_for('logins')}}";
+               window.location.href = myurl;
+
+             
+
+            }
+            function myfuns() {
+                myurls="{{url_for('admin')}}";
+               window.location.href = myurls;
+            }
+ 
+        </script>
+        </div>
+    </div>
+</body>
+
+</html>

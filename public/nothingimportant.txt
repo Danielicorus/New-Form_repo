@@ -1,0 +1,95 @@
+import express from "express";
+import mysql from "mysql";
+import dotenv from "dotenv"
+dotenv.config({path:'./.env'});
+// import bodyParser from "body-parser";
+import path from "path";
+import {__dirname} from "path";
+// import {fileURLToPath} from "url";
+// const __dirname =dirname(fileURLToPath(import.meta.url))
+const app = express();
+const port = 3000;
+
+
+const db=mysql.createConnection({
+    host:process.env.DATABASE_HOST,
+    user:process.env.DATABASE_USER,
+    password:process.env.DATABASE_PASSWORD,
+    database:process.env.DATABASE
+
+});
+
+const publicDirectory = path.join(__dirname, './public');
+app.use(express.static(publicDirectory));
+// console.log(_dirname);
+app.set('view engine', 'hbs');
+
+
+
+db.connect( (error) => {
+    if(error) {
+    console.log(error)
+    } else {
+    console.log("MYSQL Connected ... ")
+    
+    }
+})
+
+
+
+
+
+
+app.get("/" ,(req,res)=>{
+    res.render("userandadmin");
+});
+
+// var bandName = "";
+
+// app.use(bodyParser.urlencoded({extended:true}))
+
+// function bandNameGenerator(req, res, next) {
+// console.log(req.body) ;
+// bandName= req.body["email"] + req.body["password"];
+// next();
+
+// }
+
+// app.use(bandNameGenerator);
+
+
+
+// app.get("/",(req,res) => {
+//     res.sendFile(__dirname+"/public/index.html");
+  
+// });
+
+// app.post("/submit", (req,res) =>{
+//     // console.log(req.body);
+//     res.send("please check  " + bandName )
+
+// });
+
+// var generateName = require('sillyname');
+// var sillyName = generateName();
+
+
+// console.log('my name is'+ sillyName)
+
+
+
+
+ {{!-- <script>
+                function myfun() {
+                    myurl = "{{url_for('logins')}}";
+                    window.location.href = myurl;
+
+
+
+                }
+                function myfuns() {
+                    myurls = "{{url_for('admin')}}";
+                    window.location.href = myurls;
+                }
+
+            </script> --}}

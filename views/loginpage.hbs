@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/login" method="post">
+            <div class="login"><b>DANIELI</b> CORUS</div>
+            <div class="imgcontainer">
+                <img src="img/for Applicaiton.png" alt="Avatar" class="avatar">
+            </div><br>
+
+            <div class="input-container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" class="user" name="uname" required><br>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" class="password" name="psw" required><br>
+
+            </div>
+
+            <!-- <button type="submit">Login</button> -->
+            <input type="submit" value="Submit">
+            <!-- <input type="button" class="signup" value="signup" onclick="myfun()"> -->
+            <button type="button" class="cancelbtn" onclick="myfun()">Cancel</button><br>
+            <!-- <button class="mode"  onclick="myfun()">mode:user</button> -->
+
+
+
+            <!-- <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div> -->
+        </form>
+        <script>
+            function myfun() {
+                myurl = "/";
+                window.location.href = myurl;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

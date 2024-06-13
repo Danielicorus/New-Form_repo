@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/induction.css">
+</head>
+
+<body>
+  <div class="box1">
+    New Employee induction plan
+  </div>
+  <div class="box">
+    <form action="/inductioninsert" method="post">
+      <table>
+        <tr class="header-row">
+          <th>Employee name</th>
+          <td colspan=4><input type="text" name="Employee_name" id=""></td>
+        </tr>
+        <tr>
+          <th>Employee ID</th>
+          <td colspan=4><input type="text" name="Employee_ID" id=""></td>
+        </tr>
+        <tr>
+          <th>Department</th>
+          <td colspan=4><input type="text" name="Department" id=""></td>
+        </tr>
+        <tr>
+          <th>Joining Date</th>
+          <td colspan=4><input type="text" name="Joining_Date" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+        </tr>
+        <tr>
+          <th>Designation</th>
+          <td colspan=4><input type="text" name="Designation" id=""></td>
+        </tr>
+        <tr class="process-owner-row">
+          <th>Department</th>
+          <th>Process Owner</th>
+          <th>Day & Time</th>
+          <th>Employee Sign</th>
+          <th>Process Owner Sign</th>
+        </tr>
+        <tr>
+          <td>HR/Admin</td>
+          <td>Shweta Singh</td>
+          <td><input type="text" name="HRorAdminDayandTime" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="HRorAdminEmployeeSign" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="HRorAdminProcessOwnerSign" id=""></td>
+        </tr>
+        <tr>
+          <td>Quality Engineering</td>
+          <td>Nitin Bajpai</td>
+          <td><input type="text" name="Quality_EngineeringDayandTime1" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Quality_EngineeringEmployeeSign1" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Quality_EngineeringProcessOwnerSign1" id=""></td>
+        </tr>
+        <tr>
+          <td>Finance & Control</td>
+          <td>Sheeba Sadana</td>
+          <td><input type="text" name="Finance_ControlDayandTime2" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Finance_ControlEmployeeSign2" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Finance_ControlProcessOwnerSign2" id=""></td>
+        </tr>
+        <tr>
+          <td>Project Management</td>
+          <td>Avik Chatterjee</td>
+          <td><input type="text" name="Project_ManagementDayandTime3" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Project_ManagementEmployeeSign3" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Project_ManagementProcessOwnerSign3" id=""></td>
+        </tr>
+        <tr>
+          <td>Engineering</td>
+          <td>Deepak Gupta</td>
+          <td><input type="text" name="Engineering_DayandTime4" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Engineering_EmployeeSign4" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Engineering_ProcessOwnerSign4" id=""></td>
+        </tr>
+        <tr>
+          <td>SIBM</td>
+          <td>J.K Singh</td>
+          <td><input type="text" name="SIBM_DayandTime5" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="SIBM_EmployeeSign5" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="SIBM_ProcessOwnerSign5" id=""></td>
+        </tr>
+        <tr>
+          <td>Procurement</td>
+          <td>Himanshu Tomar</td>
+          <td><input type="text" name="Procurement_DayandTime6" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Procurement_EmployeeSign6" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Procurement_ProcessOwnerSign6" id=""></td>
+        </tr>
+        <tr>
+          <td>Proposal & Service</td>
+          <td>Kaushik Mukherjee</td>
+          <td><input type="text" name="Proposal_ServiceDayandTime7" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Proposal_ServiceEmployeeSign7" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Proposal_ServiceProcessOwnerSign7" id=""></td>
+        </tr>
+        <tr>
+          <td>Refractory</td>
+          <td>Prashant Dikshit</td>
+          <td><input type="text" name="Refractory_DayandTime8" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="Refractory_EmployeeSign8" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="Refractory_ProcessOwnerSign8" id=""></td>
+        </tr>
+        <tr>
+          <td>PMO</td>
+          <td>Navneet Singh</td>
+          <td><input type="text" name="PMO_DayandTime9" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="PMO_EmployeeSign9" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="PMO_ProcessOwnerSign9" id=""></td>
+        </tr>
+        <tr>
+          <td>IT</td>
+          <td>Ashok Kumar</td>
+          <td><input type="text" name="IT_DayandTime10" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td><input type="checkbox" value="Employee sign" name="IT_EmployeeSign10" id=""></td>
+          <td><input type="checkbox" value="Process Owner Sign" name="IT_ProcessOwnerSign10" id=""></td>
+
+
+        </tr>
+        <tr>
+          <td>Employee Feedback</td>
+          <td colspan="5"><textarea></textarea name="Employee_FeedbacK" id=""></textarea></td>
+
+        </tr>
+        <tr>
+          <td>Employee Signature</td>
+          <td colspan="2"><input type="text" name="Employee_Signature" id=""></td>
+          <td>HR Signature</td>
+          <td><input type="text" name="HR_Employee_Signature" id=""></td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td colspan="1"><input type="text" name="Date1" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+          <td>Date</td>
+          <td colspan="2"><input type="text" name="Date2" id="" onfocus="(this.type='date')"
+              onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><input type="submit" value="submit" style="padding: 8px 10px; background:rgb(160, 218, 160)"
+              onclick="myfun()"></td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+
+
+
+
+
+  </div>
+  <script>
+    function myfun() {
+      alert("done");
+      window.location.href = "/homepage";
+    }
+
+  </script>
+
+
+</body>
+
+</html>

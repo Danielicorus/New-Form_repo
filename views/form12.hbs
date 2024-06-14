@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="/form12insert" method="post">
         <div class="box1">
             <img src="imgs/formno12b.PNG" alt="" class="img1">
             <p onclick="window.print()" id="printout">printout</p><br>
@@ -71,7 +71,7 @@
                 onblur="if(!this.value) this.type='text'" max="9999-12-31">
             <input type="text" name="gross_amount" id="" class="grossamount">
             <input type="text" name="qualifying_amount" id="" class="qualifyingamount">
-            <input type="submit" value="submit" class="submit">
+            <input type="submit" value="submit" class="submit" onclick="myfun()">
 
 
 
@@ -81,6 +81,12 @@
 
         </div>
     </form>
+    <script>
+        function myfun(){
+            alert("save for form12");
+            window.location.href="/homepage";
+        }
+    </script>
 
 </body>
 

@@ -154,7 +154,7 @@ app.post('/PFforminsert', (req, res) => {
             if (err) {
                 return res.status(500).send('Database insert failed');
             }
-            res.send('User registered successfully');
+            res.render("homepage.hbs");
         });
 });
 
@@ -163,6 +163,43 @@ app.post('/PFforminsert', (req, res) => {
 
 app.get("/form12", (req, res) => {
     res.render("form12.hbs");
+});
+
+
+app.post('/form12insert', (req, res) => {
+    const { end_year, name_and_address, permanent_accountno, residential_status, 
+        name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
+        period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
+        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
+        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
+        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp, 
+        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
+        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
+        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
+        value13, estimated_value14, employer_contribution15, interest16, 
+        total_of_columns17, policy, Date5, gross_amount, qualifying_amount } = req.body;
+
+    // if (!username || !password) {
+    //     return res.status(400).send('all file are required');
+    // }
+
+    const sql = "INSERT INTO taxdeduction (end_year,name_and_address, permanent_accountno, residential_status,  name_and_address_employer, tan_of_employer_ito, permanent_account_number, period_of_employment, total_amount_of_salary, total_amount_house_allowance,  value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto,  name_of_emp, tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, value13, estimated_value14, employer_contribution15, interest16, total_of_columns17, policy, Date5, gross_amount, qualifying_amount) VALUES (?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?)";
+    db.query(sql, [end_year, name_and_address, permanent_accountno, residential_status, 
+        name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
+        period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
+        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
+        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
+        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp, 
+        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
+        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
+        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
+        value13, estimated_value14, employer_contribution15, interest16, 
+        total_of_columns17, policy, Date5, gross_amount, qualifying_amount], (err, result) => {
+        if (err) {
+            return res.status(500).send('Database insert failed');
+        }
+        res.render("homepage.hbs")
+    });
 });
 
 app.get("/newjoining", (req, res) => {
@@ -389,25 +426,7 @@ app.post('/EmployeeOnboardingChecklistForminsert', (req, res) => {
 
     const values = fields.map(field => getBooleanField(field));
 
-    const sql = `
-        INSERT INTO employeeoboarding (
-           Form_No, Date_of_Issue, Revision, Approved_by, Resume,
-           Employee_Information_Form, Educational_Certificate,
-           Relieving_Certificates_of_last_2_organizations, Salary_Slips_of_last_3_months,
-           Form_16_If_applicable, Pan_Card_Mandatory, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc, 
-           Passport_size_Photo, Permanent_Mandatory, Bank_Aorc_Opening_Form_and_Formalities,
-           Current_Address_Proof, NDAorService_Agreement, Entry_in_Keka,
-           Appointment_Letter, Entry_in_Dax360, Entry_in_Meytou,
-           Indirect_ariff, Stationary_Notepad_and_Pen, Employee_ID_Card,
-           Extension_list, Visiting_Cards_if_pplicable, Adhaar_Card_Copy,
-           Appointment_Letter_Copy, Nomination_Letter, Universal_Account_Number_UAN,
-           Provident_Fund_Account_Number_PF, Bank_Account_No_and_Name, PAN_Card_Copy,
-           Seating_Arrangement, Laptopa_and_Desktop_and_Accessories, Phone_Extension,
-           Official_Email_ID_Creation, Group_and_Location_Email_Alias, Sim_Card,
-           Head_Phone, Screen, Employee_Access_Card_and_Biometrix_Access,
-           Insurance_Form, Insurance_Form1
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `;
+    const sql = "INSERT INTO employeeoboarding (Form_No, Date_of_Issue, Revision, Approved_by, Resume, Employee_Information_Form, Educational_Certificate, Relieving_Certificates_of_last_2_organizations, Salary_Slips_of_last_3_months,Form_16_If_applicable, Pan_Card_Mandatory, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc, Passport_size_Photo, Permanent_Mandatory, Bank_Aorc_Opening_Form_and_Formalities,Current_Address_Proof, NDAorService_Agreement, Entry_in_Keka, Appointment_Letter, Entry_in_Dax360, Entry_in_Meytou, Indirect_ariff, Stationary_Notepad_and_Pen, Employee_ID_Card, Extension_list, Visiting_Cards_if_pplicable, Adhaar_Card_Copy, Appointment_Letter_Copy, Nomination_Letter, Universal_Account_Number_UAN, Provident_Fund_Account_Number_PF, Bank_Account_No_and_Name, PAN_Card_Copy, Seating_Arrangement, Laptopa_and_Desktop_and_Accessories, Phone_Extension, Official_Email_ID_Creation, Group_and_Location_Email_Alias, Sim_Card, Head_Phone, Screen, Employee_Access_Card_and_Biometrix_Access, Insurance_Form, Insurance_Form1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     db.query(sql, values, (err, result) => {
         if (err) {

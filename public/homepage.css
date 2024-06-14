@@ -27,6 +27,7 @@ body {
     font-size: 50px;
     text-decoration: none;
     font-size: 40px;
+    color: rgb(18, 22, 22);
     /* background-image: linear-gradient(to right, rgb(77, 206, 210),  rgb(208, 151, 226)) ; */
 
 }
@@ -40,6 +41,7 @@ body {
     font-size: 50px;
     text-decoration: none;
     font-size: 40px;
+    color: rgb(18, 22, 22);
     /* background-image: linear-gradient(to right, rgb(77, 206, 210),  rgb(208, 151, 226)) ; */
 
 }
@@ -69,6 +71,26 @@ img.avatar {
     margin-top: -20px;
     /* border-radius: 50%; */
     /* padding-top: -100px; */
+}
+
+.formname{
+    position:absolute;
+    left:150px ;
+    top:27%;
+    font-size: 30px;
+
+
+   
+    
+
+}
+
+.status{
+    position:absolute;
+    left:60%;
+    top:27%;
+    font-size: 30px;
+
 }
 
 /* #successIcon {

@@ -427,11 +427,17 @@
             </div>
              <div class="btn" style="display: flex; justify-content: end;">
 
-                 <button type="submit" style="text-align: center; padding: 10px ; border-radius: 5px ; background-color: rgb(14, 151, 105); font-weight: 600; font-size: 22px;">Submit </button>
+                 <button type="submit" style="text-align: center; padding: 10px ; border-radius: 5px ; background-color: rgb(14, 151, 105); font-weight: 600; font-size: 22px;" onclick="myfun()">Submit </button>
              </div>
              <br><br>
         </div>
     </form>
+    <script>
+        function myfun(){
+            alert("Form submitted successfully");
+            window.location.href="/homepage";
+        }
+    </script>
 </body>
 
 </html>

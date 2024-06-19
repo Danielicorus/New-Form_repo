@@ -202,9 +202,16 @@ app.post('/form12insert', (req, res) => {
     });
 });
 
+
+app.get("/forms12", (req, res) => {
+    res.render("forms12.hbs");
+});
+
 app.get("/newjoining", (req, res) => {
     res.render("newjoining.hbs");
 });
+
+
 
 app.post('/newjoininsert', (req, res) => {
     const { Name, Designation, PresentAddress, PermanentAddress, Namefather, NameMother, PAN, DateJoining, DateBirth, personalmobile, personalemail, Department, Location, MaritalStatus, EPFNOwithPreviousEmployer, nameofSpouseandChildren, Relationship, DateofBirth, nameofSpouseandChildren1, Relationship1, DateofBirth1, nameofSpouseandChildren2, Relationship2, DateofBirth2, nameofSpouseandChildren3, Relationship3, DateofBirth3 } = req.body;
@@ -405,6 +412,8 @@ app.get("/EmployeeOnboardingChecklistForm", (req, res) => {
 });
 
 app.post('/EmployeeOnboardingChecklistForminsert', (req, res) => {
+
+   const {Form_No, Date_of_Issue, Revision, Approved_by}= req.body;
     const getBooleanField = (field) => req.body[field] === 'on' ? 1 : 0;
 
     const fields = [
@@ -424,7 +433,8 @@ app.post('/EmployeeOnboardingChecklistForminsert', (req, res) => {
         'Insurance_Form', 'Insurance_Form1'
     ];
 
-    const values = fields.map(field => getBooleanField(field));
+    const booleanValues = fields.map(field => getBooleanField(field));
+    const values = [Form_No, Date_of_Issue, Revision, Approved_by, ...booleanValues];
 
     const sql = "INSERT INTO employeeoboarding (Form_No, Date_of_Issue, Revision, Approved_by, Resume, Employee_Information_Form, Educational_Certificate, Relieving_Certificates_of_last_2_organizations, Salary_Slips_of_last_3_months,Form_16_If_applicable, Pan_Card_Mandatory, Photo_ID_Proof_Voter_Aadhar_Card_Passport_etc, Passport_size_Photo, Permanent_Mandatory, Bank_Aorc_Opening_Form_and_Formalities,Current_Address_Proof, NDAorService_Agreement, Entry_in_Keka, Appointment_Letter, Entry_in_Dax360, Entry_in_Meytou, Indirect_ariff, Stationary_Notepad_and_Pen, Employee_ID_Card, Extension_list, Visiting_Cards_if_pplicable, Adhaar_Card_Copy, Appointment_Letter_Copy, Nomination_Letter, Universal_Account_Number_UAN, Provident_Fund_Account_Number_PF, Bank_Account_No_and_Name, PAN_Card_Copy, Seating_Arrangement, Laptopa_and_Desktop_and_Accessories, Phone_Extension, Official_Email_ID_Creation, Group_and_Location_Email_Alias, Sim_Card, Head_Phone, Screen, Employee_Access_Card_and_Biometrix_Access, Insurance_Form, Insurance_Form1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 

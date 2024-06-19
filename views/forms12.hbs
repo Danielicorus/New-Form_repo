@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/forms12.css">
+    <title>Document</title>
+
+    
+</head>
+
+<body>
+    <form action="/form12insert" method="post">
+        <h2 class="form-title">FORM NO. 12B</h2>
+        <p class="subtitle">[See rule 26A(2)]</p>
+        <p style="margin-left:30%;">Form for furnishing details of income under section 192(1) for the year ending.
+            <input type="text" name="end_year" class="endyear" id="" onfocus="(this.type='date')"
+                onblur="if(!this.value) this.type='text'" max="9999-12-31">
+        </p>
+        <p onclick="window.print()" id="printout" class="printout">printout</p><br>
+        <a href="/homepage" id="backtohomepage" class="backtohomepage">back to homepage</a>
+
+
+        <label for="name-address">Name and address of the employee:
+            <input type="text" name="name_and_address" id="" class="nameandaddress"></label>
+        <label for="permanent-account">Permanent Account No.:
+            <input type="text" name="permanent_accountno" id="" class="permanentaccountno"></label>
+        <label for="residential-status">Residential status:
+            <input type="text" name="residential_status" id="" class="residentialstatus"></label>
+
+
+
+
+
+        <table style="height: 174px;" width="820">
+            <tbody>
+                <tr style="height: 22px;">
+                    <td style="height: 22px; width: 74.4625px;"></td>
+                    <td style="height: 22px; width: 74.4625px;">&nbsp;</td>
+                    <td style="height: 22px; width: 74.4625px;">&nbsp;</td>
+                    <td colspan="3" style="height: 22px; width: 74.4625px;">Particulars of salary as <br> defined in
+                        section
+                        17,<br> paid or due to be paid to the employee during the year</td>
+                    <td style="height: 22px; width: 74.4625px;"></td>
+                    <td style="height: 22px; width: 74.4625px;"><br></td>
+                    <td style="height: 22px; width: 74.4625px;">&nbsp;</td>
+                    <td style="height: 22px; width: 74.4625px;">&nbsp;</td>
+                    <td style="height: 22px; width: 74.4625px;">&nbsp;</td>
+
+                </tr>
+                <tr style="height: 22px;">
+                    <td style="height: 22px; width: 74.4625px;">Name and address of<br>employer(s)</td>
+                    <td style="height: 22px; width: 74.4625px;">TAN of the employer(s) as allotted <br> by the ITO</td>
+                    <td style="height: 22px; width: 74.4625px;">Period of employment</td>
+                    <td style="height: 22px; width: 74.4625px;">Permanent Account Number <br> of the employer(s)</td>
+                    <td style="height: 22px; width: 74.4625px;">Total amount of salary <br> excluding amounts required
+                        <br>
+                        to be shown in columns 7 and 8
+                    </td>
+                    <td style="height: 22px; width: 74.4625px;">Total amount of house rent allowance, conveyance
+                        allowance
+                        and other allowances to the extent chargeable to tax[See section 10(13A) <br> read with rule
+                        <br> 2A
+                        and section 10(14)]
+                    </td>
+                    <td style="height: 22px; width: 74.4625px;">Value of perquisites and amount of accretion to
+                        employee's
+                        provident <br> fund account (give details in the Annexure)</td>
+                    <td style="height: 22px; width: 74.4625px;">Total of columns<br> 6, 7, and 8</td>
+                    <td style="height: 22px; width: 74.4625px;">Amount deducted in respect of life insurance <br>
+                        premium,
+                        provident fund contribution, etc., <br>to which sec. 80C † applies (Give details)</td>
+                    <td style="height: 22px; width: 74.4625px;">Total amount of tax <br> deducted during <br> the year
+                        (enclose certificate issued under section 203)</td>
+                    <td style="height: 22px; width: 74.4625px;">Remarks</td>
+
+                </tr>
+                <tr style="height: 22px;">
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="name_and_address_employer"
+                            placeholder="1" id="" class="name1emp"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="tan_of_employer_ito" id=""
+                            placeholder="2" class="tan2"></td>
+                    <td style="height: 22px; width: 74.4625px;"> <input type="text" name="period_of_employment"
+                            placeholder="3" id="" class="per4" onfocus="(this.type='date')"
+                            onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="permanent_account_number"
+                            placeholder="4" id="" class="per3"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="total_amount_of_salary"
+                            placeholder="5" id="" class="tol5"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="total_amount_house_allowance"
+                            placeholder="6" id="" class="tol6"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="value_of_perquistes_and_amount"
+                            placeholder="7" id="" class="val7"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="total_of_colume" id=""
+                            placeholder="8" class="tol8"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="amount_deducted_in_respesct"
+                            placeholder="9" id="" class="amo9"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text"
+                            name="total_of_tax_deducteddu_in_the_year" placeholder="10" id="" class="tol10"></td>
+                    <td style="height: 22px; width: 74.4625px;"><input type="text" name="remark" placeholder="11" id=""
+                            class="r11"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pre>
+
+
+
+     <div>
+        <span style="margin-left:70%; font-family:Verdana;">Signature of the employee</span>
+        <p style="font-family:Verdana;">† With effect from 1-4-1991, section 80C has been replaced by section 88.</p><br>
+        <p>I,<input type="text" name="your_name" id="" style="width:27%;" placeholder="n1" class="yourname"></p><p style="margin-left:30%; font-family:Verdana; margin-top:-2%;">do hereby declare that what is stated above is true to the best of my knowledge and belief.</p><br>
+        <p style="margin-top:-43px; margin-left:-2px; font-family:Verdana;">Verified today, the <input type="text" name="verified_today" id="" class="verifiedtoday" onfocus="(this.type='date')"
+            onblur="if(!this.value) this.type='text'" max="9999-12-31"> day of <input type="text" name="day_of_year" id="" class="dayofyear" onfocus="(this.type='date')"
+                onblur="if(!this.value) this.type='text'" max="9999-12-31"></p>
+        <span style="margin-left:70%; font-family:Verdana;">Signature of the employee</span>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+   </pre>
+        <p style="text-align: center;">ANNEXURE</p><br>
+        <p style="text-align: center; margin-top:-20px;">[See column 8 of Form No. 12B]</p><br>
+        <p style="text-align: center; margin-top:-20px;">Particulars of value of perquisites and amount of accretion to
+            employee's provident fund account</p><br>
+        <p style="margin-top:10px;">Name and address of the employee <input type="text" name="name_emp_address"
+                id="name_empa_ddress" placeholder="" class="nameempaddress"></p><br>
+        <p style="margin-top:-20px;">Permanent Account No. <input type="text" name="permanent_account" id=""
+                placeholder="" class="permanentaccount"></p><br>
+        <p style="float: right; margin-top:-9px">Period:<input type="text" name="year_endingfrom" id="" placeholder=""
+                class="endingyear" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"
+                max="9999-12-31">To<input type="text" name="year_endingto" id="" placeholder="" class="endingyearto"
+                onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" max="9999-12-31"></p>
+        <table style="height: 103px;" width="821">
+            <tbody>
+                <tr>
+                    <td style="width: 82.0125px;" rowspan="3">Name of the <br> employee</td>
+                    <td style="width: 82.0125px;" rowspan="3">TAN/PAN of <br> the employer</td>
+                    <td style="width: 82.0125px;" colspan="10">Value of rent-free accommodation or value of any
+                        concession
+                        in rent for the accommodation provided by the employer (give basis of computation)<br>[See rules
+                        3(a) and 3(b)]</td>
+
+
+
+                </tr>
+                <tr>
+
+                    <td style="width: 82.0125px;" colspan="6">Where accommodation is furnished</td>
+                    <td style="width: 82.0125px;">&nbsp;</td>
+                    <td style="width: 82.0125px;">&nbsp;</td>
+
+                </tr>
+                <tr>
+
+                    <td style="width: 82.0125px;">Where accommodation is unfurnished</td>
+                    <td style="width: 82.0125px;">Value as if accommodation is unfurnished</td>
+                    <td style="width: 82.0125px;">Cost of furniture (including television sets, radio sets,
+                        refrigerators,
+                        <br> other household appliances and airconditioning plant or equipment) OR <br> hire charges,
+                        <br>
+                        if hired from a third party
+                    </td>
+                    <td style="width: 82.0125px;">Perquisite value of furniture (10% of column 5) OR <br> actual hire
+                        charges payable</td>
+                    <td style="width: 82.0125px;">Total of columns <br> 4 and 6</td>
+                    <td style="width: 82.0125px;">Rent, if any, paid <br> by the employee </td>
+                    <td style="width: 82.0125px;">Value of perquisite (column 3 minus <br> column 8 or column 7 minus
+                        <br>
+                        column 8 as may be applicable)
+                    </td>
+                    <td style="width: 82.0875px;">&nbsp;</td>
+                </tr>
+                <tr>
+
+                    <td style="width: 82.0125px;"><input type="text" name="name_of_emp" id="" placeholder="1"
+                            class="nameemp1"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="tan_of_employer" id="" placeholder="2"
+                            class="tanemp2"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="acommodation_is_unfurnished" id=""
+                            placeholder="3" class="acommodation3"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="value_of_acommodation" id="" placeholder="4"
+                            class="acommodation4"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="cost_of_furniture" id="" placeholder="5"
+                            class="furniture5"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="perquisite_value_of_furniture" id=""
+                            placeholder="6" class="perquisite6"></td>
+                    <td style="width: 82.0125px;"><input type="text" name="total_of_column1" id="" placeholder="7"
+                            class="tol7"></td>
+                    <td style="width: 82.0875px;"><input type="text" name="rent" id="" placeholder="8" class="rent8">
+                    </td>
+                    <td style="width: 82.0125px;"><input type="text" name="value_of_perquisite" id="" placeholder="9"
+                            class="val9"></td>
+                    <td style="width: 82.0875px;">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pre>
+
+
+
+
+
+    </pre>
+
+
+
+        <table style="height: 169px;" width="824">
+            <tbody>
+                <tr style="height: 84px;">
+                    <td style="width: 102.9px; height: 84px;">Name of the employee</td>
+                    <td style="width: 102.9px; height: 84px;">Whether any conveyance has been provided by the employer
+                        free
+                        or at a concessional rate or where the employee is allowed the use of one or more motor cars
+                        owned
+                        or hired by the employer, estimated value of perquisite (give details) [See rule 3(c)]</td>
+                    <td style="width: 102.9px; height: 84px;">Remuneration paid by employer <br> for domestic and/or
+                        personal services <br> provided to the employee (give details) [See rule 3(g)]</td>
+                    <td style="width: 102.9px; height: 84px;">Value of free or concessional passages <br> on home leave
+                        and
+                        <br> other travelling to the extent chargeable to tax (give details) <br> [See rule 2B read with
+                        section 10(5)(ii)]
+                    </td>
+                    <td style="width: 102.9px; height: 84px;">Estimated value of any other benefit or amenity provided
+                        by
+                        the employer, free of cost or at <br> concessional rate not included in the preceding columns
+                        <br>
+                        (give details), e.g., supply of gas, electricity or water <br> for household consumption, free
+                        educational <br> facilities, transport for family,etc.[See rules 3(d), 3(e) and 3(f)]
+                    </td>
+                    <td style="width: 102.9px; height: 84px;"> Employer's contribution to recognised provident fund in
+                        excess of 10% <br> of the employee's salary [See Schedule IV - Part A]</td>
+                    <td style="width: 102.9px; height: 84px;">Interest credited to the assessee's account in recognised
+                        provident fund in excess of the rate fixed by the Central Government [See Schedule IV - Part A]
+                    </td>
+                    <td style="width: 102.9px; height: 84px;">Total of columns 9 to 15 carried to column 8 of Form No.
+                        12B
+                    </td>
+
+                </tr>
+                <tr style="height: 10.3875px;">
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="name_of_employee" id=""
+                            placeholder="10" class="nameemp10"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="whether_any_conveyance"
+                            id="" class="whether11"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="remuneration12" id=""
+                            class="remuneration12"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="value13" id=""
+                            class="value13">
+                    </td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="estimated_value14" id=""
+                            class="estimatedvalue14"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="employer_contribution15"
+                            id="" class="employercontribution15"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="interest16" id=""
+                            class="interest16"></td>
+                    <td style="width: 102.9px; height: 10.3875px;"><input type="text" name="total_of_columns17" id=""
+                            class="totalofcolumns17"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pre>
+
+
+
+
+
+    </pre>
+        <table id="tables">
+
+            <tr>
+                <td>Sl. No.</td>
+                <td>Particulars</td>
+                <td>Policy No</td>
+                <td>Date</td>
+                <td>Gross<br>Amount</td>
+                <td>Qualifying <br> Amount</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Statutory Provident Fund</td>
+                <td><input type="text" name="policy" id="" class="policy"></td>
+                <td><input type="text" name="Date5" id="" class="Date5" onfocus="(this.type='date')"
+                        onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
+                <td><input type="text" name="gross_amount" id="" class="grossamount"></td>
+                <td><input type="text" name="qualifying_amount" id="" class="qualifyingamount"></td>
+            </tr>
+            <!-- <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr> -->
+
+        </table>
+        <input type="submit" value="submit" class="submit" onclick="myfun()">
+    </form>
+    <script>
+        function myfun() {
+            alert("save for form12");
+            window.location.href = "/homepage";
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -29,7 +29,7 @@ body {
 }
 
 table {
-    width: 90%;
+    /* width: 70%; */
     border-collapse: collapse;
     margin-left: 60px;
 
@@ -40,11 +40,13 @@ th,
 td {
     border: 0px solid #000000;
     padding: 8px;
+    text-align: center;
 
 }
 
 td {
     background-color: lightyellow;
+    padding: 10px 52px;
 }
 
 th {
@@ -64,8 +66,25 @@ input[type="date"] {
 
     width: 70%;
     height: 30px;
-    text-align: left;
+    border: none;
+    text-align:left;
+    outline: none;
+    background-color:rgb(228, 241, 236);
 
+}
+input[type="text"]:focus{
+border-bottom: 1px solid black;
+}
+
+input[type="submit"]{
+    margin-left:-300px ;
+    padding: 8px 50px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+#kits{
+    margin-left: 70px;
 }
 
 #kit {

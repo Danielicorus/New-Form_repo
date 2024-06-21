@@ -61,10 +61,10 @@
             /* padding-top: -100px; */
         }
 
-        .forms{
+        .forms {
             margin-top: 16%;
-            margin-bottom: -9%;
             margin-left: 40%;
+            margin-bottom:-9% ;
         }
     </style>
 
@@ -81,7 +81,11 @@
     </div>
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add
         Employee</button>
-  
+    <form action="/search" method="post" class="forms">
+        <input type="search" name="username" style="width:auto; padding:8px 10px;">
+        <input type="submit" value="search" style="width:auto;  padding:8px 10px; background:rgb(127, 197, 127);">
+    </form>
+
 
 
 
@@ -143,39 +147,31 @@
             }
         </script>
     </div>
-      <form action="/search" method="post" class="forms">
-        <input type="search" name="username" style="width:auto; padding:8px 10px;">
-        <input type="submit" value="search" style="width:auto;  padding:8px 10px; background:rgb(127, 197, 127);">
-    </form>
+
+  
 
     {{#if users.length}}
-   
-        <table border="1px" width="100%" class="scroll">
+    <table border="1px" width="100%" class="scroll">
 
-            <tr>
-                <td>S.No</td>
-                <td>Email</td>
-                <td>password</td>
-
-
-
-            </tr>
-            {{#each users}}
-            <tr>
-                <td>{{this.id}}</td>
-                <td>{{this.username}}</td>
-                <td>{{this.password}}</td>
-
-            </tr>
-            {{/each}}
+        <tr>
+            <td>S.No</td>
+            <td>Email</td>
+            <td>password</td>
 
 
 
+        </tr>
+        {{#each users}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.username}}</td>
+            <td>{{this.password}}</td>
 
+        </tr>
+        {{/each}}
 
+    </table>
 
-        </table>
-   
 
     {{else}}
     <p>no foound</p>

@@ -21,11 +21,14 @@
 
     <body>
         <form action="/EmployeeOnboardingChecklistForminsert" method="post">
+
             <table class="header-table">
                 <tr>
                     <td id="title-cell" rowspan="4" colspan="0.1">Employee Onboarding Checklist</td>
                     <td>Form No.:</td>
+                   
                     <td><input type="text" name="Form_No" id=""></td>
+                    {{!--<input type="text" name="Form_No" value="" id="">---}}
                 </tr>
                 <tr>
                     <td>Date of Issue:</td>
@@ -62,39 +65,38 @@
                     <tr>
                         <td class="rownnumber">1</td>
                         <td>Resume</td>
-                        <td><input type="checkbox" name="Resume"  id=""></td>
+                        <td><input type="checkbox" name="Resume" id=""></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Employee Information Form</td>
-                        <td><input type="checkbox" name="Employee_Information_Form"  id=""></td>
+                        <td><input type="checkbox" name="Employee_Information_Form" id=""></td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>Educational Certificates (10<sup>th</sup> & Highest one)</td>
-                        <td><input type="checkbox" name="Educational_Certificate"  id=""></td>
+                        <td><input type="checkbox" name="Educational_Certificate" id=""></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Relieving Certificates of last 2 organizations</td>
-                        <td><input type="checkbox" name="Relieving_Certificates_of_last_2_organizations" 
-                                id=""></td>
+                        <td><input type="checkbox" name="Relieving_Certificates_of_last_2_organizations" id=""></td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>Salary Slips of last 3 months</td>
-                        <td><input type="checkbox" name="Salary_Slips_of_last_3_months"  id="">
+                        <td><input type="checkbox" name="Salary_Slips_of_last_3_months" id="">
                         </td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>Form 16 (If applicable)</td>
-                        <td><input type="checkbox" name="Form_16_If_applicable"  id=""></td>
+                        <td><input type="checkbox" name="Form_16_If_applicable" id=""></td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Pan Card (Mandatory)</td>
-                        <td><input type="checkbox" name="Pan_Card_Mandatory"  id=""></td>
+                        <td><input type="checkbox" name="Pan_Card_Mandatory" id=""></td>
                     </tr>
                     <tr>
                         <td>10</td>
@@ -298,6 +300,7 @@
                 </tbody>
 
             </table>
+
         </form>
 
 

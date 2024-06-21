@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 import multer from "multer";
+import session from "express-session";
 
 
 
@@ -37,6 +38,33 @@ db.connect((error) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+// app.use(session({
+//     secret: 'your_secret_key', // Replace with a strong secret key
+//     resave: false,
+//     saveUninitialized: true,
+//    // Set to true if using HTTPS
+// }));
+
+// const getCurrentUser = (req, res, next) => {
+//     if (req.session.users) {
+//         const users = req.session.users;
+//         db.query('SELECT * FROM users WHERE username = ?', [users], (err, result) => {
+//             if (err) throw err;
+//             if (result.length > 0) {
+//                 req.currentUser = result[0];
+//             } else {
+//                 req.currentUser = null;
+//             }
+//             next();
+//         });
+//     } else {
+//         req.currentUser = null;
+//         next();
+//     }
+// };
+
+
+
 const publicDirectory = path.join(__dirname, './public');
 app.use(express.static(publicDirectory));
 
@@ -61,6 +89,7 @@ app.post("/login", (req, res) => {
             console.error("Error executing query:", error);
             res.status(500).send("Server Error");
         } else if (results.length > 0) {
+            // req.session.users = result[0].uname;
             res.render("homepage.hbs");
         } else {
             res.send("Invalid username or password.");
@@ -84,7 +113,7 @@ app.post('/logininsert', (req, res) => {
         if (err) {
             return res.status(500).send('Database insert failed');
         }
-        res.render("managemployee.hbs")
+        res.render("managemployee.hbs",)
     });
 });
 
@@ -167,16 +196,16 @@ app.get("/form12", (req, res) => {
 
 
 app.post('/form12insert', (req, res) => {
-    const { end_year, name_and_address, permanent_accountno, residential_status, 
-        name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
-        period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
-        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
-        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
-        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp, 
-        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
-        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
-        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
-        value13, estimated_value14, employer_contribution15, interest16, 
+    const { end_year, name_and_address, permanent_accountno, residential_status,
+        name_and_address_employer, tan_of_employer_ito, permanent_account_number,
+        period_of_employment, total_amount_of_salary, total_amount_house_allowance,
+        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct,
+        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today,
+        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp,
+        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation,
+        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent,
+        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12,
+        value13, estimated_value14, employer_contribution15, interest16,
         total_of_columns17, policy, Date5, gross_amount, qualifying_amount } = req.body;
 
     // if (!username || !password) {
@@ -184,22 +213,22 @@ app.post('/form12insert', (req, res) => {
     // }
 
     const sql = "INSERT INTO taxdeduction (end_year,name_and_address, permanent_accountno, residential_status,  name_and_address_employer, tan_of_employer_ito, permanent_account_number, period_of_employment, total_amount_of_salary, total_amount_house_allowance,  value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto,  name_of_emp, tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, value13, estimated_value14, employer_contribution15, interest16, total_of_columns17, policy, Date5, gross_amount, qualifying_amount) VALUES (?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?,	?)";
-    db.query(sql, [end_year, name_and_address, permanent_accountno, residential_status, 
-        name_and_address_employer, tan_of_employer_ito, permanent_account_number, 
-        period_of_employment, total_amount_of_salary, total_amount_house_allowance, 
-        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct, 
-        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today, 
-        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp, 
-        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation, 
-        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent, 
-        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12, 
-        value13, estimated_value14, employer_contribution15, interest16, 
+    db.query(sql, [end_year, name_and_address, permanent_accountno, residential_status,
+        name_and_address_employer, tan_of_employer_ito, permanent_account_number,
+        period_of_employment, total_amount_of_salary, total_amount_house_allowance,
+        value_of_perquistes_and_amount, total_of_colume, amount_deducted_in_respesct,
+        total_of_tax_deducteddu_in_the_year, remark, your_name, verified_today,
+        day_of_year, name_emp_address, permanent_account, year_endingfrom, year_endingto, name_of_emp,
+        tan_of_employer, acommodation_is_unfurnished, value_of_acommodation,
+        cost_of_furniture, perquisite_value_of_furniture, total_of_column1, rent,
+        value_of_perquisite, name_of_employee, whether_any_conveyance, remuneration12,
+        value13, estimated_value14, employer_contribution15, interest16,
         total_of_columns17, policy, Date5, gross_amount, qualifying_amount], (err, result) => {
-        if (err) {
-            return res.status(500).send('Database insert failed');
-        }
-        res.render("homepage.hbs")
-    });
+            if (err) {
+                return res.status(500).send('Database insert failed');
+            }
+            res.render("homepage.hbs")
+        });
 });
 
 
@@ -360,7 +389,7 @@ app.post('/inductioninsert', (req, res) => {
 // });
 
 app.get("/Employee_submission", (req, res) => {
-    res.render("Employee_submission.hbs");
+    res.render("Employee_submission.hbs", { formNo });
 });
 
 
@@ -407,13 +436,13 @@ app.post('/searchs', (req, res) => {
     });
 })
 
-app.get("/EmployeeOnboardingChecklistForm", (req, res) => {
+app.get("/EmployeeOnboardingChecklistForm" , (req, res) => {
     res.render("Employee Onboarding Checklist Form.hbs");
 });
 
 app.post('/EmployeeOnboardingChecklistForminsert', (req, res) => {
 
-   const {Form_No, Date_of_Issue, Revision, Approved_by}= req.body;
+    const { Form_No, Date_of_Issue, Revision, Approved_by } = req.body;
     const getBooleanField = (field) => req.body[field] === 'on' ? 1 : 0;
 
     const fields = [
